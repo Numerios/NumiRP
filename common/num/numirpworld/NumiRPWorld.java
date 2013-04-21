@@ -1,5 +1,6 @@
 package num.numirpworld;
 
+import num.numirpworld.lib.Reference;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.PostInit;
@@ -8,10 +9,9 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-
-@Mod(modid = "NumiRPWorld", name = "NumiRPWorld", version = "0.0.1")
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION)
 public class NumiRPWorld {
-    
+
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
     }
