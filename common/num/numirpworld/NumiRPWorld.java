@@ -1,7 +1,7 @@
 package num.numirpworld;
 
-import num.numirpworld.blocks.ModBlocks;
-import num.numirpworld.items.ModItems;
+import num.numirpworld.block.ModBlocks;
+import num.numirpworld.item.ModItems;
 import num.numirpworld.lib.Reference;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;

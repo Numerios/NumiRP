@@ -1,4 +1,4 @@
-package num.numirpworld.items;
+package num.numirpworld.item;
 
 public class ModItems {
 

@@ -1,4 +1,4 @@
-package num.numirpworld.blocks;
+package num.numirpworld.block;
 
 public class ModBlocks {
 
