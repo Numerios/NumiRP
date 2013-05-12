@@ -7,6 +7,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import num.numirpworld.item.ItemBlockOres;
+import num.numirpworld.lib.BlockIDs;
 import num.numirpworld.lib.Reference;
 import num.numirpworld.lib.Strings;
 
@@ -17,7 +18,7 @@ public class ModBlocks {
             oreTin, oreSilver, oreNikolite, oreTungsten;
 
     public static void init() {
-        blockOres = new BlockOres(2050, Material.rock)
+        blockOres = new BlockOres(BlockIDs.ORES_ID, Material.rock)
                 .setUnlocalizedName("blockOres");
 
         GameRegistry.registerBlock(
