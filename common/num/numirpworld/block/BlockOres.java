@@ -51,7 +51,7 @@ public class BlockOres extends Block {
     
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int side, int meta) {
-        return icons[side];
+        return icons[meta];
     }
 
     @Override

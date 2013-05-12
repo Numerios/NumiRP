@@ -1,7 +1,5 @@
 package num.numirpworld.block;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
@@ -9,9 +7,10 @@ import num.numirpworld.item.ItemBlockOres;
 import num.numirpworld.lib.BlockIDs;
 import num.numirpworld.lib.Reference;
 import num.numirpworld.lib.Strings;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ModBlocks {
-    public static Block tutorialBlock;
     public static Block blockOres;
     public static ItemStack oreSapphire, oreGreenSapphire, oreRuby, oreCopper,
             oreTin, oreSilver, oreNikolite, oreTungsten;
