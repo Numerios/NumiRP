@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraftforge.common.MinecraftForge;
 import num.numirpworld.lib.Reference;
 import num.numirpworld.lib.Strings;
 import cpw.mods.fml.relauncher.Side;
@@ -16,15 +17,28 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockOres extends Block {
 
-    public BlockOres(int id, Material material) {
-        super(id, material);
+    public BlockOres(int id) {
+        super(id, Material.rock);
+        setHardness(3.0F);
+        setResistance(5.0F);
+        setStepSound(soundStoneFootstep);
         setCreativeTab(CreativeTabs.tabMaterials);
         setUnlocalizedName("numirpworld.ore");
+        
+        MinecraftForge.setBlockHarvestLevel(this, 0, "pickaxe", 2);
+        MinecraftForge.setBlockHarvestLevel(this, 1, "pickaxe", 2);
+        MinecraftForge.setBlockHarvestLevel(this, 2, "pickaxe", 2);
+        MinecraftForge.setBlockHarvestLevel(this, 3, "pickaxe", 1);
+        MinecraftForge.setBlockHarvestLevel(this, 4, "pickaxe", 1);
+        MinecraftForge.setBlockHarvestLevel(this, 5, "pickaxe", 1);
+        MinecraftForge.setBlockHarvestLevel(this, 6, "pickaxe", 2);
+        MinecraftForge.setBlockHarvestLevel(this, 7, "pickaxe", 2);
     }
-
+  
     @SideOnly(Side.CLIENT)
     private Icon[] icons;
-
+    
+    @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister ir) {
         icons = new Icon[Strings.ORES.length];
@@ -34,7 +48,7 @@ public class BlockOres extends Block {
                     + Strings.ORES[i]);
         }
     }
-
+    
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int side, int meta) {
         return icons[side];

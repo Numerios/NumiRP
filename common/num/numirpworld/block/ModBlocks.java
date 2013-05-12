@@ -3,7 +3,6 @@ package num.numirpworld.block;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import num.numirpworld.item.ItemBlockOres;
@@ -18,7 +17,7 @@ public class ModBlocks {
             oreTin, oreSilver, oreNikolite, oreTungsten;
 
     public static void init() {
-        blockOres = new BlockOres(BlockIDs.ORES_ID, Material.rock)
+        blockOres = new BlockOres(BlockIDs.ORES_ID)
                 .setUnlocalizedName("blockOres");
 
         GameRegistry.registerBlock(
