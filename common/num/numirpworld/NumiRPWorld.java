@@ -1,5 +1,6 @@
 package num.numirpworld;
 
+import num.numirpworld.config.ConfigHandler;
 import num.numirpworld.block.ModBlocks;
 import num.numirpworld.item.ModItems;
 import num.numirpworld.lib.Reference;
@@ -22,6 +23,7 @@ public class NumiRPWorld {
 
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
+        ConfigHandler.init(event.getSuggestedConfigurationFile());
         ModBlocks.init();
         ModItems.init();
         GameRegistry.registerWorldGenerator(WorldGenerator.instance);
