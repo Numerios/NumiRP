@@ -4,6 +4,8 @@ import num.numirpworld.block.ModBlocks;
 import num.numirpworld.config.ConfigHandler;
 import num.numirpworld.item.ModItems;
 import num.numirpworld.lib.Reference;
+import num.numirpworld.recipe.ModCrafting;
+import num.numirpworld.recipe.ModSmelting;
 import num.numirpworld.world.WorldGenerator;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -27,6 +29,8 @@ public class NumiRPWorld {
         ModBlocks.init();
         ModItems.init();
         GameRegistry.registerWorldGenerator(WorldGenerator.instance);
+        ModCrafting.init();
+        ModSmelting.init();
 
     }
 
