@@ -27,7 +27,7 @@ public class ModBlocks {
 
         for (int i = 0; i < Strings.ORES.length; i++) {
             LanguageRegistry.addName(new ItemStack(blockOres, 1, i),
-                    Strings.ORES[i] + " Ore");
+                    Strings.ORE_NAMES[i] + " Ore");
         }
 
         oreSapphire = new ItemStack(blockOres, 1, 0);
