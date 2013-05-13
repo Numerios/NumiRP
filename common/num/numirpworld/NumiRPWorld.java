@@ -1,7 +1,7 @@
 package num.numirpworld;
 
-import num.numirpworld.config.ConfigHandler;
 import num.numirpworld.block.ModBlocks;
+import num.numirpworld.config.ConfigHandler;
 import num.numirpworld.item.ModItems;
 import num.numirpworld.lib.Reference;
 import num.numirpworld.world.WorldGenerator;

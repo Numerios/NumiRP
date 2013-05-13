@@ -29,16 +29,21 @@ public class WorldGenerator implements IWorldGenerator {
     }
 
     private void generateSurface(World world, Random random, int x, int z) {
-        // test gen
-        this.addOreSpawn(ModBlocks.blockOres, 0, world, random, x, z, 4, 5, 15,
-                64);
+        this.addOre(ModBlocks.blockOres, 0, world, random, x, z, 6, 2, 0, 48); // Sapphire
+        this.addOre(ModBlocks.blockOres, 1, world, random, x, z, 6, 2, 0, 48); // GSapphire
+        this.addOre(ModBlocks.blockOres, 2, world, random, x, z, 6, 2, 0, 48); // Ruby
+        this.addOre(ModBlocks.blockOres, 3, world, random, x, z, 8, 20, 0, 64); // Copper
+        this.addOre(ModBlocks.blockOres, 4, world, random, x, z, 8, 5, 15, 64); // Tin
+        this.addOre(ModBlocks.blockOres, 5, world, random, x, z, 8, 5, 15, 48); // Silver
+        this.addOre(ModBlocks.blockOres, 6, world, random, x, z, 8, 10, 0, 16); // Nikolite
+        this.addOre(ModBlocks.blockOres, 7, world, random, x, z, 2, 1, 0, 16); // Tungsten
     }
 
     private void generateNether(World world, Random random, int x, int z) {
 
     }
 
-    public void addOreSpawn(Block block, int meta, World world, Random random,
+    public void addOre(Block block, int meta, World world, Random random,
             int blockXPos, int blockZPos, int clusterSize, int spawnChances,
             int minY, int maxY) {
         for (int x = 0; x < spawnChances; x++) {
