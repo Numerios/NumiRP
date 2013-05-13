@@ -11,9 +11,12 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ModBlocks {
-    public static Block blockOres;
+    public static Block blockOres, blockStorage;
     public static ItemStack oreSapphire, oreGreenSapphire, oreRuby, oreCopper,
-            oreTin, oreSilver, oreNikolite, oreTungsten;
+            oreTin, oreSilver, oreNikolite, oreTungsten, blockStorageSapphire,
+            blockStorageGreenSapphire, blockStorageRuby, blockStorageCopper,
+            blockStorageTin, blockStorageSilver, blockStorageNikolite,
+            blockStorageTungsten;
 
     public static void init() {
         blockOres = new BlockOres(BlockIDs.ORES_ID)
@@ -47,6 +50,29 @@ public class ModBlocks {
         OreDictionary.registerOre("oreSilver", oreSilver);
         OreDictionary.registerOre("oreNikolite", oreNikolite);
         OreDictionary.registerOre("oreTungsten", oreTungsten);
+
+        blockStorage = new BlockStorage(BlockIDs.STORAGE_ID)
+                .setUnlocalizedName("blockStorage");
+
+        GameRegistry.registerBlock(
+                blockStorage,
+                ItemBlockOres.class,
+                Reference.MOD_ID.toLowerCase()
+                        + (blockStorage.getUnlocalizedName().substring(5)));
+
+        for (int i = 0; i < Strings.ORES.length; i++) {
+            LanguageRegistry.addName(new ItemStack(blockStorage, 1, i),
+                    Strings.ORE_NAMES[i] + " Storage Block");
+        }
+
+        blockStorageSapphire = new ItemStack(blockStorage, 1, 0);
+        blockStorageGreenSapphire = new ItemStack(blockStorage, 1, 1);
+        blockStorageRuby = new ItemStack(blockStorage, 1, 2);
+        blockStorageCopper = new ItemStack(blockStorage, 1, 3);
+        blockStorageTin = new ItemStack(blockStorage, 1, 4);
+        blockStorageSilver = new ItemStack(blockStorage, 1, 5);
+        blockStorageNikolite = new ItemStack(blockStorage, 1, 6);
+        blockStorageTungsten = new ItemStack(blockStorage, 1, 7);
 
     }
 

@@ -21,6 +21,9 @@ public class ConfigHandler {
             BlockIDs.ORES_ID = configuration.getBlock("ores",
                     BlockIDs.ORES_ID_DEFAULT).getInt(
                             BlockIDs.ORES_ID_DEFAULT);
+            BlockIDs.STORAGE_ID = configuration.getBlock("storage block",
+                    BlockIDs.STORAGE_ID_DEFAULT).getInt(
+                            BlockIDs.STORAGE_ID_DEFAULT);
 
         } catch (Exception e) {
             FMLLog.log(Level.SEVERE, e, "Mod called " + Reference.MOD_NAME
