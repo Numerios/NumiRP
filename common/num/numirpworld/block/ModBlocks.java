@@ -73,6 +73,15 @@ public class ModBlocks {
         blockStorageSilver = new ItemStack(blockStorage, 1, 5);
         blockStorageNikolite = new ItemStack(blockStorage, 1, 6);
         blockStorageTungsten = new ItemStack(blockStorage, 1, 7);
+        
+        OreDictionary.registerOre("blockStorageSapphire", blockStorageSapphire);
+        OreDictionary.registerOre("blockStorageGreenSapphire", blockStorageGreenSapphire);
+        OreDictionary.registerOre("blockStorageRuby", blockStorageRuby);
+        OreDictionary.registerOre("blockStorageCopper", blockStorageCopper);
+        OreDictionary.registerOre("blockStorageTin", blockStorageTin);
+        OreDictionary.registerOre("blockStorageSilver", blockStorageSilver);
+        OreDictionary.registerOre("blockStorageNikolite", blockStorageNikolite);
+        OreDictionary.registerOre("blockStorageTungsten", blockStorageTungsten);
 
     }
 
