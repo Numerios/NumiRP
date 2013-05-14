@@ -7,6 +7,7 @@ import cpw.mods.fml.common.FMLLog;
 
 import net.minecraftforge.common.Configuration;
 import num.numirpworld.lib.BlockIDs;
+import num.numirpworld.lib.ItemIDs;
 import num.numirpworld.lib.Reference;
 
 public class ConfigHandler {
@@ -17,13 +18,14 @@ public class ConfigHandler {
 
         try {
             configuration.load();
-
+            ItemIDs.PROCESSED_ID = configuration.getItem("processed",
+                    ItemIDs.PROCESSED_ID_DEFAULT).getInt(
+                    ItemIDs.PROCESSED_ID_DEFAULT);
             BlockIDs.ORES_ID = configuration.getBlock("ores",
-                    BlockIDs.ORES_ID_DEFAULT).getInt(
-                            BlockIDs.ORES_ID_DEFAULT);
+                    BlockIDs.ORES_ID_DEFAULT).getInt(BlockIDs.ORES_ID_DEFAULT);
             BlockIDs.STORAGE_ID = configuration.getBlock("storage block",
                     BlockIDs.STORAGE_ID_DEFAULT).getInt(
-                            BlockIDs.STORAGE_ID_DEFAULT);
+                    BlockIDs.STORAGE_ID_DEFAULT);
 
         } catch (Exception e) {
             FMLLog.log(Level.SEVERE, e, "Mod called " + Reference.MOD_NAME
