@@ -21,20 +21,20 @@ public class ModItems {
                     Strings.PROCESSED_NAMES[i]);
         }
 
-        gemSapphire = new ItemStack(itemProcessed, 1, 0);
+        gemRuby = new ItemStack(itemProcessed, 1, 0);
         gemGreenSapphire = new ItemStack(itemProcessed, 1, 1);
-        gemRuby = new ItemStack(itemProcessed, 1, 2);
-        ingotCopper = new ItemStack(itemProcessed, 1, 3);
-        ingotTin = new ItemStack(itemProcessed, 1, 4);
+        gemSapphire = new ItemStack(itemProcessed, 1, 2);
+        ingotTin = new ItemStack(itemProcessed, 1, 3);
+        ingotCopper = new ItemStack(itemProcessed, 1, 4);
         ingotSilver = new ItemStack(itemProcessed, 1, 5);
         dustNikolite = new ItemStack(itemProcessed, 1, 6);
         ingotTungsten = new ItemStack(itemProcessed, 1, 7);
 
-        OreDictionary.registerOre("gemSapphire", gemSapphire);
-        OreDictionary.registerOre("gemGreenSapphire", gemGreenSapphire);
         OreDictionary.registerOre("gemRuby", gemRuby);
-        OreDictionary.registerOre("ingotCopper", ingotCopper);
+        OreDictionary.registerOre("gemGreenSapphire", gemGreenSapphire);
+        OreDictionary.registerOre("gemSapphire", gemSapphire);
         OreDictionary.registerOre("ingotTin", ingotTin);
+        OreDictionary.registerOre("ingotCopper", ingotCopper);
         OreDictionary.registerOre("ingotSilver", ingotSilver);
         OreDictionary.registerOre("dustNikolite", dustNikolite);
         OreDictionary.registerOre("ingotTungsten", ingotTungsten);
