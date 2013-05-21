@@ -16,7 +16,7 @@ public class ModItems {
     public static void init() {
         itemProcessed = new ItemProcessed(ItemIDs.PROCESSED_ID);
         GameRegistry.registerItem(itemProcessed, "itemProcessed");
-        for (int i = 0; i < Strings.ORES.length; i++) {
+        for (int i = 0; i < Strings.PROCESSED.length; i++) {
             LanguageRegistry.addName(new ItemStack(itemProcessed, 1, i),
                     Strings.PROCESSED_NAMES[i]);
         }
@@ -38,5 +38,6 @@ public class ModItems {
         OreDictionary.registerOre("ingotSilver", ingotSilver);
         OreDictionary.registerOre("dustNikolite", dustNikolite);
         OreDictionary.registerOre("ingotTungsten", ingotTungsten);
+
     }
 }

@@ -10,6 +10,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraftforge.common.MinecraftForge;
+import num.numirpworld.item.ModItems;
 import num.numirpworld.lib.Reference;
 import num.numirpworld.lib.Strings;
 import cpw.mods.fml.relauncher.Side;
@@ -24,7 +25,7 @@ public class BlockOres extends Block {
         setStepSound(soundStoneFootstep);
         setCreativeTab(CreativeTabs.tabMaterials);
         setUnlocalizedName("numirpworld.ore");
-        
+
         MinecraftForge.setBlockHarvestLevel(this, 0, "pickaxe", 2);
         MinecraftForge.setBlockHarvestLevel(this, 1, "pickaxe", 2);
         MinecraftForge.setBlockHarvestLevel(this, 2, "pickaxe", 2);
@@ -34,10 +35,10 @@ public class BlockOres extends Block {
         MinecraftForge.setBlockHarvestLevel(this, 6, "pickaxe", 2);
         MinecraftForge.setBlockHarvestLevel(this, 7, "pickaxe", 2);
     }
-  
+
     @SideOnly(Side.CLIENT)
     private Icon[] icons;
-    
+
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister ir) {
@@ -48,10 +49,17 @@ public class BlockOres extends Block {
                     + Strings.ORES[i]);
         }
     }
-    
+
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int side, int meta) {
         return icons[meta];
+    }
+
+    @Override
+    public int idDropped(int id, Random rand, int meta) {
+        if ((id < 3) || (id == 6))
+            return ModItems.itemProcessed.itemID;
+        return this.blockID;
     }
 
     @Override
@@ -60,7 +68,12 @@ public class BlockOres extends Block {
     }
 
     @Override
-    public int quantityDropped(Random random) {
+    public int quantityDropped(int meta, int fortune, Random random) {
+        if (meta == 6)
+            return 4 + random.nextInt(2) + random.nextInt(fortune + 1); // same as RS
+        if (meta < 3) {
+            return random.nextInt(fortune + 1) + 1;
+        }
         return 1;
     }
 

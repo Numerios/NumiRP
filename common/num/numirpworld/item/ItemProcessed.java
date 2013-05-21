@@ -17,7 +17,7 @@ public class ItemProcessed extends Item {
         super(id);
         setHasSubtypes(true);
         setMaxDamage(0);
-        setCreativeTab(CreativeTabs.tabMaterials);
+        setCreativeTab(CreativeTabs.tabCombat); // yea, yea, yea... temporary
     }
 
     @SideOnly(Side.CLIENT)
@@ -44,7 +44,7 @@ public class ItemProcessed extends Item {
         return getUnlocalizedName() + "." + Strings.PROCESSED[meta] + "."
                 + "processed";
     }
-    
+
     @SuppressWarnings({ "unchecked", "rawtypes" })
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(int par1, CreativeTabs creativetab, List list) {
