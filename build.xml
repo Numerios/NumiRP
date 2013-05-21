@@ -1,0 +1,58 @@
+<?xml version="1.0" ?> 
+<project name="NumiRPWorld" default="build">
+   <property name="build.dir.dev" value="../../" />
+   <property name="build.dir.release" value="Releases" />
+   <property name="build.release.mcversion" value="1.5.2" />
+   <property name="build.release.mod.version" value="0.1.0-beta" />   
+	
+	<target name="clean">
+		<delete file="${build.dir.dev}\mcp\src\minecraft\mcmod.info" />
+		<delete dir="${build.dir.dev}\mcp\src\minecraft\num" />
+		<delete dir="${build.dir.dev}\eclipse\Minecraft\bin\num" />
+		<delete dir="${build.dir.dev}\mcp\reobf\minecraft" />
+	</target>
+
+	<target name="prep">
+		<copy todir="${build.dir.dev}\mcp\src\minecraft">
+			<fileset dir="${build.dir.dev}\src\NumiRPWorld\common" />
+		</copy>
+	</target>
+	
+	<target name="recompile">
+		<exec dir="${build.dir.dev}\mcp" executable="cmd" osfamily="windows">
+			<arg line="/c recompile.bat" />
+		</exec>
+		<exec dir="${build.dir.dev}\mcp" executable="bash" osfamily="unix">
+			<arg line="recompile.sh" />
+		</exec>
+	</target>
+	
+	<target name="reobfuscate">
+		<exec dir="${build.dir.dev}\mcp" executable="cmd" osfamily="windows">
+			<arg line="/c reobfuscate_srg.bat" />
+		</exec>
+		<exec dir="${build.dir.dev}\mcp" executable="bash" osfamily="unix">
+			<arg line="reobfuscate_srg.sh" />
+		</exec>
+	</target>	
+	
+	<target name="build">
+		<!-- Prep for the build -->
+		<antcall target="clean" />
+		<antcall target="prep" />
+		<antcall target="recompile" />		
+		<antcall target="reobfuscate" />
+		
+		<!-- Build the jar -->
+		<mkdir dir="${build.dir.release}" />
+		<jar destfile="${build.dir.release}\NumiRPWorld-${build.release.mcversion}-${build.release.mod.version}.jar">
+			<fileset dir="${build.dir.dev}\mcp\src\minecraft\" includes="mcmod.info" />
+			<fileset dir="${build.dir.dev}\mcp\reobf\minecraft" />
+			<fileset dir="${build.dir.dev}\src\NumiRPWorld\resources" />
+		</jar>
+		
+		<!-- Clean up the MCP source now that we are done -->
+		<antcall target="clean" />
+	</target>
+	
+</project>
