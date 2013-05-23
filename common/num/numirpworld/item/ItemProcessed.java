@@ -38,7 +38,8 @@ public class ItemProcessed extends Item {
     public int getMetadata(int meta) {
         return meta;
     }
-
+    
+    @Override
     public String getUnlocalizedName(ItemStack is) {
         int meta = is.getItemDamage();
         return getUnlocalizedName() + "." + Strings.PROCESSED[meta] + "."

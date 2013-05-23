@@ -3,7 +3,6 @@ package num.numirpworld.block;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import num.numirpworld.item.ItemBlockOres;
 import num.numirpworld.lib.BlockIDs;
 import num.numirpworld.lib.Reference;
 import num.numirpworld.lib.Strings;
@@ -56,7 +55,7 @@ public class ModBlocks {
 
         GameRegistry.registerBlock(
                 blockStorage,
-                ItemBlockOres.class,
+                ItemBlockStorage.class,
                 Reference.MOD_ID.toLowerCase()
                         + (blockStorage.getUnlocalizedName().substring(5)));
 

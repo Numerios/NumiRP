@@ -1,4 +1,4 @@
-package num.numirpworld.item;
+package num.numirpworld.block;
 
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -12,8 +12,8 @@ public class ItemBlockOres extends ItemBlock {
     }
 
     @Override
-    public int getMetadata(int i) {
-        return i;
+    public int getMetadata(int meta) {
+        return meta;
     }
 
     public String getUnlocalizedName(ItemStack is) {
