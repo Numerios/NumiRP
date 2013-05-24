@@ -38,7 +38,16 @@ public class ItemProcessed extends Item {
     public int getMetadata(int meta) {
         return meta;
     }
-    
+
+    @SideOnly(Side.CLIENT)
+    public Icon getIconFromDamage(int i) {
+        return this.icons[i];
+    }
+
+    public String getItemNameIS(ItemStack is) {
+        return Strings.PROCESSED_NAMES[is.getItemDamage()];
+    }
+
     @Override
     public String getUnlocalizedName(ItemStack is) {
         int meta = is.getItemDamage();
