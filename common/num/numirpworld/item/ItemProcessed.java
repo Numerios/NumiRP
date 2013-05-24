@@ -41,11 +41,7 @@ public class ItemProcessed extends Item {
 
     @SideOnly(Side.CLIENT)
     public Icon getIconFromDamage(int i) {
-        return this.icons[i];
-    }
-
-    public String getItemNameIS(ItemStack is) {
-        return Strings.PROCESSED_NAMES[is.getItemDamage()];
+        return icons[i];
     }
 
     @Override
