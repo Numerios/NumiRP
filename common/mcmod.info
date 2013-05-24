@@ -3,13 +3,13 @@
   "modid": "NumiRPWorld",
   "name": "NumiRPWorld",
   "description": "NumiRPWorld is a recreation of RP2 World package by Eloraam.",
-  "version": "0.1.0-alpha",
+  "version": "0.1.0-alpha3",
   "url": "www.github.com/numerios/NumiRPWorld",
   "updateUrl": "",
   "authorList": [
     "Numerios"
   ],
-  "credits": "Eloraam for her wonderful mod",
+  "credits": "Eloraam for inspiration, JBuk for help",
   "logoFile": "/mods/NumiRPWorld/textures/logo/logo.png",
   "screenshots": [
   ],
