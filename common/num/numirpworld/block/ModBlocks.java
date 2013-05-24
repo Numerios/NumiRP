@@ -31,12 +31,11 @@ public class ModBlocks {
             LanguageRegistry.addName(new ItemStack(blockOres, 1, i),
                     Strings.ORE_NAMES[i] + " Ore");
         }
-
-        oreSapphire = new ItemStack(blockOres, 1, 0);
-        oreGreenSapphire = new ItemStack(blockOres, 1, 1);
-        oreRuby = new ItemStack(blockOres, 1, 2);
-        oreCopper = new ItemStack(blockOres, 1, 3);
-        oreTin = new ItemStack(blockOres, 1, 4);
+        oreRuby = new ItemStack(blockOres, 1, 0);
+        oreSapphire = new ItemStack(blockOres, 1, 1);
+        oreGreenSapphire = new ItemStack(blockOres, 1, 2);
+        oreTin = new ItemStack(blockOres, 1, 3);
+        oreCopper = new ItemStack(blockOres, 1, 4);
         oreSilver = new ItemStack(blockOres, 1, 5);
         oreNikolite = new ItemStack(blockOres, 1, 6);
         oreTungsten = new ItemStack(blockOres, 1, 7);
@@ -63,16 +62,15 @@ public class ModBlocks {
             LanguageRegistry.addName(new ItemStack(blockStorage, 1, i),
                     Strings.ORE_NAMES[i] + " Storage Block");
         }
-
-        blockStorageSapphire = new ItemStack(blockStorage, 1, 0);
+        blockStorageRuby = new ItemStack(blockStorage, 1, 0);
         blockStorageGreenSapphire = new ItemStack(blockStorage, 1, 1);
-        blockStorageRuby = new ItemStack(blockStorage, 1, 2);
-        blockStorageCopper = new ItemStack(blockStorage, 1, 3);
-        blockStorageTin = new ItemStack(blockStorage, 1, 4);
+        blockStorageSapphire = new ItemStack(blockStorage, 1, 2);
+        blockStorageTin = new ItemStack(blockStorage, 1, 3);
+        blockStorageCopper = new ItemStack(blockStorage, 1, 4);
         blockStorageSilver = new ItemStack(blockStorage, 1, 5);
         blockStorageNikolite = new ItemStack(blockStorage, 1, 6);
         blockStorageTungsten = new ItemStack(blockStorage, 1, 7);
-        
+
         OreDictionary.registerOre("blockStorageSapphire", blockStorageSapphire);
         OreDictionary.registerOre("blockStorageGreenSapphire", blockStorageGreenSapphire);
         OreDictionary.registerOre("blockStorageRuby", blockStorageRuby);
