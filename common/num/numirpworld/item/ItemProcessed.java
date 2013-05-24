@@ -38,7 +38,16 @@ public class ItemProcessed extends Item {
     public int getMetadata(int meta) {
         return meta;
     }
-    
+
+    @SideOnly(Side.CLIENT)
+    public Icon getIconFromDamage(int i) {
+        return this.icons[i];
+    }
+
+    public String getItemNameIS(ItemStack is) {
+        return Strings.PROCESSED_NAMES[is.getItemDamage()];
+    }
+
     @Override
     public String getUnlocalizedName(ItemStack is) {
         int meta = is.getItemDamage();
@@ -48,7 +57,7 @@ public class ItemProcessed extends Item {
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
     @SideOnly(Side.CLIENT)
-    public void getSubBlocks(int par1, CreativeTabs creativetab, List list) {
+    public void getSubItems(int par1, CreativeTabs creativetab, List list) {
         for (int i = 0; i < Strings.PROCESSED.length; i++) {
             list.add(new ItemStack(par1, 1, i));
         }
