@@ -1,4 +1,4 @@
-package num.numirpworld.config;
+package num.numirp.config;
 
 import java.io.File;
 import java.util.logging.Level;
@@ -6,10 +6,10 @@ import java.util.logging.Level;
 import cpw.mods.fml.common.FMLLog;
 
 import net.minecraftforge.common.Configuration;
-import num.numirpworld.lib.BlockIDs;
-import num.numirpworld.lib.ItemIDs;
-import num.numirpworld.lib.Reference;
-import num.numirpworld.lib.Values;
+import num.numirp.lib.BlockIDs;
+import num.numirp.lib.ItemIDs;
+import num.numirp.lib.Reference;
+import num.numirp.lib.Values;
 
 public class ConfigHandler {
     public static Configuration configuration;

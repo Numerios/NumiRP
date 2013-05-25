@@ -1,11 +1,11 @@
-package num.numirpworld.block;
+package num.numirp.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import num.numirpworld.lib.BlockIDs;
-import num.numirpworld.lib.Reference;
-import num.numirpworld.lib.Strings;
+import num.numirp.lib.BlockIDs;
+import num.numirp.lib.Reference;
+import num.numirp.lib.Strings;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 

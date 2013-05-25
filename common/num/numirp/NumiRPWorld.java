@@ -1,12 +1,12 @@
-package num.numirpworld;
+package num.numirp;
 
-import num.numirpworld.block.ModBlocks;
-import num.numirpworld.config.ConfigHandler;
-import num.numirpworld.item.ModItems;
-import num.numirpworld.lib.Reference;
-import num.numirpworld.recipe.ModCrafting;
-import num.numirpworld.recipe.ModSmelting;
-import num.numirpworld.world.WorldGenerator;
+import num.numirp.block.ModBlocks;
+import num.numirp.config.ConfigHandler;
+import num.numirp.item.ModItems;
+import num.numirp.lib.Reference;
+import num.numirp.recipe.ModCrafting;
+import num.numirp.recipe.ModSmelting;
+import num.numirp.world.WorldGenerator;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;

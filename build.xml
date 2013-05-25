@@ -1,9 +1,9 @@
 <?xml version="1.0" ?> 
-<project name="NumiRPWorld" default="build">
+<project name="NumiRP" default="build">
    <property name="build.dir.dev" value="../../" />
    <property name="build.dir.release" value="Releases" />
    <property name="build.release.mcversion" value="1.5.2" />
-   <property name="build.release.mod.version" value="0.1.0-alpha2" />   
+   <property name="build.release.mod.version" value="0.1.0-alpha3" />   
 	
 	<target name="clean">
 		<delete file="${build.dir.dev}\mcp\src\minecraft\mcmod.info" />

@@ -1,4 +1,4 @@
-package num.numirpworld.lib;
+package num.numirp.lib;
 
 public class BlockIDs {
     public static int ORES_ID_DEFAULT = 2050;

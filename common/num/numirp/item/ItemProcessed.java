@@ -1,4 +1,4 @@
-package num.numirpworld.item;
+package num.numirp.item;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
-import num.numirpworld.lib.Reference;
-import num.numirpworld.lib.Strings;
+import num.numirp.lib.Reference;
+import num.numirp.lib.Strings;
 
 public class ItemProcessed extends Item {
     public ItemProcessed(int id) {

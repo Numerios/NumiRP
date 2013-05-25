@@ -1,12 +1,12 @@
-package num.numirpworld.item;
+package num.numirp.item;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import num.numirpworld.lib.ItemIDs;
-import num.numirpworld.lib.Strings;
+import num.numirp.lib.ItemIDs;
+import num.numirp.lib.Strings;
 
 public class ModItems {
     public static Item itemProcessed;

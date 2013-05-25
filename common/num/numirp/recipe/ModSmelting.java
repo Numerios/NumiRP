@@ -1,8 +1,8 @@
-package num.numirpworld.recipe;
+package num.numirp.recipe;
 
 import net.minecraft.item.crafting.FurnaceRecipes;
-import num.numirpworld.block.ModBlocks;
-import num.numirpworld.item.ModItems;
+import num.numirp.block.ModBlocks;
+import num.numirp.item.ModItems;
 
 public class ModSmelting {
 

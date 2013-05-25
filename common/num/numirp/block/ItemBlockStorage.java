@@ -1,8 +1,8 @@
-package num.numirpworld.block;
+package num.numirp.block;
 
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import num.numirpworld.lib.Strings;
+import num.numirp.lib.Strings;
 
 public class ItemBlockStorage extends ItemBlock {
     public ItemBlockStorage(int par1) {

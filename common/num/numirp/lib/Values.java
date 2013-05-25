@@ -1,4 +1,4 @@
-package num.numirpworld.lib;
+package num.numirp.lib;
 
 public class Values {
     //TODO: Think of a better name for this class. This one sucks.

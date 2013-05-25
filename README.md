@@ -1,8 +1,8 @@
-##NumiRPWorld
+##NumiRP
 
 ### Description
-NumiRPWorld is a recreation of RP2 World package by Eloraam.
-The original RP2 World package is very popular in the community but sadly Eloraam is not updating her mods that often.
+NumiRP is a recreation of RP2 by Eloraam.
+The original RP2 is a very popular mod in the MC community but sadly Eloraam is not updating her mods that often.
 This mod will also try to improve on Eloraam's concepts and add some of our own.
 
 ### License
@@ -22,5 +22,5 @@ If you find a bug and have a fix or want to implement a new feature:
 If you find any issue or bug or just want to suggest something:
 
 1. Make sure this issue has not been reported before and that it is relevant to this mod.
-2. Go [here](https://github.com/numerios/NumiRPWorld/issues) and click "New Issue".
+2. Go [here](https://github.com/numerios/NumiRP/issues) and click "New Issue".
 3. Enter necessary title with helpful description and send the Issue. 
