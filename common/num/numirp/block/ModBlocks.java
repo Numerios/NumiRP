@@ -10,12 +10,14 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ModBlocks {
-    public static Block blockOres, blockStorage;
+    public static Block blockOres, blockStorage, blockDecor;
     public static ItemStack oreSapphire, oreGreenSapphire, oreRuby, oreCopper,
             oreTin, oreSilver, oreNikolite, oreTungsten, blockStorageSapphire,
             blockStorageGreenSapphire, blockStorageRuby, blockStorageCopper,
             blockStorageTin, blockStorageSilver, blockStorageNikolite,
-            blockStorageTungsten;
+            blockStorageTungsten, blockMarble, blockBasalt, blockMarbleBrick,
+            blockBasaltCobble, blockBasaltBrick, blockBasaltChiseled,
+            blockBasaltPaver;
 
     public static void init() {
         blockOres = new BlockOres(BlockIDs.ORES_ID)
@@ -72,7 +74,8 @@ public class ModBlocks {
         blockStorageTungsten = new ItemStack(blockStorage, 1, 7);
 
         OreDictionary.registerOre("blockStorageSapphire", blockStorageSapphire);
-        OreDictionary.registerOre("blockStorageGreenSapphire", blockStorageGreenSapphire);
+        OreDictionary.registerOre("blockStorageGreenSapphire",
+                blockStorageGreenSapphire);
         OreDictionary.registerOre("blockStorageRuby", blockStorageRuby);
         OreDictionary.registerOre("blockStorageCopper", blockStorageCopper);
         OreDictionary.registerOre("blockStorageTin", blockStorageTin);
@@ -80,6 +83,26 @@ public class ModBlocks {
         OreDictionary.registerOre("blockStorageNikolite", blockStorageNikolite);
         OreDictionary.registerOre("blockStorageTungsten", blockStorageTungsten);
 
+        blockDecor = new BlockDecor(BlockIDs.DECOR_ID)
+                .setUnlocalizedName("blockDecor");
+
+        GameRegistry.registerBlock(
+                blockDecor,
+                ItemBlockDecor.class,
+                Reference.MOD_ID.toLowerCase()
+                        + (blockDecor.getUnlocalizedName().substring(5)));
+
+        for (int i = 0; i < Strings.DECOR.length; i++) {
+            LanguageRegistry.addName(new ItemStack(blockDecor, 1, i),
+                    Strings.DECOR_NAMES[i]);
+        }
+        blockMarble = new ItemStack(blockDecor, 1, 0);
+        blockBasalt = new ItemStack(blockDecor, 1, 1);
+        blockMarbleBrick = new ItemStack(blockDecor, 1, 2);
+        blockBasaltCobble = new ItemStack(blockDecor, 1, 3);
+        blockBasaltBrick = new ItemStack(blockDecor, 1, 4);
+        blockBasaltChiseled = new ItemStack(blockDecor, 1, 5);
+        blockBasaltPaver = new ItemStack(blockDecor, 1, 6);
     }
 
 }

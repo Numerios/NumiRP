@@ -11,5 +11,10 @@ public class Strings {
     public static final String[] PROCESSED_NAMES = { "Ruby Gem",
             "Green Sapphire Gem", "Sapphire Gem", "Tin Ingot", "Copper Ingot",
             "Silver Ingot", "Nikolite Dust", "Tungsten Ingot" };
-
+    public static final String[] DECOR = { "Marble", "Basalt",
+            "MarbleBrick", "BasaltCobble", "BasaltBrick",
+            "BasaltChiseled", "BasaltPaver" };
+    public static final String[] DECOR_NAMES = { "Marble", "Basalt",
+        "Marble Brick", "Basalt Cobblestone", "Basalt Brick",
+        "Chiseled Basalt", "Basalt Paver" };
 }

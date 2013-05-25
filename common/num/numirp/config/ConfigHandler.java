@@ -34,9 +34,12 @@ public class ConfigHandler {
                     ItemIDs.PROCESSED_ID_DEFAULT);
             BlockIDs.ORES_ID = conf.getBlock("ores",
                     BlockIDs.ORES_ID_DEFAULT).getInt(BlockIDs.ORES_ID_DEFAULT);
-            BlockIDs.STORAGE_ID = conf.getBlock("storage block",
+            BlockIDs.STORAGE_ID = conf.getBlock("storage blocks",
                     BlockIDs.STORAGE_ID_DEFAULT).getInt(
                     BlockIDs.STORAGE_ID_DEFAULT);
+            BlockIDs.DECOR_ID = conf.getBlock("decorative blocks (marble, basalt, etc.)",
+                    BlockIDs.DECOR_ID_DEFAULT).getInt(
+                    BlockIDs.DECOR_ID_DEFAULT);
 
         } catch (Exception e) {
             FMLLog.log(Level.SEVERE, e, "Mod called " + Reference.MOD_NAME
