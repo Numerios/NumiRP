@@ -18,10 +18,10 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION)
-public class NumiRPWorld {
+public class NumiRP {
 
     @Instance(Reference.MOD_ID)
-    public static NumiRPWorld instance;
+    public static NumiRP instance;
 
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
