@@ -27,6 +27,8 @@ public class ConfigHandler {
             Values.WORLDGEN_SILVER = conf.get("World Generation", "Silver Generation", Values.WORLDGEN_SILVER_DEFAULT).getBoolean(Values.WORLDGEN_SILVER_DEFAULT);
             Values.WORLDGEN_NIKOLITE = conf.get("World Generation", "Nikolite Generation", Values.WORLDGEN_NIKOLITE_DEFAULT).getBoolean(Values.WORLDGEN_NIKOLITE_DEFAULT);
             Values.WORLDGEN_TUNGSTEN = conf.get("World Generation", "Tungsten Generation", Values.WORLDGEN_TUNGSTEN_DEFAULT).getBoolean(Values.WORLDGEN_TUNGSTEN_DEFAULT);
+            Values.WORLDGEN_MARBLE = conf.get("World Generation", "Marble Generation", Values.WORLDGEN_MARBLE_DEFAULT).getBoolean(Values.WORLDGEN_MARBLE_DEFAULT);
+            Values.WORLDGEN_BASALT = conf.get("World Generation", "Basalt Generation", Values.WORLDGEN_BASALT_DEFAULT).getBoolean(Values.WORLDGEN_BASALT_DEFAULT);
 
             
             ItemIDs.PROCESSED_ID = conf.getItem("processed",

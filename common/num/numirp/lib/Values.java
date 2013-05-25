@@ -10,6 +10,8 @@ public class Values {
     public static boolean WORLDGEN_SILVER_DEFAULT = true;
     public static boolean WORLDGEN_NIKOLITE_DEFAULT = true;
     public static boolean WORLDGEN_TUNGSTEN_DEFAULT = true;
+    public static boolean WORLDGEN_MARBLE_DEFAULT = true;
+    public static boolean WORLDGEN_BASALT_DEFAULT = true;
  
     public static boolean WORLDGEN_RUBY;
     public static boolean WORLDGEN_GREENSAPPHIRE;
@@ -19,4 +21,6 @@ public class Values {
     public static boolean WORLDGEN_SILVER;
     public static boolean WORLDGEN_NIKOLITE;
     public static boolean WORLDGEN_TUNGSTEN;
+    public static boolean WORLDGEN_MARBLE;
+    public static boolean WORLDGEN_BASALT;
 }
