@@ -25,7 +25,6 @@ public class ModCrafting {
                 new Object[] { "###", "###", "###", Character.valueOf('#'), ModItems.dustNikolite });
         GameRegistry.addRecipe(ModBlocks.blockStorageTungsten,
                 new Object[] { "###", "###", "###", Character.valueOf('#'), ModItems.ingotTungsten });
-=======
         GameRegistry
                 .addRecipe(
                         ModBlocks.blockStorageRuby,
@@ -63,7 +62,6 @@ public class ModCrafting {
         GameRegistry.addRecipe(new ItemStack(ModBlocks.blockDecor, 1, 6),
                 new Object[] { "#", Character.valueOf('#'),
                         ModBlocks.blockBasalt });
->>>>>>> upstream/master
 
         // Pickaxes
         GameRegistry.addRecipe(new ItemStack(ModItems.pickaxeRuby), new Object[] { "###", " I ", " I ", Character.valueOf('#'),
