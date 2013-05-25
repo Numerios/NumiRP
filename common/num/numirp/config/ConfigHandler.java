@@ -30,6 +30,29 @@ public class ConfigHandler {
             Values.WORLDGEN_MARBLE = conf.get("World Generation", "Marble Generation", Values.WORLDGEN_MARBLE_DEFAULT).getBoolean(Values.WORLDGEN_MARBLE_DEFAULT);
             Values.WORLDGEN_BASALT = conf.get("World Generation", "Basalt Generation", Values.WORLDGEN_BASALT_DEFAULT).getBoolean(Values.WORLDGEN_BASALT_DEFAULT);
 
+            ItemIDs.PICKAXE_RUBY_ID = conf.getItem("pickaxeRuby", ItemIDs.PICKAXE_RUBY_ID_DEFAULT).getInt(
+                    ItemIDs.PICKAXE_RUBY_ID_DEFAULT);
+            ItemIDs.PICKAXE_GREEN_SAPPHIRE_ID = conf.getItem("pickaxeGreenSaphire", ItemIDs.PICKAXE_GREEN_SAPPHIRE_ID_DEFAULT).getInt(
+                    ItemIDs.PICKAXE_GREEN_SAPPHIRE_ID_DEFAULT);
+            ItemIDs.PICKAXE_SAPPHIRE_ID = conf.getItem("pickaxeSaphire", ItemIDs.PICKAXE_SAPPHIRE_ID_DEFAULT).getInt(
+                    ItemIDs.PICKAXE_SAPPHIRE_ID_DEFAULT);
+            
+            ItemIDs.SHOVEL_RUBY_ID = conf.getItem("shovelRuby", ItemIDs.SHOVEL_RUBY_ID_DEFAULT).getInt(
+                    ItemIDs.SHOVEL_RUBY_ID_DEFAULT);
+            ItemIDs.SHOVEL_GREEN_SAPPHIRE_ID = conf.getItem("shovelGreenSaphire", ItemIDs.SHOVEL_GREEN_SAPPHIRE_ID_DEFAULT).getInt(
+                    ItemIDs.SHOVEL_GREEN_SAPPHIRE_ID_DEFAULT);
+            ItemIDs.SHOVEL_SAPPHIRE_ID = conf.getItem("shovelSaphire", ItemIDs.SHOVEL_SAPPHIRE_ID_DEFAULT).getInt(
+                    ItemIDs.SHOVEL_SAPPHIRE_ID_DEFAULT);
+
+            ItemIDs.AXE_RUBY_ID = conf.getItem("axeRuby", ItemIDs.AXE_RUBY_ID_DEFAULT).getInt(
+                    ItemIDs.AXE_RUBY_ID_DEFAULT);
+            ItemIDs.AXE_GREEN_SAPPHIRE_ID = conf.getItem("axeGreenSaphire", ItemIDs.AXE_GREEN_SAPPHIRE_ID_DEFAULT).getInt(
+                    ItemIDs.AXE_GREEN_SAPPHIRE_ID_DEFAULT);
+            ItemIDs.AXE_SAPPHIRE_ID = conf.getItem("axeSaphire", ItemIDs.AXE_SAPPHIRE_ID_DEFAULT).getInt(
+                    ItemIDs.AXE_SAPPHIRE_ID_DEFAULT);
+
+            ItemIDs.SICKLE_RUBY_ID = conf.getItem("sickleRuby", ItemIDs.SICKLE_RUBY_ID_DEFAULT).getInt(
+                    ItemIDs.SICKLE_RUBY_ID_DEFAULT);
             
             ItemIDs.PROCESSED_ID = conf.getItem("processed",
                     ItemIDs.PROCESSED_ID_DEFAULT).getInt(
