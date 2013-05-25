@@ -15,6 +15,8 @@ public class ModSmelting {
                 ModItems.ingotSilver, 0.5F);
         FurnaceRecipes.smelting().addSmelting(ModBlocks.blockOres.blockID, 7,
                 ModItems.ingotTungsten, 0.5F);
+        FurnaceRecipes.smelting().addSmelting(ModBlocks.blockDecor.blockID, 3,
+                ModBlocks.blockBasalt, 0.5F);
 
     }
 }

@@ -23,13 +23,13 @@ public class BlockDecor extends Block {
         setStepSound(soundStoneFootstep);
         setCreativeTab(CreativeTabs.tabMaterials);
         setUnlocalizedName("numirpworld.decor");
-       
+
         MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 0);
     }
-    
+
     @SideOnly(Side.CLIENT)
     private Icon[] icons;
-    
+
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister ir) {
@@ -40,7 +40,7 @@ public class BlockDecor extends Block {
                     + Strings.DECOR[i]);
         }
     }
-    
+
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int side, int meta) {
         return icons[meta];
@@ -48,7 +48,11 @@ public class BlockDecor extends Block {
 
     @Override
     public int damageDropped(int meta) {
-        return meta;
+        if (meta == 1) {
+            return 3;
+        } else {
+            return meta;
+        }
     }
 
     @Override
