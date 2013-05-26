@@ -26,4 +26,5 @@ public class Strings {
         "Marble Brick", "Basalt Cobblestone", "Basalt Brick",
         "Chiseled Basalt", "Basalt Paver" };
     public static String[] SICKLES = { "Ruby Sickle" };
+    public static String[] ATHAME = { "Athame" };
 }

@@ -21,6 +21,7 @@ public class ModItems {
     public static Item shovelRuby, shovelGreenSapphire, shovelSapphire;
     public static Item axeRuby,axeGreenSapphire, axeSapphire;
     public static Item sickleRuby;
+    public static Item athame;
 
     public static void init() {
         itemProcessed = new ItemProcessed(ItemIDs.PROCESSED_ID);
@@ -94,6 +95,10 @@ public class ModItems {
         sickleRuby = new ItemRPSickle(ItemIDs.SICKLE_RUBY_ID, ruby);
         GameRegistry.registerItem(sickleRuby, "sickleRuby");
         LanguageRegistry.addName(new ItemStack(sickleRuby, 1), Strings.SICKLES[0]);
-        
+
+        // Athames
+        athame = new ItemRPAthame(ItemIDs.ATHAME_ID, EnumToolMaterial.IRON);
+        GameRegistry.registerItem(athame, "athame");
+        LanguageRegistry.addName(new ItemStack(athame, 1), Strings.ATHAME[0]);
     }
 }

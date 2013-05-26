@@ -9,88 +9,90 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class ModCrafting {
 
     public static void init() {
-        GameRegistry.addRecipe(ModBlocks.blockStorageRuby, new Object[] { "###", "###", "###", Character.valueOf('#'),
-                ModItems.gemRuby });
-        GameRegistry.addRecipe(ModBlocks.blockStorageGreenSapphire,
-                new Object[] { "###", "###", "###", Character.valueOf('#'), ModItems.gemGreenSapphire });
-        GameRegistry.addRecipe(ModBlocks.blockStorageSapphire,
-                new Object[] { "###", "###", "###", Character.valueOf('#'), ModItems.gemSapphire });
-        GameRegistry.addRecipe(ModBlocks.blockStorageTin, new Object[] { "###", "###", "###", Character.valueOf('#'),
-                ModItems.ingotTin });
+        GameRegistry.addRecipe(ModBlocks.blockStorageRuby, new Object[] { "###", "###", "###",
+                Character.valueOf('#'), ModItems.gemRuby });
+        GameRegistry.addRecipe(ModBlocks.blockStorageGreenSapphire, new Object[] { "###", "###",
+                "###", Character.valueOf('#'), ModItems.gemGreenSapphire });
+        GameRegistry.addRecipe(ModBlocks.blockStorageSapphire, new Object[] { "###", "###", "###",
+                Character.valueOf('#'), ModItems.gemSapphire });
+        GameRegistry.addRecipe(ModBlocks.blockStorageTin, new Object[] { "###", "###", "###",
+                Character.valueOf('#'), ModItems.ingotTin });
         GameRegistry.addRecipe(ModBlocks.blockStorageCopper, new Object[] { "###", "###", "###",
                 Character.valueOf('#'), ModItems.ingotCopper });
         GameRegistry.addRecipe(ModBlocks.blockStorageSilver, new Object[] { "###", "###", "###",
                 Character.valueOf('#'), ModItems.ingotSilver });
-        GameRegistry.addRecipe(ModBlocks.blockStorageNikolite,
-                new Object[] { "###", "###", "###", Character.valueOf('#'), ModItems.dustNikolite });
-        GameRegistry.addRecipe(ModBlocks.blockStorageTungsten,
-                new Object[] { "###", "###", "###", Character.valueOf('#'), ModItems.ingotTungsten });
-        GameRegistry
-                .addRecipe(
-                        ModBlocks.blockStorageRuby,
-                        new Object[] { "###", "###", "###",
-                                Character.valueOf('#'), ModItems.gemRuby });
-        GameRegistry.addRecipe(ModBlocks.blockStorageGreenSapphire,
-                new Object[] { "###", "###", "###", Character.valueOf('#'),
-                        ModItems.gemGreenSapphire });
-        GameRegistry.addRecipe(ModBlocks.blockStorageSapphire, new Object[] {
-                "###", "###", "###", Character.valueOf('#'),
-                ModItems.gemSapphire });
-        GameRegistry.addRecipe(ModBlocks.blockStorageTin, new Object[] { "###",
-                "###", "###", Character.valueOf('#'), ModItems.ingotTin });
-        GameRegistry.addRecipe(ModBlocks.blockStorageCopper, new Object[] {
-                "###", "###", "###", Character.valueOf('#'),
-                ModItems.ingotCopper });
-        GameRegistry.addRecipe(ModBlocks.blockStorageSilver, new Object[] {
-                "###", "###", "###", Character.valueOf('#'),
-                ModItems.ingotSilver });
-        GameRegistry.addRecipe(ModBlocks.blockStorageNikolite, new Object[] {
-                "###", "###", "###", Character.valueOf('#'),
-                ModItems.dustNikolite });
-        GameRegistry.addRecipe(ModBlocks.blockStorageTungsten, new Object[] {
-                "###", "###", "###", Character.valueOf('#'),
-                ModItems.ingotTungsten });
-        GameRegistry.addRecipe(new ItemStack(ModBlocks.blockDecor, 4, 4),
-                new Object[] { "##", "##", Character.valueOf('#'),
-                        ModBlocks.blockBasalt });
-        GameRegistry.addRecipe(new ItemStack(ModBlocks.blockDecor, 4, 2),
-                new Object[] { "##", "##", Character.valueOf('#'),
-                        ModBlocks.blockMarble });
-        GameRegistry.addRecipe(new ItemStack(ModBlocks.blockDecor, 4, 5),
-                new Object[] { "##", "##", Character.valueOf('#'),
-                        ModBlocks.blockBasaltBrick });
-        GameRegistry.addRecipe(new ItemStack(ModBlocks.blockDecor, 1, 6),
-                new Object[] { "#", Character.valueOf('#'),
-                        ModBlocks.blockBasalt });
+        GameRegistry.addRecipe(ModBlocks.blockStorageNikolite, new Object[] { "###", "###", "###",
+                Character.valueOf('#'), ModItems.dustNikolite });
+        GameRegistry.addRecipe(ModBlocks.blockStorageTungsten, new Object[] { "###", "###", "###",
+                Character.valueOf('#'), ModItems.ingotTungsten });
+        GameRegistry.addRecipe(ModBlocks.blockStorageRuby, new Object[] { "###", "###", "###",
+                Character.valueOf('#'), ModItems.gemRuby });
+        GameRegistry.addRecipe(ModBlocks.blockStorageGreenSapphire, new Object[] { "###", "###",
+                "###", Character.valueOf('#'), ModItems.gemGreenSapphire });
+        GameRegistry.addRecipe(ModBlocks.blockStorageSapphire, new Object[] { "###", "###", "###",
+                Character.valueOf('#'), ModItems.gemSapphire });
+        GameRegistry.addRecipe(ModBlocks.blockStorageTin, new Object[] { "###", "###", "###",
+                Character.valueOf('#'), ModItems.ingotTin });
+        GameRegistry.addRecipe(ModBlocks.blockStorageCopper, new Object[] { "###", "###", "###",
+                Character.valueOf('#'), ModItems.ingotCopper });
+        GameRegistry.addRecipe(ModBlocks.blockStorageSilver, new Object[] { "###", "###", "###",
+                Character.valueOf('#'), ModItems.ingotSilver });
+        GameRegistry.addRecipe(ModBlocks.blockStorageNikolite, new Object[] { "###", "###", "###",
+                Character.valueOf('#'), ModItems.dustNikolite });
+        GameRegistry.addRecipe(ModBlocks.blockStorageTungsten, new Object[] { "###", "###", "###",
+                Character.valueOf('#'), ModItems.ingotTungsten });
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.blockDecor, 4, 4), new Object[] { "##",
+                "##", Character.valueOf('#'), ModBlocks.blockBasalt });
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.blockDecor, 4, 2), new Object[] { "##",
+                "##", Character.valueOf('#'), ModBlocks.blockMarble });
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.blockDecor, 4, 5), new Object[] { "##",
+                "##", Character.valueOf('#'), ModBlocks.blockBasaltBrick });
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.blockDecor, 1, 6), new Object[] { "#",
+                Character.valueOf('#'), ModBlocks.blockBasalt });
 
         // Pickaxes
-        GameRegistry.addRecipe(new ItemStack(ModItems.pickaxeRuby), new Object[] { "###", " I ", " I ", Character.valueOf('#'),
-                ModItems.gemRuby, Character.valueOf('I'), Item.stick });
-        GameRegistry.addRecipe(new ItemStack(ModItems.pickaxeGreenSapphire), new Object[] { "###", " I ", " I ", Character.valueOf('#'),
-                ModItems.gemGreenSapphire, Character.valueOf('I'), Item.stick });
-        GameRegistry.addRecipe(new ItemStack(ModItems.pickaxeSapphire), new Object[] { "###", " I ", " I ", Character.valueOf('#'),
-                ModItems.gemSapphire, Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.pickaxeRuby),
+                new Object[] { "###", " I ", " I ", Character.valueOf('#'), ModItems.gemRuby,
+                        Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.pickaxeGreenSapphire),
+                new Object[] { "###", " I ", " I ", Character.valueOf('#'),
+                        ModItems.gemGreenSapphire, Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.pickaxeSapphire), new Object[] { "###",
+                " I ", " I ", Character.valueOf('#'), ModItems.gemSapphire, Character.valueOf('I'),
+                Item.stick });
 
         // Shovels
-        GameRegistry.addRecipe(new ItemStack(ModItems.shovelRuby), new Object[] { "#", "I", "I", Character.valueOf('#'),
-                ModItems.gemRuby, Character.valueOf('I'), Item.stick });
-        GameRegistry.addRecipe(new ItemStack(ModItems.shovelGreenSapphire), new Object[] { "#", "I", "I", Character.valueOf('#'),
-                ModItems.gemGreenSapphire, Character.valueOf('I'), Item.stick });
-        GameRegistry.addRecipe(new ItemStack(ModItems.shovelSapphire), new Object[] { "#", "I", "I", Character.valueOf('#'),
-                ModItems.gemSapphire, Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.shovelRuby), new Object[] { "#", "I", "I",
+                Character.valueOf('#'), ModItems.gemRuby, Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.shovelGreenSapphire), new Object[] { "#",
+                "I", "I", Character.valueOf('#'), ModItems.gemGreenSapphire,
+                Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.shovelSapphire), new Object[] { "#", "I",
+                "I", Character.valueOf('#'), ModItems.gemSapphire, Character.valueOf('I'),
+                Item.stick });
 
         // Axes
-        GameRegistry.addRecipe(new ItemStack(ModItems.axeRuby), new Object[] { "## ", "#I ", " I ", Character.valueOf('#'),
-                ModItems.gemRuby, Character.valueOf('I'), Item.stick });
-        GameRegistry.addRecipe(new ItemStack(ModItems.axeGreenSapphire), new Object[] { "## ", "#I ", " I ", Character.valueOf('#'),
-                ModItems.gemGreenSapphire, Character.valueOf('I'), Item.stick });
-        GameRegistry.addRecipe(new ItemStack(ModItems.axeSapphire), new Object[] { "## ", "#I ", " I ", Character.valueOf('#'),
-                ModItems.gemSapphire, Character.valueOf('I'), Item.stick });
-        GameRegistry.addRecipe(new ItemStack(ModItems.axeRuby), new Object[] { " ##", " I#", " I ", Character.valueOf('#'),
-                ModItems.gemRuby, Character.valueOf('I'), Item.stick });
-        GameRegistry.addRecipe(new ItemStack(ModItems.axeGreenSapphire), new Object[] { " ##", " I#", " I ", Character.valueOf('#'),
-                ModItems.gemGreenSapphire, Character.valueOf('I'), Item.stick });
-        GameRegistry.addRecipe(new ItemStack(ModItems.axeSapphire), new Object[] { " ##", " I#", " I ", Character.valueOf('#'),
-                ModItems.gemSapphire, Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.axeRuby), new Object[] { "## ", "#I ", " I ",
+                Character.valueOf('#'), ModItems.gemRuby, Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.axeGreenSapphire),
+                new Object[] { "## ", "#I ", " I ", Character.valueOf('#'),
+                        ModItems.gemGreenSapphire, Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.axeSapphire), new Object[] { "## ", "#I ",
+                " I ", Character.valueOf('#'), ModItems.gemSapphire, Character.valueOf('I'),
+                Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.axeRuby), new Object[] { " ##", " I#", " I ",
+                Character.valueOf('#'), ModItems.gemRuby, Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.axeGreenSapphire),
+                new Object[] { " ##", " I#", " I ", Character.valueOf('#'),
+                        ModItems.gemGreenSapphire, Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.axeSapphire), new Object[] { " ##", " I#",
+                " I ", Character.valueOf('#'), ModItems.gemSapphire, Character.valueOf('I'),
+                Item.stick });
+        
+        // Athame
+        GameRegistry.addRecipe(new ItemStack(ModItems.athame), new Object[] { " #",
+            "I ", Character.valueOf('#'), ModItems.ingotSilver, Character.valueOf('I'), Item.stick});
+        GameRegistry.addRecipe(new ItemStack(ModItems.athame), new Object[] { "# ",
+            " I", Character.valueOf('#'), ModItems.ingotSilver, Character.valueOf('I'), Item.stick});
     }
 }
