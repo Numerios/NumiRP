@@ -37,15 +37,17 @@ public class ModCrafting {
         GameRegistry.addRecipe(
                 new ItemStack(ModItems.itemProcessed, 9, Metadata.SAPPHIRE),
                 new Object[] { "#", Character.valueOf('#'),
-                ModBlocks.blockStorageSapphire });
+                        ModBlocks.blockStorageSapphire });
         GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.TIN),
                 new Object[] { "#", Character.valueOf('#'), ModBlocks.blockStorageTin });
-        GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.COPPER),
-                new Object[] { "#", Character.valueOf('#'),
-                ModBlocks.blockStorageCopper });
-        GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.SILVER),
-               new Object[] { "#", Character.valueOf('#'),
-               ModBlocks.blockStorageSilver });
+        GameRegistry
+                .addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.COPPER),
+                        new Object[] { "#", Character.valueOf('#'),
+                                ModBlocks.blockStorageCopper });
+        GameRegistry
+                .addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.SILVER),
+                        new Object[] { "#", Character.valueOf('#'),
+                                ModBlocks.blockStorageSilver });
         GameRegistry.addRecipe(
                 new ItemStack(ModItems.itemProcessed, 9, Metadata.NIKOLITE),
                 new Object[] { "#", Character.valueOf('#'),
@@ -106,7 +108,7 @@ public class ModCrafting {
 
         // Axes
         GameRegistry.addRecipe(new ItemStack(ModItems.axeRuby),
-                new Object[] { "## ", "#I ", " I ", Character.valueOf('#'),
+                new Object[] { "## ", "#I ", " I ", Character.valueOf('#'), 
                         ModItems.gemRuby, Character.valueOf('I'), Item.stick });
         GameRegistry.addRecipe(new ItemStack(ModItems.axeGreenSapphire), new Object[] {
                 "## ", "#I ", " I ", Character.valueOf('#'), ModItems.gemGreenSapphire,
@@ -124,7 +126,17 @@ public class ModCrafting {
         GameRegistry.addRecipe(new ItemStack(ModItems.axeSapphire),
                 new Object[] { " ##", " I#", " I ", Character.valueOf('#'),
                         ModItems.gemSapphire, Character.valueOf('I'), Item.stick });
+
+        // Sickle
+        GameRegistry.addRecipe(new ItemStack(ModItems.sickleRuby),
+                new Object[] { " # ", "  #", "I# ", Character.valueOf('#'),
+                        ModItems.gemRuby, Character.valueOf('I'), Item.stick});
+        GameRegistry.addRecipe(new ItemStack(ModItems.sickleGreenSapphire),
+                new Object[] { " # ", "  #", "I# ", Character.valueOf('#'),
+                        ModItems.gemGreenSapphire, Character.valueOf('I'), Item.stick});
+        GameRegistry.addRecipe(new ItemStack(ModItems.sickleSapphire),
+                new Object[] { " # ", "  #", "I# ", Character.valueOf('#'),
+                        ModItems.gemSapphire, Character.valueOf('I'), Item.stick});
         
-        //Sickle
     }
 }
