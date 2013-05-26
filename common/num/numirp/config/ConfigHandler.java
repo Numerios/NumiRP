@@ -9,7 +9,7 @@ import net.minecraftforge.common.Configuration;
 import num.numirp.lib.BlockIDs;
 import num.numirp.lib.ItemIDs;
 import num.numirp.lib.Reference;
-import num.numirp.lib.Values;
+import num.numirp.lib.WorldGen;
 
 public class ConfigHandler {
     public static Configuration configuration;
@@ -19,16 +19,16 @@ public class ConfigHandler {
 
         try {
             conf.load();
-            Values.WORLDGEN_RUBY = conf.get("World Generation", "Ruby Generation", Values.WORLDGEN_RUBY_DEFAULT).getBoolean(Values.WORLDGEN_RUBY_DEFAULT);
-            Values.WORLDGEN_GREENSAPPHIRE = conf.get("World Generation", "Green Sapphire Generation", Values.WORLDGEN_GREENSAPPHIRE_DEFAULT).getBoolean(Values.WORLDGEN_GREENSAPPHIRE_DEFAULT);
-            Values.WORLDGEN_SAPPHIRE = conf.get("World Generation", "Sapphire Generation", Values.WORLDGEN_SAPPHIRE_DEFAULT).getBoolean(Values.WORLDGEN_SAPPHIRE_DEFAULT);
-            Values.WORLDGEN_TIN = conf.get("World Generation", "Tin Generation", Values.WORLDGEN_TIN_DEFAULT).getBoolean(Values.WORLDGEN_TIN_DEFAULT);
-            Values.WORLDGEN_COPPER = conf.get("World Generation", "Copper Generation", Values.WORLDGEN_COPPER_DEFAULT).getBoolean(Values.WORLDGEN_COPPER_DEFAULT);
-            Values.WORLDGEN_SILVER = conf.get("World Generation", "Silver Generation", Values.WORLDGEN_SILVER_DEFAULT).getBoolean(Values.WORLDGEN_SILVER_DEFAULT);
-            Values.WORLDGEN_NIKOLITE = conf.get("World Generation", "Nikolite Generation", Values.WORLDGEN_NIKOLITE_DEFAULT).getBoolean(Values.WORLDGEN_NIKOLITE_DEFAULT);
-            Values.WORLDGEN_TUNGSTEN = conf.get("World Generation", "Tungsten Generation", Values.WORLDGEN_TUNGSTEN_DEFAULT).getBoolean(Values.WORLDGEN_TUNGSTEN_DEFAULT);
-            Values.WORLDGEN_MARBLE = conf.get("World Generation", "Marble Generation", Values.WORLDGEN_MARBLE_DEFAULT).getBoolean(Values.WORLDGEN_MARBLE_DEFAULT);
-            Values.WORLDGEN_BASALT = conf.get("World Generation", "Basalt Generation", Values.WORLDGEN_BASALT_DEFAULT).getBoolean(Values.WORLDGEN_BASALT_DEFAULT);
+            WorldGen.WORLDGEN_RUBY = conf.get("World Generation", "Ruby Generation", WorldGen.WORLDGEN_RUBY_DEFAULT).getBoolean(WorldGen.WORLDGEN_RUBY_DEFAULT);
+            WorldGen.WORLDGEN_GREENSAPPHIRE = conf.get("World Generation", "Green Sapphire Generation", WorldGen.WORLDGEN_GREENSAPPHIRE_DEFAULT).getBoolean(WorldGen.WORLDGEN_GREENSAPPHIRE_DEFAULT);
+            WorldGen.WORLDGEN_SAPPHIRE = conf.get("World Generation", "Sapphire Generation", WorldGen.WORLDGEN_SAPPHIRE_DEFAULT).getBoolean(WorldGen.WORLDGEN_SAPPHIRE_DEFAULT);
+            WorldGen.WORLDGEN_TIN = conf.get("World Generation", "Tin Generation", WorldGen.WORLDGEN_TIN_DEFAULT).getBoolean(WorldGen.WORLDGEN_TIN_DEFAULT);
+            WorldGen.WORLDGEN_COPPER = conf.get("World Generation", "Copper Generation", WorldGen.WORLDGEN_COPPER_DEFAULT).getBoolean(WorldGen.WORLDGEN_COPPER_DEFAULT);
+            WorldGen.WORLDGEN_SILVER = conf.get("World Generation", "Silver Generation", WorldGen.WORLDGEN_SILVER_DEFAULT).getBoolean(WorldGen.WORLDGEN_SILVER_DEFAULT);
+            WorldGen.WORLDGEN_NIKOLITE = conf.get("World Generation", "Nikolite Generation", WorldGen.WORLDGEN_NIKOLITE_DEFAULT).getBoolean(WorldGen.WORLDGEN_NIKOLITE_DEFAULT);
+            WorldGen.WORLDGEN_TUNGSTEN = conf.get("World Generation", "Tungsten Generation", WorldGen.WORLDGEN_TUNGSTEN_DEFAULT).getBoolean(WorldGen.WORLDGEN_TUNGSTEN_DEFAULT);
+            WorldGen.WORLDGEN_MARBLE = conf.get("World Generation", "Marble Generation", WorldGen.WORLDGEN_MARBLE_DEFAULT).getBoolean(WorldGen.WORLDGEN_MARBLE_DEFAULT);
+            WorldGen.WORLDGEN_BASALT = conf.get("World Generation", "Basalt Generation", WorldGen.WORLDGEN_BASALT_DEFAULT).getBoolean(WorldGen.WORLDGEN_BASALT_DEFAULT);
 
             ItemIDs.PICKAXE_RUBY_ID = conf.getItem("pickaxeRuby", ItemIDs.PICKAXE_RUBY_ID_DEFAULT).getInt(
                     ItemIDs.PICKAXE_RUBY_ID_DEFAULT);
