@@ -24,6 +24,14 @@ public class ModItems {
     public static Item sickleRuby, sickleGreenSapphire, sickleSapphire;
 
     public static void init() {
+        
+        //Material types for tools
+        EnumToolMaterial ruby = EnumHelper.addToolMaterial("RUBY", 2, 500, 8.0F, 3, 12);
+        EnumToolMaterial greenSapphire = EnumHelper.addToolMaterial("GREENSAPPHIRE", 2,
+                500, 8.0F, 3, 12);
+        EnumToolMaterial sapphire = EnumHelper.addToolMaterial("SAPPHIRE", 2, 500, 8.0F,
+                3, 12);
+        
         // Processed items
         itemProcessed = new ItemProcessed(ItemIDs.PROCESSED_ID);
         GameRegistry.registerItem(itemProcessed, "itemProcessed");
@@ -51,12 +59,6 @@ public class ModItems {
         OreDictionary.registerOre("ingotTungsten", ingotTungsten);
 
         // Pickaxes
-        EnumToolMaterial ruby = EnumHelper.addToolMaterial("RUBY", 2, 500, 8.0F, 3, 12);
-        EnumToolMaterial greenSapphire = EnumHelper.addToolMaterial("GREENSAPPHIRE", 2,
-                500, 8.0F, 3, 12);
-        EnumToolMaterial sapphire = EnumHelper.addToolMaterial("SAPPHIRE", 2, 500, 8.0F,
-                3, 12);
-
         pickaxeRuby = new ItemRPPickaxe(ItemIDs.PICKAXE_RUBY_ID, ruby);
         pickaxeGreenSapphire = new ItemRPPickaxe(ItemIDs.PICKAXE_GREEN_SAPPHIRE_ID,
                 greenSapphire);
