@@ -21,7 +21,7 @@ public class ModItems {
     public static Item pickaxeRuby, pickaxeGreenSapphire, pickaxeSapphire;
     public static Item shovelRuby, shovelGreenSapphire, shovelSapphire;
     public static Item axeRuby, axeGreenSapphire, axeSapphire;
-    public static Item sickleRuby;
+    public static Item sickleRuby, sickleGreenSapphire, sickleSapphire;
 
     public static void init() {
         // Processed items
@@ -66,10 +66,10 @@ public class ModItems {
         GameRegistry.registerItem(pickaxeGreenSapphire, "pickaxeGreenSapphire");
         GameRegistry.registerItem(pickaxeSapphire, "pickaxeSapphire");
 
-        LanguageRegistry.addName(new ItemStack(pickaxeRuby, 1), Strings.PICKAXES[0]);
+        LanguageRegistry.addName(new ItemStack(pickaxeRuby, 1), Strings.ORE_NAMES[0] + " Pickaxe");
         LanguageRegistry.addName(new ItemStack(pickaxeGreenSapphire, 1),
-                Strings.PICKAXES[1]);
-        LanguageRegistry.addName(new ItemStack(pickaxeSapphire, 1), Strings.PICKAXES[2]);
+                Strings.ORE_NAMES[1] + " Pickaxe");
+        LanguageRegistry.addName(new ItemStack(pickaxeSapphire, 1), Strings.ORE_NAMES[2] + " Pickaxe");
 
         // Shovels
         shovelRuby = new ItemRPShovel(ItemIDs.SHOVEL_RUBY_ID, ruby);
@@ -81,10 +81,10 @@ public class ModItems {
         GameRegistry.registerItem(shovelGreenSapphire, "shovelGreenSapphire");
         GameRegistry.registerItem(shovelSapphire, "shovelSapphire");
 
-        LanguageRegistry.addName(new ItemStack(shovelRuby, 1), Strings.SHOVELS[0]);
+        LanguageRegistry.addName(new ItemStack(shovelRuby, 1), Strings.ORE_NAMES[0] + " Shovel");
         LanguageRegistry.addName(new ItemStack(shovelGreenSapphire, 1),
-                Strings.SHOVELS[1]);
-        LanguageRegistry.addName(new ItemStack(shovelSapphire, 1), Strings.SHOVELS[2]);
+                Strings.ORE_NAMES[1] + " Shovel");
+        LanguageRegistry.addName(new ItemStack(shovelSapphire, 1), Strings.ORE_NAMES[2] + " Shovel");
 
         // Shovels
         axeRuby = new ItemRPAxe(ItemIDs.AXE_RUBY_ID, ruby);
@@ -95,14 +95,23 @@ public class ModItems {
         GameRegistry.registerItem(axeGreenSapphire, "axeGreenSapphire");
         GameRegistry.registerItem(axeSapphire, "axeSapphire");
 
-        LanguageRegistry.addName(new ItemStack(axeRuby, 1), Strings.AXES[0]);
-        LanguageRegistry.addName(new ItemStack(axeGreenSapphire, 1), Strings.AXES[1]);
-        LanguageRegistry.addName(new ItemStack(axeSapphire, 1), Strings.AXES[2]);
+        LanguageRegistry.addName(new ItemStack(axeRuby, 1), Strings.ORE_NAMES[0] + " Axe");
+        LanguageRegistry.addName(new ItemStack(axeGreenSapphire, 1), Strings.ORE_NAMES[1] + " Axe");
+        LanguageRegistry.addName(new ItemStack(axeSapphire, 1), Strings.ORE_NAMES[2] + " Axe");
 
         // Sickles
         sickleRuby = new ItemRPSickle(ItemIDs.SICKLE_RUBY_ID, ruby);
+        sickleGreenSapphire = new ItemRPSickle(ItemIDs.SICKLE_GREEN_SAPPHIRE_ID, greenSapphire);
+        sickleSapphire = new ItemRPSickle(ItemIDs.SICKLE_SAPPHIRE_ID, sapphire);
+        
         GameRegistry.registerItem(sickleRuby, "sickleRuby");
-        LanguageRegistry.addName(new ItemStack(sickleRuby, 1), Strings.SICKLES[0]);
+        GameRegistry.registerItem(sickleGreenSapphire, "sickleGreenSapphire");
+        GameRegistry.registerItem(sickleSapphire, "sickleSapphire");
+
+        LanguageRegistry.addName(new ItemStack(sickleRuby, 1), Strings.ORE_NAMES[0] + " Sickle");
+        LanguageRegistry.addName(new ItemStack(sickleGreenSapphire, 1), Strings.ORE_NAMES[1] + " Sickle");
+        LanguageRegistry.addName(new ItemStack(sickleSapphire, 1), Strings.ORE_NAMES[2] + " Sickle");
+
 
     }
 }

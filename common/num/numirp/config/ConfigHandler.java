@@ -53,6 +53,10 @@ public class ConfigHandler {
 
             ItemIDs.SICKLE_RUBY_ID = conf.getItem("sickleRuby", ItemIDs.SICKLE_RUBY_ID_DEFAULT).getInt(
                     ItemIDs.SICKLE_RUBY_ID_DEFAULT);
+            ItemIDs.SICKLE_GREEN_SAPPHIRE_ID = conf.getItem("sickleRuby", ItemIDs.SICKLE_GREEN_SAPPHIRE_ID_DEFAULT).getInt(
+                    ItemIDs.SICKLE_GREEN_SAPPHIRE_ID_DEFAULT);
+            ItemIDs.SICKLE_SAPPHIRE_ID = conf.getItem("sickleRuby", ItemIDs.SICKLE_SAPPHIRE_ID_DEFAULT).getInt(
+                    ItemIDs.SICKLE_SAPPHIRE_ID_DEFAULT);
             
             ItemIDs.PROCESSED_ID = conf.getItem("processed",
                     ItemIDs.PROCESSED_ID_DEFAULT).getInt(
