@@ -29,30 +29,31 @@ public class ModCrafting {
                 "###", "###", Character.valueOf('#'), ModItems.ingotTungsten });
 
         // Storage Blocks uncrafting
-        GameRegistry.addRecipe(ModBlocks.blockStorageRuby,
+        GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.RUBY),
+                new Object[] { "#", Character.valueOf('#'), ModBlocks.blockStorageRuby });
+        GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9,
+                Metadata.GREENSAPPHIRE), new Object[] { "#", Character.valueOf('#'),
+                ModBlocks.blockStorageGreenSapphire });
+        GameRegistry.addRecipe(
+                new ItemStack(ModItems.itemProcessed, 9, Metadata.SAPPHIRE),
                 new Object[] { "#", Character.valueOf('#'),
-                        new ItemStack(ModItems.itemProcessed, 9, Metadata.RUBY) });
-        GameRegistry.addRecipe(ModBlocks.blockStorageGreenSapphire, new Object[] { "#",
-                Character.valueOf('#'),
-                new ItemStack(ModItems.itemProcessed, 9, Metadata.GREENSAPPHIRE) });
-        GameRegistry.addRecipe(ModBlocks.blockStorageSapphire, new Object[] { "#",
-                Character.valueOf('#'),
-                new ItemStack(ModItems.itemProcessed, 9, Metadata.SAPPHIRE) });
-        GameRegistry.addRecipe(ModBlocks.blockStorageTin,
+                ModBlocks.blockStorageSapphire });
+        GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.TIN),
+                new Object[] { "#", Character.valueOf('#'), ModBlocks.blockStorageTin });
+        GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.COPPER),
                 new Object[] { "#", Character.valueOf('#'),
-                        new ItemStack(ModItems.itemProcessed, 9, Metadata.TIN) });
-        GameRegistry.addRecipe(ModBlocks.blockStorageCopper, new Object[] { "#",
-                Character.valueOf('#'),
-                new ItemStack(ModItems.itemProcessed, 9, Metadata.COPPER) });
-        GameRegistry.addRecipe(ModBlocks.blockStorageSilver, new Object[] { "#",
-                Character.valueOf('#'),
-                new ItemStack(ModItems.itemProcessed, 9, Metadata.SILVER) });
-        GameRegistry.addRecipe(ModBlocks.blockStorageNikolite, new Object[] { "#",
-                Character.valueOf('#'),
-                new ItemStack(ModItems.itemProcessed, 9, Metadata.NIKOLITE) });
-        GameRegistry.addRecipe(ModBlocks.blockStorageTungsten, new Object[] { "#",
-                Character.valueOf('#'),
-                new ItemStack(ModItems.itemProcessed, 9, Metadata.TUNGSTEN) });
+                ModBlocks.blockStorageCopper });
+        GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.SILVER),
+                        new Object[] { "#", Character.valueOf('#'),
+                                ModBlocks.blockStorageSilver });
+        GameRegistry.addRecipe(
+                new ItemStack(ModItems.itemProcessed, 9, Metadata.NIKOLITE),
+                new Object[] { "#", Character.valueOf('#'),
+                        ModBlocks.blockStorageNikolite });
+        GameRegistry.addRecipe(
+                new ItemStack(ModItems.itemProcessed, 9, Metadata.TUNGSTEN),
+                new Object[] { "#", Character.valueOf('#'),
+                        ModBlocks.blockStorageTungsten });
 
         // Decor blocks crafting
         GameRegistry.addRecipe(new ItemStack(ModBlocks.blockDecor, 4,
