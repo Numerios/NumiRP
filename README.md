@@ -5,6 +5,9 @@ NumiRP is a recreation of RP2 by Eloraam.
 The original RP2 is a very popular mod in the MC community but sadly Eloraam is not updating her mods that often.
 This mod will also try to improve on Eloraam's concepts and add some of our own.
 
+### Download
+Newest: Version 0.1.0 - [_HERE_](https://dl.dropboxusercontent.com/u/3743471/mods/NumiRP-1.5.2-0.1.0.jar)
+
 ### License
 This mod is licensed under the MMPL - Minecraft Mod Public License version 1.0.1
 http://www.mod-buildcraft.com/MMPL-1.0.txt
