@@ -14,7 +14,8 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemToolSickle extends ItemTool {
-    private static Block[] blocksEffectiveAgainst = new Block[] { Block.leaves, Block.grass, Block.vine };
+    private static Block[] blocksEffectiveAgainst = new Block[] { Block.leaves,
+            Block.grass, Block.vine };
     private int materialId;
 
     public ItemToolSickle(int itemId, EnumToolMaterial material) {
@@ -33,18 +34,22 @@ public class ItemToolSickle extends ItemTool {
             setUnlocalizedName("sickleUnknown");
             materialId = 3;
         }
+    }
 
-        setMaxDamage(120);
+    public float getStrVsBlock(ItemStack itemstack, Block block) {
+        return 0.5F;
     }
 
     @Override
-    public boolean onBlockDestroyed(ItemStack itemstack, World world, int par3, int x, int y, int z, EntityLiving entity) {
+    public boolean onBlockDestroyed(ItemStack itemstack, World world, int par3, int x,
+            int y, int z, EntityLiving entity) {
         Material material = world.getBlockMaterial(x, y, z);
         for (int i = x - 1; i <= x + 1; i++) {
             for (int j = y - 1; j <= y + 1; j++) {
                 for (int k = z - 1; k <= z + 1; k++) {
                     material = world.getBlockMaterial(i, j, k);
-                    if (material == Material.plants || material == Material.vine || material == Material.leaves) {
+                    if (material == Material.plants || material == Material.vine
+                            || material == Material.leaves) {
                         world.destroyBlock(i, j, k, true);
                         itemstack.damageItem(1, entity);
                     }
@@ -57,6 +62,7 @@ public class ItemToolSickle extends ItemTool {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {
-        itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "sickle" + Strings.ORES[materialId]);
+        itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "sickle"
+                + Strings.ORES[materialId]);
     }
 }

@@ -72,6 +72,9 @@ public class ConfigHandler {
             ItemIDs.SICKLE_SAPPHIRE_ID = conf.getItem("sickleSapphire", ItemIDs.SICKLE_SAPPHIRE_ID_DEFAULT).getInt(
                     ItemIDs.SICKLE_SAPPHIRE_ID_DEFAULT);
             
+            ItemIDs.ATHAME_ID = conf.getItem("athame", ItemIDs.ATHAME_ID_DEFAULT).getInt(ItemIDs.ATHAME_ID_DEFAULT);
+
+            
             ItemIDs.PROCESSED_ID = conf.getItem("processed",
                     ItemIDs.PROCESSED_ID_DEFAULT).getInt(
                     ItemIDs.PROCESSED_ID_DEFAULT);
