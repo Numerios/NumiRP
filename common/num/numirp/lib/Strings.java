@@ -5,6 +5,7 @@ public class Strings {
             "Tin", "Copper", "Nikolite", "Tungsten" };
     public static final String[] ORE_NAMES = { "Ruby", "Green Sapphire", "Sapphire",
             "Silver", "Tin", "Copper", "Nikolite", "Tungsten" };
+
     public static final String[] PROCESSED = { "gemRuby", "gemGreenSapphire",
             "gemSapphire", "ingotTin", "ingotCopper", "ingotSilver", "dustNikolite",
             "ingotTungsten" };
@@ -16,5 +17,4 @@ public class Strings {
             "BasaltCobble", "BasaltBrick", "BasaltChiseled", "BasaltPaver" };
     public static final String[] DECOR_NAMES = { "Marble", "Basalt", "Marble Brick",
             "Basalt Cobblestone", "Basalt Brick", "Chiseled Basalt", "Basalt Paver" };
-    public static String[] SICKLES = { "Ruby Sickle" };
 }
