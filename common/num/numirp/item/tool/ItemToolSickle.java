@@ -37,6 +37,11 @@ public class ItemToolSickle extends ItemTool {
         setMaxDamage(120);
     }
 
+    public float getStrVsBlock(ItemStack itemstack, Block block)
+    {
+        return 0.5F;
+    }
+    
     @Override
     public boolean onBlockDestroyed(ItemStack itemstack, World world, int par3, int x, int y, int z, EntityLiving entity) {
         Material material = world.getBlockMaterial(x, y, z);

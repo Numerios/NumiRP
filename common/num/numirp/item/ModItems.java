@@ -10,6 +10,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import num.numirp.lib.ItemIDs;
 import num.numirp.lib.Metadata;
 import num.numirp.lib.Strings;
+import num.numirp.item.tool.ItemToolAthame;
 import num.numirp.item.tool.ItemToolAxe;
 import num.numirp.item.tool.ItemToolHoe;
 import num.numirp.item.tool.ItemToolPickaxe;
@@ -29,6 +30,7 @@ public class ModItems {
     public static Item swordRuby, swordGreenSapphire, swordSapphire;
     public static Item hoeRuby, hoeGreenSapphire, hoeSapphire;
     public static Item sickleRuby, sickleGreenSapphire, sickleSapphire;
+    public static Item athame;
 
     public static void init() {
         
@@ -133,12 +135,17 @@ public class ModItems {
         LanguageRegistry.addName(new ItemStack(hoeRuby, 1), Strings.ORE_NAMES[0] + " Hoe");
         LanguageRegistry.addName(new ItemStack(hoeGreenSapphire, 1), Strings.ORE_NAMES[1] + " Hoe");
         LanguageRegistry.addName(new ItemStack(hoeSapphire, 1), Strings.ORE_NAMES[2] + " Hoe");
-
+        
         // Sickles
         sickleRuby = new ItemToolSickle(ItemIDs.SICKLE_RUBY_ID, ruby);
         sickleGreenSapphire = new ItemToolSickle(ItemIDs.SICKLE_GREEN_SAPPHIRE_ID, greenSapphire);
         sickleSapphire = new ItemToolSickle(ItemIDs.SICKLE_SAPPHIRE_ID, sapphire);
-        
+
+        // Athames
+        athame = new ItemToolAthame(ItemIDs.ATHAME_ID, EnumToolMaterial.IRON);
+        GameRegistry.registerItem(athame, "athame");
+        LanguageRegistry.addName(new ItemStack(athame, 1), Strings.ATHAME[0]);
+
         GameRegistry.registerItem(sickleRuby, "sickleRuby");
         GameRegistry.registerItem(sickleGreenSapphire, "sickleGreenSapphire");
         GameRegistry.registerItem(sickleSapphire, "sickleSapphire");
@@ -146,7 +153,6 @@ public class ModItems {
         LanguageRegistry.addName(new ItemStack(sickleRuby, 1), Strings.ORE_NAMES[0] + " Sickle");
         LanguageRegistry.addName(new ItemStack(sickleGreenSapphire, 1), Strings.ORE_NAMES[1] + " Sickle");
         LanguageRegistry.addName(new ItemStack(sickleSapphire, 1), Strings.ORE_NAMES[2] + " Sickle");
-
 
     }
 }
