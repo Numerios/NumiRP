@@ -16,13 +16,10 @@ public class ItemIDs {
     public static int AXE_SAPPHIRE_ID_DEFAULT = 6859;
     
     public static int SICKLE_RUBY_ID_DEFAULT = 6860;
-<<<<<<< HEAD
-    
-    public static int ATHAME_ID_DEFAULT = 6861;
-=======
     public static int SICKLE_GREEN_SAPPHIRE_ID_DEFAULT = 6861;
     public static int SICKLE_SAPPHIRE_ID_DEFAULT = 6862;
->>>>>>> upstream/master
+    
+    public static int ATHAME_ID_DEFAULT = 6861;
 
     public static int PROCESSED_ID;
     

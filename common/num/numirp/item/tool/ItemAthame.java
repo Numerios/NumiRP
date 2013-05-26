@@ -1,4 +1,4 @@
-package num.numirp.item;
+package num.numirp.item.tool;
 
 import java.util.Random;
 
@@ -15,11 +15,11 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
 import num.numirp.lib.Reference;
 
-public class ItemRPAthame extends ItemSword {
+public class ItemAthame extends ItemSword {
 
     private int weaponDamage;
     
-    public ItemRPAthame(int id, EnumToolMaterial material) {
+    public ItemAthame(int id, EnumToolMaterial material) {
         super(id, material);
         
         weaponDamage = 1 + material.getDamageVsEntity();

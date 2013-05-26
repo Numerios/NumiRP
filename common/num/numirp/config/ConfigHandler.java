@@ -46,17 +46,12 @@ public class ConfigHandler {
 
             ItemIDs.ATHAME_ID = conf.getItem("sickleRuby", ItemIDs.ATHAME_ID_DEFAULT).getInt(ItemIDs.ATHAME_ID_DEFAULT);
 
-<<<<<<< HEAD
             ItemIDs.PROCESSED_ID = conf.getItem("processed", ItemIDs.PROCESSED_ID_DEFAULT).getInt(ItemIDs.PROCESSED_ID_DEFAULT);
-=======
-            ItemIDs.SICKLE_RUBY_ID = conf.getItem("sickleRuby", ItemIDs.SICKLE_RUBY_ID_DEFAULT).getInt(
-                    ItemIDs.SICKLE_RUBY_ID_DEFAULT);
-            ItemIDs.SICKLE_GREEN_SAPPHIRE_ID = conf.getItem("sickleGreenSapphire", ItemIDs.SICKLE_GREEN_SAPPHIRE_ID_DEFAULT).getInt(
-                    ItemIDs.SICKLE_GREEN_SAPPHIRE_ID_DEFAULT);
-            ItemIDs.SICKLE_SAPPHIRE_ID = conf.getItem("sickleSapphire", ItemIDs.SICKLE_SAPPHIRE_ID_DEFAULT).getInt(
-                    ItemIDs.SICKLE_SAPPHIRE_ID_DEFAULT);
->>>>>>> upstream/master
-            
+
+            ItemIDs.SICKLE_RUBY_ID = conf.getItem("sickleRuby", ItemIDs.SICKLE_RUBY_ID_DEFAULT).getInt(ItemIDs.SICKLE_RUBY_ID_DEFAULT);
+            ItemIDs.SICKLE_GREEN_SAPPHIRE_ID = conf.getItem("sickleGreenSapphire", ItemIDs.SICKLE_GREEN_SAPPHIRE_ID_DEFAULT).getInt(ItemIDs.SICKLE_GREEN_SAPPHIRE_ID_DEFAULT);
+            ItemIDs.SICKLE_SAPPHIRE_ID = conf.getItem("sickleSapphire", ItemIDs.SICKLE_SAPPHIRE_ID_DEFAULT).getInt(ItemIDs.SICKLE_SAPPHIRE_ID_DEFAULT);
+
             BlockIDs.ORES_ID = conf.getBlock("ores", BlockIDs.ORES_ID_DEFAULT).getInt(BlockIDs.ORES_ID_DEFAULT);
             BlockIDs.STORAGE_ID = conf.getBlock("storage blocks", BlockIDs.STORAGE_ID_DEFAULT).getInt(BlockIDs.STORAGE_ID_DEFAULT);
             BlockIDs.DECOR_ID = conf.getBlock("decorative blocks (marble, basalt, etc.)", BlockIDs.DECOR_ID_DEFAULT).getInt(BlockIDs.DECOR_ID_DEFAULT);

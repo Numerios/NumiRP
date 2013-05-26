@@ -10,6 +10,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import num.numirp.lib.ItemIDs;
 import num.numirp.lib.Metadata;
 import num.numirp.lib.Strings;
+import num.numirp.item.tool.ItemAthame;
 import num.numirp.item.tool.ToolAxe;
 import num.numirp.item.tool.ToolPickaxe;
 import num.numirp.item.tool.ToolShovel;
@@ -105,19 +106,17 @@ public class ModItems {
         LanguageRegistry.addName(new ItemStack(axeGreenSapphire, 1), Strings.ORE_NAMES[1] + " Axe");
         LanguageRegistry.addName(new ItemStack(axeSapphire, 1), Strings.ORE_NAMES[2] + " Axe");
 
-        // Sickles
-        sickleRuby = new ToolSickle(ItemIDs.SICKLE_RUBY_ID, ruby);
-        GameRegistry.registerItem(sickleRuby, "sickleRuby");
-        LanguageRegistry.addName(new ItemStack(sickleRuby, 1), Strings.SICKLES[0]);
 
         // Athames
-        athame = new ItemRPAthame(ItemIDs.ATHAME_ID, EnumToolMaterial.IRON);
+        athame = new ItemAthame(ItemIDs.ATHAME_ID, EnumToolMaterial.IRON);
         GameRegistry.registerItem(athame, "athame");
         LanguageRegistry.addName(new ItemStack(athame, 1), Strings.ATHAME[0]);
+        
         sickleRuby = new ToolSickle(ItemIDs.SICKLE_RUBY_ID, ruby);
         sickleGreenSapphire = new ToolSickle(ItemIDs.SICKLE_GREEN_SAPPHIRE_ID, greenSapphire);
         sickleSapphire = new ToolSickle(ItemIDs.SICKLE_SAPPHIRE_ID, sapphire);
-        
+
+        // Sickles
         GameRegistry.registerItem(sickleRuby, "sickleRuby");
         GameRegistry.registerItem(sickleGreenSapphire, "sickleGreenSapphire");
         GameRegistry.registerItem(sickleSapphire, "sickleSapphire");
