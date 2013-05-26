@@ -126,6 +126,28 @@ public class ModCrafting {
         GameRegistry.addRecipe(new ItemStack(ModItems.axeSapphire),
                 new Object[] { " ##", " I#", " I ", Character.valueOf('#'),
                         ModItems.gemSapphire, Character.valueOf('I'), Item.stick });
+        
+        // Swords
+        GameRegistry.addRecipe(new ItemStack(ModItems.swordRuby),
+                new Object[] { "#", "#", "I", Character.valueOf('#'), 
+                        ModItems.gemRuby, Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.swordGreenSapphire), new Object[] {
+            "#", "#", "I", Character.valueOf('#'), ModItems.gemGreenSapphire,
+                Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.swordSapphire),
+                new Object[] { "#", "#", "I", Character.valueOf('#'),
+                        ModItems.gemSapphire, Character.valueOf('I'), Item.stick });
+        
+        // Hoes
+        GameRegistry.addRecipe(new ItemStack(ModItems.hoeRuby),
+                new Object[] { "## ", " I ", " I ", Character.valueOf('#'), 
+                        ModItems.gemRuby, Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.hoeGreenSapphire), new Object[] {
+                "## ", " I ", " I ", Character.valueOf('#'), ModItems.gemGreenSapphire,
+                Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.hoeSapphire),
+                new Object[] { "## ", " I ", " I ", Character.valueOf('#'),
+                        ModItems.gemSapphire, Character.valueOf('I'), Item.stick });
 
         // Sickle
         GameRegistry.addRecipe(new ItemStack(ModItems.sickleRuby),

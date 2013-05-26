@@ -1,30 +1,30 @@
 package num.numirp.item.tool;
 
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.item.EnumToolMaterial;
-import net.minecraft.item.ItemAxe;
-import num.numirp.lib.Reference;
-import num.numirp.lib.Strings;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.ItemHoe;
+import num.numirp.lib.Reference;
+import num.numirp.lib.Strings;
 
-public class ToolAxe extends ItemAxe {
+public class ItemToolHoe extends ItemHoe{
     private int materialId;
 
-    public ToolAxe(int itemId, EnumToolMaterial material) {
+    public ItemToolHoe(int itemId, EnumToolMaterial material) {
         super(itemId, material);
 
         if(material.name() == "RUBY") {
-            setUnlocalizedName("pickaxeRuby");
+            setUnlocalizedName("hoeRuby");
             materialId = 0;
         } else if(material.name() == "GREENSAPPHIRE") {
-            setUnlocalizedName("pickaxeGreenSapphire");
+            setUnlocalizedName("hoeGreenSapphire");
             materialId = 1;
         } else if(material.name() == "SAPPHIRE") {
-            setUnlocalizedName("pickaxeSapphire");
+            setUnlocalizedName("hoeSapphire");
             materialId = 2;
         } else {
-            setUnlocalizedName("pickaxeUnknown");
+            setUnlocalizedName("hoeUnknown");
             materialId = 3;
         }
     }
@@ -32,6 +32,6 @@ public class ToolAxe extends ItemAxe {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {
-        itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "axe" + Strings.ORES[materialId]);
+        itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "hoe" + Strings.ORES[materialId]);
     }
 }

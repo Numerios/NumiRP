@@ -13,11 +13,11 @@ import num.numirp.lib.Strings;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ToolSickle extends ItemTool {
+public class ItemToolSickle extends ItemTool {
     private static Block[] blocksEffectiveAgainst = new Block[] { Block.leaves, Block.grass, Block.vine };
     private int materialId;
 
-    public ToolSickle(int itemId, EnumToolMaterial material) {
+    public ItemToolSickle(int itemId, EnumToolMaterial material) {
         super(itemId, 1, material, blocksEffectiveAgainst);
 
         if (material.name() == "RUBY") {

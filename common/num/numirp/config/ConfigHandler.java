@@ -32,23 +32,37 @@ public class ConfigHandler {
 
             ItemIDs.PICKAXE_RUBY_ID = conf.getItem("pickaxeRuby", ItemIDs.PICKAXE_RUBY_ID_DEFAULT).getInt(
                     ItemIDs.PICKAXE_RUBY_ID_DEFAULT);
-            ItemIDs.PICKAXE_GREEN_SAPPHIRE_ID = conf.getItem("pickaxeGreenSaphire", ItemIDs.PICKAXE_GREEN_SAPPHIRE_ID_DEFAULT).getInt(
+            ItemIDs.PICKAXE_GREEN_SAPPHIRE_ID = conf.getItem("pickaxeGreenSapphire", ItemIDs.PICKAXE_GREEN_SAPPHIRE_ID_DEFAULT).getInt(
                     ItemIDs.PICKAXE_GREEN_SAPPHIRE_ID_DEFAULT);
-            ItemIDs.PICKAXE_SAPPHIRE_ID = conf.getItem("pickaxeSaphire", ItemIDs.PICKAXE_SAPPHIRE_ID_DEFAULT).getInt(
+            ItemIDs.PICKAXE_SAPPHIRE_ID = conf.getItem("pickaxeSapphire", ItemIDs.PICKAXE_SAPPHIRE_ID_DEFAULT).getInt(
                     ItemIDs.PICKAXE_SAPPHIRE_ID_DEFAULT);
             
             ItemIDs.SHOVEL_RUBY_ID = conf.getItem("shovelRuby", ItemIDs.SHOVEL_RUBY_ID_DEFAULT).getInt(
                     ItemIDs.SHOVEL_RUBY_ID_DEFAULT);
-            ItemIDs.SHOVEL_GREEN_SAPPHIRE_ID = conf.getItem("shovelGreenSaphire", ItemIDs.SHOVEL_GREEN_SAPPHIRE_ID_DEFAULT).getInt(
+            ItemIDs.SHOVEL_GREEN_SAPPHIRE_ID = conf.getItem("shovelGreenSapphire", ItemIDs.SHOVEL_GREEN_SAPPHIRE_ID_DEFAULT).getInt(
                     ItemIDs.SHOVEL_GREEN_SAPPHIRE_ID_DEFAULT);
-            ItemIDs.SHOVEL_SAPPHIRE_ID = conf.getItem("shovelSaphire", ItemIDs.SHOVEL_SAPPHIRE_ID_DEFAULT).getInt(
+            ItemIDs.SHOVEL_SAPPHIRE_ID = conf.getItem("shovelSapphire", ItemIDs.SHOVEL_SAPPHIRE_ID_DEFAULT).getInt(
                     ItemIDs.SHOVEL_SAPPHIRE_ID_DEFAULT);
 
             ItemIDs.AXE_RUBY_ID = conf.getItem("axeRuby", ItemIDs.AXE_RUBY_ID_DEFAULT).getInt(
                     ItemIDs.AXE_RUBY_ID_DEFAULT);
-            ItemIDs.AXE_GREEN_SAPPHIRE_ID = conf.getItem("axeGreenSaphire", ItemIDs.AXE_GREEN_SAPPHIRE_ID_DEFAULT).getInt(
+            ItemIDs.AXE_GREEN_SAPPHIRE_ID = conf.getItem("axeGreenSapphire", ItemIDs.AXE_GREEN_SAPPHIRE_ID_DEFAULT).getInt(
                     ItemIDs.AXE_GREEN_SAPPHIRE_ID_DEFAULT);
-            ItemIDs.AXE_SAPPHIRE_ID = conf.getItem("axeSaphire", ItemIDs.AXE_SAPPHIRE_ID_DEFAULT).getInt(
+            ItemIDs.AXE_SAPPHIRE_ID = conf.getItem("axeSapphire", ItemIDs.AXE_SAPPHIRE_ID_DEFAULT).getInt(
+                    ItemIDs.AXE_SAPPHIRE_ID_DEFAULT);
+            
+            ItemIDs.SWORD_RUBY_ID = conf.getItem("swordRuby", ItemIDs.SWORD_RUBY_ID_DEFAULT).getInt(
+                    ItemIDs.AXE_RUBY_ID_DEFAULT);
+            ItemIDs.SWORD_GREEN_SAPPHIRE_ID = conf.getItem("swordGreenSapphire", ItemIDs.SWORD_GREEN_SAPPHIRE_ID_DEFAULT).getInt(
+                    ItemIDs.AXE_GREEN_SAPPHIRE_ID_DEFAULT);
+            ItemIDs.SWORD_SAPPHIRE_ID = conf.getItem("swordSapphire", ItemIDs.SWORD_SAPPHIRE_ID_DEFAULT).getInt(
+                    ItemIDs.AXE_SAPPHIRE_ID_DEFAULT);
+            
+            ItemIDs.HOE_RUBY_ID = conf.getItem("hoeRuby", ItemIDs.HOE_RUBY_ID_DEFAULT).getInt(
+                    ItemIDs.AXE_RUBY_ID_DEFAULT);
+            ItemIDs.HOE_GREEN_SAPPHIRE_ID = conf.getItem("hoeGreenSapphire", ItemIDs.HOE_GREEN_SAPPHIRE_ID_DEFAULT).getInt(
+                    ItemIDs.HOE_GREEN_SAPPHIRE_ID_DEFAULT);
+            ItemIDs.HOE_SAPPHIRE_ID = conf.getItem("hoeSapphire", ItemIDs.HOE_SAPPHIRE_ID_DEFAULT).getInt(
                     ItemIDs.AXE_SAPPHIRE_ID_DEFAULT);
 
             ItemIDs.SICKLE_RUBY_ID = conf.getItem("sickleRuby", ItemIDs.SICKLE_RUBY_ID_DEFAULT).getInt(
