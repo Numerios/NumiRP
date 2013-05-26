@@ -3,13 +3,13 @@
   "modid": "NumiRP",
   "name": "NumiRP",
   "description": "NumiRP is a recreation of RP2 by Eloraam.",
-  "version": "0.1.0-alpha3",
+  "version": "0.1.0-beta",
   "url": "www.github.com/numerios/NumiRP",
   "updateUrl": "",
   "authorList": [
-    "Numerios"
+    "Numerios", "JBuk"
   ],
-  "credits": "Eloraam for inspiration, JBuk for help",
+  "credits": "Eloraam for inspiration",
   "logoFile": "/mods/NumiRP/textures/logo/logo.png",
   "screenshots": [
   ],
