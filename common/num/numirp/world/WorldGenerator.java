@@ -56,10 +56,10 @@ public class WorldGenerator implements IWorldGenerator {
             this.addOre(ModBlocks.blockOres, Metadata.TUNGSTEN, world, random, x, z, 2,
                     1, 0, 16);
         if (WorldGen.WORLDGEN_MARBLE)
-            this.addOre(ModBlocks.blockDecor, Metadata.MARBLE, world, random, x, z, 64,
+            this.addOre(ModBlocks.blockDecor, Metadata.MARBLE, world, random, x, z, 40,
                     1, 48, 72);
         if (WorldGen.WORLDGEN_BASALT)
-            this.addOre(ModBlocks.blockDecor, Metadata.BASALT, world, random, x, z, 48,
+            this.addOre(ModBlocks.blockDecor, Metadata.BASALT, world, random, x, z, 20,
                     1, 0, 24);
     }
 
