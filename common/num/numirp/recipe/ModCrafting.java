@@ -1,5 +1,6 @@
 package num.numirp.recipe;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import num.numirp.block.ModBlocks;
@@ -150,6 +151,21 @@ public class ModCrafting {
                         ModItems.gemSapphire, Character.valueOf('I'), Item.stick });
 
         // Sickle
+        GameRegistry.addRecipe(new ItemStack(ModItems.sickleWooden),
+                new Object[] { " # ", "  #", "I# ", Character.valueOf('#'), Block.planks,
+                        Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.sickleStone),
+                new Object[] { " # ", "  #", "I# ", Character.valueOf('#'),
+                        Block.cobblestone, Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.sickleIron),
+                new Object[] { " # ", "  #", "I# ", Character.valueOf('#'),
+                        Item.ingotIron, Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.sickleGolden),
+                new Object[] { " # ", "  #", "I# ", Character.valueOf('#'),
+                        Item.ingotGold, Character.valueOf('I'), Item.stick });
+        GameRegistry.addRecipe(new ItemStack(ModItems.sickleDiamond),
+                new Object[] { " # ", "  #", "I# ", Character.valueOf('#'), Item.diamond,
+                        Character.valueOf('I'), Item.stick });
         GameRegistry.addRecipe(new ItemStack(ModItems.sickleRuby),
                 new Object[] { " # ", "  #", "I# ", Character.valueOf('#'),
                         ModItems.gemRuby, Character.valueOf('I'), Item.stick });

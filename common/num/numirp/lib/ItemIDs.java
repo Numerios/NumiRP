@@ -23,12 +23,19 @@ public class ItemIDs {
     public static int HOE_GREEN_SAPPHIRE_ID_DEFAULT = 6864;
     public static int HOE_SAPPHIRE_ID_DEFAULT = 6865;
     
-    public static int SICKLE_RUBY_ID_DEFAULT = 6866;
-    public static int SICKLE_GREEN_SAPPHIRE_ID_DEFAULT = 6867;
-    public static int SICKLE_SAPPHIRE_ID_DEFAULT = 6868;
+    public static int SICKLE_WOODEN_ID_DEFAULT = 6866;
+    public static int SICKLE_STONE_ID_DEFAULT = 6867;
+    public static int SICKLE_IRON_ID_DEFAULT = 6868;
+    public static int SICKLE_GOLDEN_ID_DEFAULT = 6869;
+    public static int SICKLE_DIAMOND_ID_DEFAULT = 6870;
+    public static int SICKLE_RUBY_ID_DEFAULT = 6871;
+    public static int SICKLE_GREEN_SAPPHIRE_ID_DEFAULT = 6872;
+    public static int SICKLE_SAPPHIRE_ID_DEFAULT = 6873;
     
-    public static int ATHAME_ID_DEFAULT = 6880;
+    public static int ATHAME_ID_DEFAULT = 6874;
 
+    
+    
     public static int PROCESSED_ID;
     
     public static int PICKAXE_RUBY_ID;
@@ -51,6 +58,11 @@ public class ItemIDs {
     public static int HOE_GREEN_SAPPHIRE_ID;
     public static int HOE_SAPPHIRE_ID;
 
+    public static int SICKLE_WOODEN_ID;
+    public static int SICKLE_STONE_ID;
+    public static int SICKLE_IRON_ID;
+    public static int SICKLE_GOLDEN_ID;
+    public static int SICKLE_DIAMOND_ID;
     public static int SICKLE_RUBY_ID;
     public static int SICKLE_GREEN_SAPPHIRE_ID;
     public static int SICKLE_SAPPHIRE_ID;

@@ -17,4 +17,7 @@ public class Strings {
             "BasaltCobble", "BasaltBrick", "BasaltChiseled", "BasaltPaver" };
     public static final String[] DECOR_NAMES = { "Marble", "Basalt", "Marble Brick",
             "Basalt Cobblestone", "Basalt Brick", "Chiseled Basalt", "Basalt Paver" };
+
+    public static final String[] SICKLES = { "Wooden", "Stone", "Iron", "Golden",
+            "Diamond", "Ruby", "GreenSapphire", "Sapphire" };
 }

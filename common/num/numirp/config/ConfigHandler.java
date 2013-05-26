@@ -64,7 +64,17 @@ public class ConfigHandler {
                     ItemIDs.HOE_GREEN_SAPPHIRE_ID_DEFAULT);
             ItemIDs.HOE_SAPPHIRE_ID = conf.getItem("hoeSapphire", ItemIDs.HOE_SAPPHIRE_ID_DEFAULT).getInt(
                     ItemIDs.AXE_SAPPHIRE_ID_DEFAULT);
-
+            
+            ItemIDs.SICKLE_WOODEN_ID = conf.getItem("sickleWooden", ItemIDs.SICKLE_WOODEN_ID_DEFAULT).getInt(
+                    ItemIDs.SICKLE_WOODEN_ID_DEFAULT);
+            ItemIDs.SICKLE_STONE_ID = conf.getItem("sickleStone", ItemIDs.SICKLE_STONE_ID_DEFAULT).getInt(
+                    ItemIDs.SICKLE_STONE_ID_DEFAULT);
+            ItemIDs.SICKLE_IRON_ID = conf.getItem("sickleIron", ItemIDs.SICKLE_IRON_ID_DEFAULT).getInt(
+                    ItemIDs.SICKLE_IRON_ID_DEFAULT);
+            ItemIDs.SICKLE_GOLDEN_ID = conf.getItem("sickleGolden", ItemIDs.SICKLE_GOLDEN_ID_DEFAULT).getInt(
+                    ItemIDs.SICKLE_GOLDEN_ID_DEFAULT);
+            ItemIDs.SICKLE_DIAMOND_ID = conf.getItem("sickleDiamond", ItemIDs.SICKLE_DIAMOND_ID_DEFAULT).getInt(
+                    ItemIDs.SICKLE_DIAMOND_ID_DEFAULT);
             ItemIDs.SICKLE_RUBY_ID = conf.getItem("sickleRuby", ItemIDs.SICKLE_RUBY_ID_DEFAULT).getInt(
                     ItemIDs.SICKLE_RUBY_ID_DEFAULT);
             ItemIDs.SICKLE_GREEN_SAPPHIRE_ID = conf.getItem("sickleGreenSapphire", ItemIDs.SICKLE_GREEN_SAPPHIRE_ID_DEFAULT).getInt(

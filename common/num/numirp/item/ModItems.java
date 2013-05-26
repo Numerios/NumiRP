@@ -29,7 +29,7 @@ public class ModItems {
     public static Item axeRuby, axeGreenSapphire, axeSapphire;
     public static Item swordRuby, swordGreenSapphire, swordSapphire;
     public static Item hoeRuby, hoeGreenSapphire, hoeSapphire;
-    public static Item sickleRuby, sickleGreenSapphire, sickleSapphire;
+    public static Item sickleWooden, sickleStone, sickleIron, sickleGolden, sickleDiamond, sickleRuby, sickleGreenSapphire, sickleSapphire;
     public static Item athame;
 
     public static void init() {
@@ -137,17 +137,32 @@ public class ModItems {
         LanguageRegistry.addName(new ItemStack(hoeSapphire, 1), Strings.ORE_NAMES[2] + " Hoe");
 
         // Sickles
+        sickleWooden = new ItemToolSickle(ItemIDs.SICKLE_WOODEN_ID, EnumToolMaterial.WOOD);
+        sickleStone = new ItemToolSickle(ItemIDs.SICKLE_STONE_ID, EnumToolMaterial.STONE);
+        sickleIron = new ItemToolSickle(ItemIDs.SICKLE_IRON_ID, EnumToolMaterial.IRON);
+        sickleGolden = new ItemToolSickle(ItemIDs.SICKLE_GOLDEN_ID, EnumToolMaterial.GOLD);
+        sickleDiamond = new ItemToolSickle(ItemIDs.SICKLE_DIAMOND_ID, EnumToolMaterial.EMERALD);
         sickleRuby = new ItemToolSickle(ItemIDs.SICKLE_RUBY_ID, ruby);
         sickleGreenSapphire = new ItemToolSickle(ItemIDs.SICKLE_GREEN_SAPPHIRE_ID, greenSapphire);
         sickleSapphire = new ItemToolSickle(ItemIDs.SICKLE_SAPPHIRE_ID, sapphire);
         
+        GameRegistry.registerItem(sickleWooden, "sickleWooden");
+        GameRegistry.registerItem(sickleStone, "sickleStone");
+        GameRegistry.registerItem(sickleIron, "sickleIron");
+        GameRegistry.registerItem(sickleGolden, "sickleGolden");
+        GameRegistry.registerItem(sickleDiamond, "sickleDiamond");
         GameRegistry.registerItem(sickleRuby, "sickleRuby");
         GameRegistry.registerItem(sickleGreenSapphire, "sickleGreenSapphire");
         GameRegistry.registerItem(sickleSapphire, "sickleSapphire");
-
-        LanguageRegistry.addName(new ItemStack(sickleRuby, 1), Strings.ORE_NAMES[0] + " Sickle");
-        LanguageRegistry.addName(new ItemStack(sickleGreenSapphire, 1), Strings.ORE_NAMES[1] + " Sickle");
-        LanguageRegistry.addName(new ItemStack(sickleSapphire, 1), Strings.ORE_NAMES[2] + " Sickle");
+        
+        LanguageRegistry.addName(new ItemStack(sickleWooden, 1), Strings.SICKLES[0] + " Sickle");
+        LanguageRegistry.addName(new ItemStack(sickleStone, 1), Strings.SICKLES[1] + " Sickle");
+        LanguageRegistry.addName(new ItemStack(sickleIron, 1), Strings.SICKLES[2] + " Sickle");
+        LanguageRegistry.addName(new ItemStack(sickleGolden, 1), Strings.SICKLES[3] + " Sickle");
+        LanguageRegistry.addName(new ItemStack(sickleDiamond, 1), Strings.SICKLES[4] + " Sickle");
+        LanguageRegistry.addName(new ItemStack(sickleRuby, 1), Strings.SICKLES[5] + " Sickle");
+        LanguageRegistry.addName(new ItemStack(sickleGreenSapphire, 1), "Green Sapphire Sickle"); //derp
+        LanguageRegistry.addName(new ItemStack(sickleSapphire, 1), Strings.SICKLES[7] + " Sickle");
         
         //Athame
         athame = new ItemToolAthame(ItemIDs.ATHAME_ID, EnumToolMaterial.EMERALD);

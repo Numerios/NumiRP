@@ -20,19 +20,33 @@ public class ItemToolSickle extends ItemTool {
 
     public ItemToolSickle(int itemId, EnumToolMaterial material) {
         super(itemId, 1, material, blocksEffectiveAgainst);
-
-        if (material.name() == "RUBY") {
-            setUnlocalizedName("sickleRuby");
+        if (material.name() == "WOOD") {
+            setUnlocalizedName("sickleWooden");
             materialId = 0;
+        } else if (material.name() == "STONE") {
+            setUnlocalizedName("sickleStone");
+            materialId = 1;
+        } else if (material.name() == "IRON") {
+            setUnlocalizedName("sickleIron");
+            materialId = 2;
+        } else if (material.name() == "GOLD") {
+            setUnlocalizedName("sickleGolden");
+            materialId = 3;
+        } else if (material.name() == "EMERALD") {
+            setUnlocalizedName("sickleDiamond");
+            materialId = 4;
+        } else if (material.name() == "RUBY") {
+            setUnlocalizedName("sickleRuby");
+            materialId = 5;
         } else if (material.name() == "GREENSAPPHIRE") {
             setUnlocalizedName("sickleGreenSapphire");
-            materialId = 1;
+            materialId = 6;
         } else if (material.name() == "SAPPHIRE") {
             setUnlocalizedName("sickleSapphire");
-            materialId = 2;
+            materialId = 7;
         } else {
             setUnlocalizedName("sickleUnknown");
-            materialId = 3;
+            materialId = 8;
         }
     }
 
@@ -63,6 +77,6 @@ public class ItemToolSickle extends ItemTool {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {
         itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "sickle"
-                + Strings.ORES[materialId]);
+                + Strings.SICKLES[materialId]);
     }
 }
