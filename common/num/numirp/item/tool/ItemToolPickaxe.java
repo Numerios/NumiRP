@@ -8,10 +8,10 @@ import num.numirp.lib.Strings;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ToolPickaxe extends ItemPickaxe {
+public class ItemToolPickaxe extends ItemPickaxe {
     private int materialId;
 
-    public ToolPickaxe(int itemId, EnumToolMaterial material) {
+    public ItemToolPickaxe(int itemId, EnumToolMaterial material) {
         super(itemId, material);
 
         if(material.name() == "RUBY") {

@@ -15,11 +15,11 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
 import num.numirp.lib.Reference;
 
-public class ItemAthame extends ItemSword {
+public class ItemToolAthame extends ItemSword {
 
     private int weaponDamage;
     
-    public ItemAthame(int id, EnumToolMaterial material) {
+    public ItemToolAthame(int id, EnumToolMaterial material) {
         super(id, material);
         
         weaponDamage = 1 + material.getDamageVsEntity();
@@ -37,7 +37,7 @@ public class ItemAthame extends ItemSword {
     {
         if(entity instanceof EntityEnderman) {
             Random random = new Random();
-            int multiplier = random.nextInt(2);
+            int multiplier = random.nextInt(3);
             return this.weaponDamage * (multiplier + 6);
         }
         return this.weaponDamage;

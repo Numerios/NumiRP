@@ -10,11 +10,13 @@ import net.minecraftforge.oredict.OreDictionary;
 import num.numirp.lib.ItemIDs;
 import num.numirp.lib.Metadata;
 import num.numirp.lib.Strings;
-import num.numirp.item.tool.ItemAthame;
-import num.numirp.item.tool.ToolAxe;
-import num.numirp.item.tool.ToolPickaxe;
-import num.numirp.item.tool.ToolShovel;
-import num.numirp.item.tool.ToolSickle;
+import num.numirp.item.tool.ItemToolAthame;
+import num.numirp.item.tool.ItemToolAxe;
+import num.numirp.item.tool.ItemToolHoe;
+import num.numirp.item.tool.ItemToolPickaxe;
+import num.numirp.item.tool.ItemToolShovel;
+import num.numirp.item.tool.ItemToolSickle;
+import num.numirp.item.tool.ItemToolSword;
 
 public class ModItems {
     public static Item itemProcessed;
@@ -24,7 +26,9 @@ public class ModItems {
     // Tools
     public static Item pickaxeRuby, pickaxeGreenSapphire, pickaxeSapphire;
     public static Item shovelRuby, shovelGreenSapphire, shovelSapphire;
-    public static Item axeRuby,axeGreenSapphire, axeSapphire;
+    public static Item axeRuby, axeGreenSapphire, axeSapphire;
+    public static Item swordRuby, swordGreenSapphire, swordSapphire;
+    public static Item hoeRuby, hoeGreenSapphire, hoeSapphire;
     public static Item sickleRuby, sickleGreenSapphire, sickleSapphire;
     public static Item athame;
 
@@ -64,10 +68,10 @@ public class ModItems {
         OreDictionary.registerOre("ingotTungsten", ingotTungsten);
 
         // Pickaxes
-        pickaxeRuby = new ToolPickaxe(ItemIDs.PICKAXE_RUBY_ID, ruby);
-        pickaxeGreenSapphire = new ToolPickaxe(ItemIDs.PICKAXE_GREEN_SAPPHIRE_ID,
+        pickaxeRuby = new ItemToolPickaxe(ItemIDs.PICKAXE_RUBY_ID, ruby);
+        pickaxeGreenSapphire = new ItemToolPickaxe(ItemIDs.PICKAXE_GREEN_SAPPHIRE_ID,
                 greenSapphire);
-        pickaxeSapphire = new ToolPickaxe(ItemIDs.PICKAXE_SAPPHIRE_ID, sapphire);
+        pickaxeSapphire = new ItemToolPickaxe(ItemIDs.PICKAXE_SAPPHIRE_ID, sapphire);
 
         GameRegistry.registerItem(pickaxeRuby, "pickaxeRuby");
         GameRegistry.registerItem(pickaxeGreenSapphire, "pickaxeGreenSapphire");
@@ -79,10 +83,10 @@ public class ModItems {
         LanguageRegistry.addName(new ItemStack(pickaxeSapphire, 1), Strings.ORE_NAMES[2] + " Pickaxe");
 
         // Shovels
-        shovelRuby = new ToolShovel(ItemIDs.SHOVEL_RUBY_ID, ruby);
-        shovelGreenSapphire = new ToolShovel(ItemIDs.SHOVEL_GREEN_SAPPHIRE_ID,
+        shovelRuby = new ItemToolShovel(ItemIDs.SHOVEL_RUBY_ID, ruby);
+        shovelGreenSapphire = new ItemToolShovel(ItemIDs.SHOVEL_GREEN_SAPPHIRE_ID,
                 greenSapphire);
-        shovelSapphire = new ToolShovel(ItemIDs.SHOVEL_SAPPHIRE_ID, sapphire);
+        shovelSapphire = new ItemToolShovel(ItemIDs.SHOVEL_SAPPHIRE_ID, sapphire);
 
         GameRegistry.registerItem(shovelRuby, "shovelRuby");
         GameRegistry.registerItem(shovelGreenSapphire, "shovelGreenSapphire");
@@ -93,10 +97,10 @@ public class ModItems {
                 Strings.ORE_NAMES[1] + " Shovel");
         LanguageRegistry.addName(new ItemStack(shovelSapphire, 1), Strings.ORE_NAMES[2] + " Shovel");
 
-        // Shovels
-        axeRuby = new ToolAxe(ItemIDs.AXE_RUBY_ID, ruby);
-        axeGreenSapphire = new ToolAxe(ItemIDs.AXE_GREEN_SAPPHIRE_ID, greenSapphire);
-        axeSapphire = new ToolAxe(ItemIDs.AXE_SAPPHIRE_ID, sapphire);
+        // Axes
+        axeRuby = new ItemToolAxe(ItemIDs.AXE_RUBY_ID, ruby);
+        axeGreenSapphire = new ItemToolAxe(ItemIDs.AXE_GREEN_SAPPHIRE_ID, greenSapphire);
+        axeSapphire = new ItemToolAxe(ItemIDs.AXE_SAPPHIRE_ID, sapphire);
 
         GameRegistry.registerItem(axeRuby, "axeRuby");
         GameRegistry.registerItem(axeGreenSapphire, "axeGreenSapphire");
@@ -105,18 +109,43 @@ public class ModItems {
         LanguageRegistry.addName(new ItemStack(axeRuby, 1), Strings.ORE_NAMES[0] + " Axe");
         LanguageRegistry.addName(new ItemStack(axeGreenSapphire, 1), Strings.ORE_NAMES[1] + " Axe");
         LanguageRegistry.addName(new ItemStack(axeSapphire, 1), Strings.ORE_NAMES[2] + " Axe");
+        
+        // Swords
+        swordRuby = new ItemToolSword(ItemIDs.SWORD_RUBY_ID, ruby);
+        swordGreenSapphire = new ItemToolSword(ItemIDs.SWORD_GREEN_SAPPHIRE_ID, greenSapphire);
+        swordSapphire = new ItemToolSword(ItemIDs.SWORD_SAPPHIRE_ID, sapphire);
 
+        GameRegistry.registerItem(swordRuby, "swordRuby");
+        GameRegistry.registerItem(swordGreenSapphire, "swordGreenSapphire");
+        GameRegistry.registerItem(swordSapphire, "swordSapphire");
+
+        LanguageRegistry.addName(new ItemStack(swordRuby, 1), Strings.ORE_NAMES[0] + " Sword");
+        LanguageRegistry.addName(new ItemStack(swordGreenSapphire, 1), Strings.ORE_NAMES[1] + " Sword");
+        LanguageRegistry.addName(new ItemStack(swordSapphire, 1), Strings.ORE_NAMES[2] + " Sword");
+        
+        // Hoes
+        hoeRuby = new ItemToolHoe(ItemIDs.HOE_RUBY_ID, ruby);
+        hoeGreenSapphire = new ItemToolHoe(ItemIDs.HOE_GREEN_SAPPHIRE_ID, greenSapphire);
+        hoeSapphire = new ItemToolHoe(ItemIDs.HOE_SAPPHIRE_ID, sapphire);
+
+        GameRegistry.registerItem(hoeRuby, "hoeRuby");
+        GameRegistry.registerItem(hoeGreenSapphire, "hoeGreenSapphire");
+        GameRegistry.registerItem(hoeSapphire, "hoeSapphire");
+
+        LanguageRegistry.addName(new ItemStack(hoeRuby, 1), Strings.ORE_NAMES[0] + " Hoe");
+        LanguageRegistry.addName(new ItemStack(hoeGreenSapphire, 1), Strings.ORE_NAMES[1] + " Hoe");
+        LanguageRegistry.addName(new ItemStack(hoeSapphire, 1), Strings.ORE_NAMES[2] + " Hoe");
+        
+        // Sickles
+        sickleRuby = new ItemToolSickle(ItemIDs.SICKLE_RUBY_ID, ruby);
+        sickleGreenSapphire = new ItemToolSickle(ItemIDs.SICKLE_GREEN_SAPPHIRE_ID, greenSapphire);
+        sickleSapphire = new ItemToolSickle(ItemIDs.SICKLE_SAPPHIRE_ID, sapphire);
 
         // Athames
-        athame = new ItemAthame(ItemIDs.ATHAME_ID, EnumToolMaterial.IRON);
+        athame = new ItemToolAthame(ItemIDs.ATHAME_ID, EnumToolMaterial.IRON);
         GameRegistry.registerItem(athame, "athame");
         LanguageRegistry.addName(new ItemStack(athame, 1), Strings.ATHAME[0]);
-        
-        sickleRuby = new ToolSickle(ItemIDs.SICKLE_RUBY_ID, ruby);
-        sickleGreenSapphire = new ToolSickle(ItemIDs.SICKLE_GREEN_SAPPHIRE_ID, greenSapphire);
-        sickleSapphire = new ToolSickle(ItemIDs.SICKLE_SAPPHIRE_ID, sapphire);
 
-        // Sickles
         GameRegistry.registerItem(sickleRuby, "sickleRuby");
         GameRegistry.registerItem(sickleGreenSapphire, "sickleGreenSapphire");
         GameRegistry.registerItem(sickleSapphire, "sickleSapphire");
