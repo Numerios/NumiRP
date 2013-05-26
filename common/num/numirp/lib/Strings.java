@@ -7,10 +7,10 @@ public class Strings {
             "Silver", "Tin", "Copper", "Nikolite", "Tungsten" };
 
     public static final String[] PROCESSED = { "gemRuby", "gemGreenSapphire",
-            "gemSapphire", "ingotTin", "ingotCopper", "ingotSilver", "dustNikolite",
+            "gemSapphire", "ingotSilver", "ingotTin", "ingotCopper", "dustNikolite",
             "ingotTungsten" };
     public static final String[] PROCESSED_NAMES = { "Ruby Gem", "Green Sapphire Gem",
-            "Sapphire Gem", "Tin Ingot", "Copper Ingot", "Silver Ingot", "Nikolite Dust",
+            "Sapphire Gem", "Silver Ingot", "Tin Ingot", "Copper Ingot", "Nikolite Dust",
             "Tungsten Ingot" };
 
     public static final String[] DECOR = { "Marble", "Basalt", "MarbleBrick",
