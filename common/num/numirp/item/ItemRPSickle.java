@@ -14,7 +14,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemRPSickle extends ItemTool {
-    private static Block[] blocksEffectiveAgainst = new Block[] { Block.leaves, Block.grass, Block.vine };
+    private static Block[] blocksEffectiveAgainst = new Block[] { Block.leaves, Block.tallGrass, Block.vine };
     private int materialId;
 
     public ItemRPSickle(int itemId, EnumToolMaterial material) {
@@ -37,6 +37,10 @@ public class ItemRPSickle extends ItemTool {
         setMaxDamage(120);
     }
 
+    public float getStrVsBlock(ItemStack itemstack, Block block)
+    {
+        return 0.5F;
+    }
     @Override
     public boolean onBlockDestroyed(ItemStack itemstack, World world, int par3, int x, int y, int z, EntityLiving entity) {
         Material material = world.getBlockMaterial(x, y, z);
