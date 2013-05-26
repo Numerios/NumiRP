@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
@@ -36,13 +37,17 @@ public class ItemToolSickle extends ItemTool {
         }
     }
 
+    @Override
     public float getStrVsBlock(ItemStack itemstack, Block block) {
+        if(block.blockMaterial == Material.leaves){
+            return 1.5F;
+        }
         return 0.5F;
     }
 
     @Override
-    public boolean onBlockDestroyed(ItemStack itemstack, World world, int par3, int x,
-            int y, int z, EntityLiving entity) {
+    public boolean onBlockStartBreak(ItemStack itemstack, int x, int y, int z, EntityPlayer player) {
+        World world = player.worldObj;
         Material material = world.getBlockMaterial(x, y, z);
         for (int i = x - 1; i <= x + 1; i++) {
             for (int j = y - 1; j <= y + 1; j++) {
@@ -51,11 +56,16 @@ public class ItemToolSickle extends ItemTool {
                     if (material == Material.plants || material == Material.vine
                             || material == Material.leaves) {
                         world.destroyBlock(i, j, k, true);
-                        itemstack.damageItem(1, entity);
+                        itemstack.damageItem(1, player);
                     }
                 }
             }
         }
+        return false;
+    }
+
+    @Override
+    public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLiving par7EntityLiving) {
         return true;
     }
 
