@@ -17,7 +17,7 @@ public class ItemProcessed extends Item {
         super(id);
         setHasSubtypes(true);
         setMaxDamage(0);
-        setCreativeTab(CreativeTabs.tabCombat); // yea, yea, yea... temporary
+        setCreativeTab(CreativeTabs.tabMaterials); // yea, yea, yea... temporary
     }
 
     @SideOnly(Side.CLIENT)

@@ -27,6 +27,8 @@ public class ItemIDs {
     public static int SICKLE_GREEN_SAPPHIRE_ID_DEFAULT = 6867;
     public static int SICKLE_SAPPHIRE_ID_DEFAULT = 6868;
 
+    public static int ATHAME_ID_DEFAULT = 6869;
+
     public static int PROCESSED_ID;
     
     public static int PICKAXE_RUBY_ID;
@@ -52,5 +54,7 @@ public class ItemIDs {
     public static int SICKLE_RUBY_ID;
     public static int SICKLE_GREEN_SAPPHIRE_ID;
     public static int SICKLE_SAPPHIRE_ID;
+
+    public static int ATHAME_ID;
 
 }
