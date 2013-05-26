@@ -48,12 +48,7 @@ public class ItemRPAthame extends ItemSword {
     {
         return false;
     }
-    /*
-    @Override
-    public boolean getIsRepairable(ItemStack itemstack1, ItemStack itemstack2)
-    {
-        return false;
-    }*/
+    
     @Override
     public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
     {
