@@ -4,9 +4,9 @@ public class Metadata {
     public static int RUBY = 0;
     public static int GREENSAPPHIRE = 1;
     public static int SAPPHIRE = 2;
-    public static int TIN = 3;
-    public static int COPPER = 4;
-    public static int SILVER = 5;
+    public static int TIN = 4;
+    public static int COPPER = 5;
+    public static int SILVER = 3;
     public static int NIKOLITE = 6;
     public static int TUNGSTEN = 7;
 
