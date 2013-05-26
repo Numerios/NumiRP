@@ -44,8 +44,8 @@ public class ModCrafting {
                 new Object[] { "#", Character.valueOf('#'),
                 ModBlocks.blockStorageCopper });
         GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.SILVER),
-                        new Object[] { "#", Character.valueOf('#'),
-                                ModBlocks.blockStorageSilver });
+               new Object[] { "#", Character.valueOf('#'),
+               ModBlocks.blockStorageSilver });
         GameRegistry.addRecipe(
                 new ItemStack(ModItems.itemProcessed, 9, Metadata.NIKOLITE),
                 new Object[] { "#", Character.valueOf('#'),
@@ -124,5 +124,7 @@ public class ModCrafting {
         GameRegistry.addRecipe(new ItemStack(ModItems.axeSapphire),
                 new Object[] { " ##", " I#", " I ", Character.valueOf('#'),
                         ModItems.gemSapphire, Character.valueOf('I'), Item.stick });
+        
+        //Sickle
     }
 }

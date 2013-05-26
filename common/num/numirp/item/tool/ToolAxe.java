@@ -1,4 +1,4 @@
-package num.numirp.item;
+package num.numirp.item.tool;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumToolMaterial;
@@ -8,10 +8,10 @@ import num.numirp.lib.Strings;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemRPAxe extends ItemAxe {
+public class ToolAxe extends ItemAxe {
     private int materialId;
 
-    public ItemRPAxe(int itemId, EnumToolMaterial material) {
+    public ToolAxe(int itemId, EnumToolMaterial material) {
         super(itemId, material);
 
         if(material.name() == "RUBY") {

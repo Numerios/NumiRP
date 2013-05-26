@@ -1,30 +1,30 @@
-package num.numirp.item;
+package num.numirp.item.tool;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumToolMaterial;
-import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemSpade;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemRPPickaxe extends ItemPickaxe {
+public class ToolShovel extends ItemSpade {
     private int materialId;
 
-    public ItemRPPickaxe(int itemId, EnumToolMaterial material) {
+    public ToolShovel(int itemId, EnumToolMaterial material) {
         super(itemId, material);
 
         if(material.name() == "RUBY") {
-            setUnlocalizedName("pickaxeRuby");
+            setUnlocalizedName("shovelRuby");
             materialId = 0;
         } else if(material.name() == "GREENSAPPHIRE") {
-            setUnlocalizedName("pickaxeGreenSapphire");
+            setUnlocalizedName("shovelGreenSapphire");
             materialId = 1;
         } else if(material.name() == "SAPPHIRE") {
-            setUnlocalizedName("pickaxeSapphire");
+            setUnlocalizedName("shovelSapphire");
             materialId = 2;
         } else {
-            setUnlocalizedName("pickaxeUnknown");
+            setUnlocalizedName("shovelUnknown");
             materialId = 3;
         }
     }
@@ -32,6 +32,6 @@ public class ItemRPPickaxe extends ItemPickaxe {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {
-        itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "pickaxe" + Strings.ORES[materialId]);
+        itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "shovel" + Strings.ORES[materialId]);
     }
 }
