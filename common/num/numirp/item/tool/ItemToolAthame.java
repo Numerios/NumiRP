@@ -13,6 +13,7 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
+import num.numirp.NumiRP;
 import num.numirp.lib.Reference;
 
 public class ItemToolAthame extends ItemSword {
@@ -21,6 +22,7 @@ public class ItemToolAthame extends ItemSword {
     public ItemToolAthame(int id, EnumToolMaterial material) {
         super(id, material);
         setUnlocalizedName("athame");
+        setCreativeTab(NumiRP.tabRP);
     }
 
     @Override

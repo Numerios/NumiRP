@@ -10,6 +10,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraftforge.common.MinecraftForge;
+import num.numirp.NumiRP;
 import num.numirp.item.ModItems;
 import num.numirp.lib.Metadata;
 import num.numirp.lib.Reference;
@@ -24,7 +25,7 @@ public class BlockOres extends Block {
         setHardness(3.0F);
         setResistance(5.0F);
         setStepSound(soundStoneFootstep);
-        setCreativeTab(CreativeTabs.tabMaterials);
+        setCreativeTab(NumiRP.tabRP);
         setUnlocalizedName("numirpworld.ore");
 
         MinecraftForge.setBlockHarvestLevel(this, 0, "pickaxe", 2);

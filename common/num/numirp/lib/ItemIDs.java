@@ -1,38 +1,38 @@
 package num.numirp.lib;
 
 public class ItemIDs {
-    public static int PROCESSED_ID_DEFAULT = 6850;
+    public static int PROCESSED_ID_DEFAULT = 1257;
     
-    public static int PICKAXE_RUBY_ID_DEFAULT = 6851;
-    public static int PICKAXE_GREEN_SAPPHIRE_ID_DEFAULT = 6852;
-    public static int PICKAXE_SAPPHIRE_ID_DEFAULT = 6853;
+    public static int PICKAXE_RUBY_ID_DEFAULT = 1281;
+    public static int PICKAXE_GREEN_SAPPHIRE_ID_DEFAULT = 1282;
+    public static int PICKAXE_SAPPHIRE_ID_DEFAULT = 1283;
     
-    public static int SHOVEL_RUBY_ID_DEFAULT = 6854;
-    public static int SHOVEL_GREEN_SAPPHIRE_ID_DEFAULT = 6855;
-    public static int SHOVEL_SAPPHIRE_ID_DEFAULT = 6856;
+    public static int SHOVEL_RUBY_ID_DEFAULT = 1278;
+    public static int SHOVEL_GREEN_SAPPHIRE_ID_DEFAULT = 1279;
+    public static int SHOVEL_SAPPHIRE_ID_DEFAULT = 1280;
     
-    public static int AXE_RUBY_ID_DEFAULT = 6857;
-    public static int AXE_GREEN_SAPPHIRE_ID_DEFAULT = 6858;
-    public static int AXE_SAPPHIRE_ID_DEFAULT = 6859;
+    public static int AXE_RUBY_ID_DEFAULT = 1284;
+    public static int AXE_GREEN_SAPPHIRE_ID_DEFAULT = 1285;
+    public static int AXE_SAPPHIRE_ID_DEFAULT = 1286;
     
-    public static int SWORD_RUBY_ID_DEFAULT = 6860;
-    public static int SWORD_GREEN_SAPPHIRE_ID_DEFAULT = 6861;
-    public static int SWORD_SAPPHIRE_ID_DEFAULT = 6862;
+    public static int SWORD_RUBY_ID_DEFAULT = 1275;
+    public static int SWORD_GREEN_SAPPHIRE_ID_DEFAULT = 1276;
+    public static int SWORD_SAPPHIRE_ID_DEFAULT = 1277;
     
-    public static int HOE_RUBY_ID_DEFAULT = 6863;
-    public static int HOE_GREEN_SAPPHIRE_ID_DEFAULT = 6864;
-    public static int HOE_SAPPHIRE_ID_DEFAULT = 6865;
+    public static int HOE_RUBY_ID_DEFAULT = 1287;
+    public static int HOE_GREEN_SAPPHIRE_ID_DEFAULT = 1288;
+    public static int HOE_SAPPHIRE_ID_DEFAULT = 1289;
     
-    public static int SICKLE_WOODEN_ID_DEFAULT = 6866;
-    public static int SICKLE_STONE_ID_DEFAULT = 6867;
-    public static int SICKLE_IRON_ID_DEFAULT = 6868;
-    public static int SICKLE_GOLDEN_ID_DEFAULT = 6869;
-    public static int SICKLE_DIAMOND_ID_DEFAULT = 6870;
-    public static int SICKLE_RUBY_ID_DEFAULT = 6871;
-    public static int SICKLE_GREEN_SAPPHIRE_ID_DEFAULT = 6872;
-    public static int SICKLE_SAPPHIRE_ID_DEFAULT = 6873;
+    public static int SICKLE_WOODEN_ID_DEFAULT = 1267;
+    public static int SICKLE_STONE_ID_DEFAULT = 1268;
+    public static int SICKLE_IRON_ID_DEFAULT = 1269;
+    public static int SICKLE_GOLDEN_ID_DEFAULT = 1271;
+    public static int SICKLE_DIAMOND_ID_DEFAULT = 1270;
+    public static int SICKLE_RUBY_ID_DEFAULT = 1272;
+    public static int SICKLE_GREEN_SAPPHIRE_ID_DEFAULT = 1273;
+    public static int SICKLE_SAPPHIRE_ID_DEFAULT = 1274;
     
-    public static int ATHAME_ID_DEFAULT = 6874;
+    public static int ATHAME_ID_DEFAULT = 1329;
 
     
     

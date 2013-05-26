@@ -9,6 +9,7 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.world.World;
+import num.numirp.NumiRP;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
 import cpw.mods.fml.relauncher.Side;
@@ -21,6 +22,7 @@ public class ItemToolSickle extends ItemTool {
 
     public ItemToolSickle(int itemId, EnumToolMaterial material) {
         super(itemId, 1, material, blocksEffectiveAgainst);
+        setCreativeTab(NumiRP.tabRP);
         if (material.name() == "WOOD") {
             setUnlocalizedName("sickleWooden");
             materialId = 0;

@@ -3,6 +3,7 @@ package num.numirp.item.tool;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemPickaxe;
+import num.numirp.NumiRP;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
 import cpw.mods.fml.relauncher.Side;
@@ -13,6 +14,7 @@ public class ItemToolPickaxe extends ItemPickaxe {
 
     public ItemToolPickaxe(int itemId, EnumToolMaterial material) {
         super(itemId, material);
+        setCreativeTab(NumiRP.tabRP);
 
         if(material.name() == "RUBY") {
             setUnlocalizedName("pickaxeRuby");

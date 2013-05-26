@@ -12,6 +12,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraftforge.common.MinecraftForge;
+import num.numirp.NumiRP;
 import num.numirp.lib.Metadata;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
@@ -22,7 +23,7 @@ public class BlockDecor extends Block {
         setHardness(3.0F);
         setResistance(5.0F);
         setStepSound(soundStoneFootstep);
-        setCreativeTab(CreativeTabs.tabMaterials);
+        setCreativeTab(NumiRP.tabRP);
         setUnlocalizedName("numirpworld.decor");
 
         MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 0);

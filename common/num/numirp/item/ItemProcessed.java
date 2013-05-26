@@ -9,6 +9,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import num.numirp.NumiRP;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
 
@@ -17,7 +18,7 @@ public class ItemProcessed extends Item {
         super(id);
         setHasSubtypes(true);
         setMaxDamage(0);
-        setCreativeTab(CreativeTabs.tabCombat); // yea, yea, yea... temporary
+        setCreativeTab(NumiRP.tabRP);
     }
 
     @SideOnly(Side.CLIENT)

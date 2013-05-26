@@ -5,6 +5,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemSword;
+import num.numirp.NumiRP;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
 
@@ -13,6 +14,7 @@ public class ItemToolSword extends ItemSword{
 
     public ItemToolSword(int itemId, EnumToolMaterial material) {
         super(itemId, material);
+        setCreativeTab(NumiRP.tabRP);
 
         if(material.name() == "RUBY") {
             setUnlocalizedName("swordRuby");

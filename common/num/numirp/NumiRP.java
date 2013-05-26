@@ -1,7 +1,9 @@
 package num.numirp;
 
+import net.minecraft.creativetab.CreativeTabs;
 import num.numirp.block.ModBlocks;
 import num.numirp.config.ConfigHandler;
+import num.numirp.creativetab.CreativeTabRP;
 import num.numirp.item.ModItems;
 import num.numirp.lib.Reference;
 import num.numirp.recipe.ModCrafting;
@@ -23,6 +25,9 @@ public class NumiRP {
     @Instance(Reference.MOD_ID)
     public static NumiRP instance;
 
+    public static CreativeTabs tabRP = new CreativeTabRP(CreativeTabs.getNextID(),
+            Reference.MOD_ID);
+
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
         ConfigHandler.init(event.getSuggestedConfigurationFile());
@@ -36,6 +41,7 @@ public class NumiRP {
 
     @Init
     public void init(FMLInitializationEvent event) {
+      
     }
 
     @PostInit

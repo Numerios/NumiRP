@@ -2,6 +2,7 @@ package num.numirp.block;
 
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import num.numirp.NumiRP;
 import num.numirp.lib.Strings;
 
 public class ItemBlockOres extends ItemBlock {
@@ -9,6 +10,7 @@ public class ItemBlockOres extends ItemBlock {
         super(par1);
         setHasSubtypes(true);
         setMaxDamage(0);
+        setCreativeTab(NumiRP.tabRP);
     }
 
     @Override
