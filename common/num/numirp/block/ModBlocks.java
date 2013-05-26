@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import num.numirp.lib.BlockIDs;
+import num.numirp.lib.Metadata;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -33,14 +34,14 @@ public class ModBlocks {
             LanguageRegistry.addName(new ItemStack(blockOres, 1, i),
                     Strings.ORE_NAMES[i] + " Ore");
         }
-        oreRuby = new ItemStack(blockOres, 1, 0);
-        oreSapphire = new ItemStack(blockOres, 1, 1);
-        oreGreenSapphire = new ItemStack(blockOres, 1, 2);
-        oreTin = new ItemStack(blockOres, 1, 3);
-        oreCopper = new ItemStack(blockOres, 1, 4);
-        oreSilver = new ItemStack(blockOres, 1, 5);
-        oreNikolite = new ItemStack(blockOres, 1, 6);
-        oreTungsten = new ItemStack(blockOres, 1, 7);
+        oreRuby = new ItemStack(blockOres, 1, Metadata.RUBY);
+        oreGreenSapphire = new ItemStack(blockOres, 1, Metadata.GREENSAPPHIRE);
+        oreSapphire = new ItemStack(blockOres, 1, Metadata.SAPPHIRE);
+        oreTin = new ItemStack(blockOres, 1, Metadata.TIN);
+        oreCopper = new ItemStack(blockOres, 1, Metadata.COPPER);
+        oreSilver = new ItemStack(blockOres, 1, Metadata.SILVER);
+        oreNikolite = new ItemStack(blockOres, 1, Metadata.NIKOLITE);
+        oreTungsten = new ItemStack(blockOres, 1, Metadata.TUNGSTEN);
 
         OreDictionary.registerOre("oreSapphire", oreSapphire);
         OreDictionary.registerOre("oreGreenSapphire", oreGreenSapphire);
@@ -64,14 +65,14 @@ public class ModBlocks {
             LanguageRegistry.addName(new ItemStack(blockStorage, 1, i),
                     Strings.ORE_NAMES[i] + " Storage Block");
         }
-        blockStorageRuby = new ItemStack(blockStorage, 1, 0);
-        blockStorageGreenSapphire = new ItemStack(blockStorage, 1, 1);
-        blockStorageSapphire = new ItemStack(blockStorage, 1, 2);
-        blockStorageTin = new ItemStack(blockStorage, 1, 3);
-        blockStorageCopper = new ItemStack(blockStorage, 1, 4);
-        blockStorageSilver = new ItemStack(blockStorage, 1, 5);
-        blockStorageNikolite = new ItemStack(blockStorage, 1, 6);
-        blockStorageTungsten = new ItemStack(blockStorage, 1, 7);
+        blockStorageRuby = new ItemStack(blockStorage, 1, Metadata.RUBY);
+        blockStorageGreenSapphire = new ItemStack(blockStorage, 1, Metadata.GREENSAPPHIRE);
+        blockStorageSapphire = new ItemStack(blockStorage, 1, Metadata.SAPPHIRE);
+        blockStorageTin = new ItemStack(blockStorage, 1, Metadata.TIN);
+        blockStorageCopper = new ItemStack(blockStorage, 1, Metadata.COPPER);
+        blockStorageSilver = new ItemStack(blockStorage, 1, Metadata.SILVER);
+        blockStorageNikolite = new ItemStack(blockStorage, 1, Metadata.NIKOLITE);
+        blockStorageTungsten = new ItemStack(blockStorage, 1, Metadata.TUNGSTEN);
 
         OreDictionary.registerOre("blockStorageSapphire", blockStorageSapphire);
         OreDictionary.registerOre("blockStorageGreenSapphire",
@@ -96,13 +97,13 @@ public class ModBlocks {
             LanguageRegistry.addName(new ItemStack(blockDecor, 1, i),
                     Strings.DECOR_NAMES[i]);
         }
-        blockMarble = new ItemStack(blockDecor, 1, 0);
-        blockBasalt = new ItemStack(blockDecor, 1, 1);
-        blockMarbleBrick = new ItemStack(blockDecor, 1, 2);
-        blockBasaltCobble = new ItemStack(blockDecor, 1, 3);
-        blockBasaltBrick = new ItemStack(blockDecor, 1, 4);
-        blockBasaltChiseled = new ItemStack(blockDecor, 1, 5);
-        blockBasaltPaver = new ItemStack(blockDecor, 1, 6);
+        blockMarble = new ItemStack(blockDecor, 1, Metadata.MARBLE);
+        blockBasalt = new ItemStack(blockDecor, 1, Metadata.BASALT);
+        blockMarbleBrick = new ItemStack(blockDecor, 1, Metadata.MARBLEBRICK);
+        blockBasaltCobble = new ItemStack(blockDecor, 1, Metadata.BASALTCOBBLE);
+        blockBasaltBrick = new ItemStack(blockDecor, 1, Metadata.BASALTBRICK);
+        blockBasaltChiseled = new ItemStack(blockDecor, 1, Metadata.BASALTCHISELED);
+        blockBasaltPaver = new ItemStack(blockDecor, 1, Metadata.BASALTPAVER);
     }
 
 }

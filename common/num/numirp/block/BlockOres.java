@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraftforge.common.MinecraftForge;
 import num.numirp.item.ModItems;
+import num.numirp.lib.Metadata;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
 import cpw.mods.fml.relauncher.Side;
@@ -45,8 +46,7 @@ public class BlockOres extends Block {
         icons = new Icon[Strings.ORES.length];
 
         for (int i = 0; i < Strings.ORES.length; i++) {
-            icons[i] = ir.registerIcon(Reference.TEXTURE_PATH + "ore"
-                    + Strings.ORES[i]);
+            icons[i] = ir.registerIcon(Reference.TEXTURE_PATH + "ore" + Strings.ORES[i]);
         }
     }
 
@@ -57,7 +57,8 @@ public class BlockOres extends Block {
 
     @Override
     public int idDropped(int id, Random rand, int meta) {
-        if ((id < 3) || (id == 6))
+        if ((id == Metadata.RUBY) || (id == Metadata.GREENSAPPHIRE)
+                || (id == Metadata.SAPPHIRE) || (id == Metadata.NIKOLITE))
             return ModItems.itemProcessed.itemID;
         return this.blockID;
     }
@@ -69,9 +70,11 @@ public class BlockOres extends Block {
 
     @Override
     public int quantityDropped(int meta, int fortune, Random random) {
-        if (meta == 6)
-            return 4 + random.nextInt(2) + random.nextInt(fortune + 1); // same as RS
-        if (meta < 3) {
+        if (meta == Metadata.NIKOLITE)
+            return 4 + random.nextInt(2) + random.nextInt(fortune + 1); // same
+                                                                        // as RS
+        if ((meta == Metadata.RUBY) || (meta == Metadata.GREENSAPPHIRE)
+                || (meta == Metadata.SAPPHIRE)) {
             return random.nextInt(fortune + 1) + 1;
         }
         return 1;

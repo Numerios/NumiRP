@@ -12,6 +12,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraftforge.common.MinecraftForge;
+import num.numirp.lib.Metadata;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
 
@@ -48,8 +49,8 @@ public class BlockDecor extends Block {
 
     @Override
     public int damageDropped(int meta) {
-        if (meta == 1) {
-            return 3;
+        if (meta == Metadata.BASALT) {
+            return Metadata.BASALTCOBBLE;
         } else {
             return meta;
         }

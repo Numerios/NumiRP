@@ -1,4 +1,4 @@
-package num.numirp.item;
+package num.numirp.item.tool;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -13,11 +13,11 @@ import num.numirp.lib.Strings;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemRPSickle extends ItemTool {
-    private static Block[] blocksEffectiveAgainst = new Block[] { Block.leaves, Block.tallGrass, Block.vine };
+public class ToolSickle extends ItemTool {
+    private static Block[] blocksEffectiveAgainst = new Block[] { Block.leaves, Block.grass, Block.vine };
     private int materialId;
 
-    public ItemRPSickle(int itemId, EnumToolMaterial material) {
+    public ToolSickle(int itemId, EnumToolMaterial material) {
         super(itemId, 1, material, blocksEffectiveAgainst);
 
         if (material.name() == "RUBY") {

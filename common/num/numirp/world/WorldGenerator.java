@@ -7,7 +7,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import num.numirp.block.ModBlocks;
-import num.numirp.lib.Values;
+import num.numirp.lib.Metadata;
+import num.numirp.lib.WorldGen;
 import cpw.mods.fml.common.IWorldGenerator;
 
 public class WorldGenerator implements IWorldGenerator {
@@ -30,32 +31,50 @@ public class WorldGenerator implements IWorldGenerator {
     }
 
     private void generateSurface(World world, Random random, int x, int z) {
-        if(Values.WORLDGEN_RUBY) this.addOre(ModBlocks.blockOres, 0, world, random, x, z, 6, 2, 24, 48); // Ruby
-        if(Values.WORLDGEN_GREENSAPPHIRE) this.addOre(ModBlocks.blockOres, 1, world, random, x, z, 6, 2, 24, 48); // GSapphire
-        if(Values.WORLDGEN_SAPPHIRE) this.addOre(ModBlocks.blockOres, 2, world, random, x, z, 6, 2, 24, 48); // Sapphire
-        if(Values.WORLDGEN_TIN) this.addOre(ModBlocks.blockOres, 3, world, random, x, z, 8, 5, 15, 64); // Tin
-        if(Values.WORLDGEN_COPPER) this.addOre(ModBlocks.blockOres, 4, world, random, x, z, 8, 20, 24, 64); // Copper
-        if(Values.WORLDGEN_SILVER)  this.addOre(ModBlocks.blockOres, 5, world, random, x, z, 8, 5, 15, 48); // Silver
-        if(Values.WORLDGEN_NIKOLITE) this.addOre(ModBlocks.blockOres, 6, world, random, x, z, 8, 10, 0, 16); // Nikolite
-        if(Values.WORLDGEN_TUNGSTEN) this.addOre(ModBlocks.blockOres, 7, world, random, x, z, 2, 1, 0, 16); // Tungsten
-        if(Values.WORLDGEN_MARBLE) this.addOre(ModBlocks.blockDecor, 0, world, random, x, z, 64, 1, 48, 72); // Marble
-        if(Values.WORLDGEN_BASALT) this.addOre(ModBlocks.blockDecor, 1, world, random, x, z, 48, 1, 0, 24); // Basalt
+        if (WorldGen.WORLDGEN_RUBY)
+            this.addOre(ModBlocks.blockOres, Metadata.RUBY, world, random, x, z, 6, 2,
+                    24, 48);
+        if (WorldGen.WORLDGEN_GREENSAPPHIRE)
+            this.addOre(ModBlocks.blockOres, Metadata.GREENSAPPHIRE, world, random, x, z,
+                    6, 2, 24, 48);
+        if (WorldGen.WORLDGEN_SAPPHIRE)
+            this.addOre(ModBlocks.blockOres, Metadata.SAPPHIRE, world, random, x, z, 6,
+                    2, 24, 48);
+        if (WorldGen.WORLDGEN_TIN)
+            this.addOre(ModBlocks.blockOres, Metadata.TIN, world, random, x, z, 8, 5, 15,
+                    64);
+        if (WorldGen.WORLDGEN_COPPER)
+            this.addOre(ModBlocks.blockOres, Metadata.COPPER, world, random, x, z, 8, 20,
+                    24, 64);
+        if (WorldGen.WORLDGEN_SILVER)
+            this.addOre(ModBlocks.blockOres, Metadata.SILVER, world, random, x, z, 8, 5,
+                    15, 48);
+        if (WorldGen.WORLDGEN_NIKOLITE)
+            this.addOre(ModBlocks.blockOres, Metadata.NIKOLITE, world, random, x, z, 8,
+                    10, 0, 16);
+        if (WorldGen.WORLDGEN_TUNGSTEN)
+            this.addOre(ModBlocks.blockOres, Metadata.TUNGSTEN, world, random, x, z, 2,
+                    1, 0, 16);
+        if (WorldGen.WORLDGEN_MARBLE)
+            this.addOre(ModBlocks.blockDecor, Metadata.MARBLE, world, random, x, z, 64,
+                    1, 48, 72);
+        if (WorldGen.WORLDGEN_BASALT)
+            this.addOre(ModBlocks.blockDecor, Metadata.BASALT, world, random, x, z, 48,
+                    1, 0, 24);
     }
 
     private void generateNether(World world, Random random, int x, int z) {
 
     }
 
-    public void addOre(Block block, int meta, World world, Random random,
-            int blockXPos, int blockZPos, int clusterSize, int spawnChances,
-            int minY, int maxY) {
+    public void addOre(Block block, int meta, World world, Random random, int blockXPos,
+            int blockZPos, int clusterSize, int spawnChances, int minY, int maxY) {
         for (int x = 0; x < spawnChances; x++) {
             int posX = blockXPos + random.nextInt(16);
             int posY = minY + random.nextInt(maxY - minY);
             int posZ = blockZPos + random.nextInt(16);
-            (new WorldGenMinable(block.blockID, meta, clusterSize,
-                    Block.stone.blockID)).generate(world, random, posX, posY,
-                    posZ);
+            (new WorldGenMinable(block.blockID, meta, clusterSize, Block.stone.blockID))
+                    .generate(world, random, posX, posY, posZ);
         }
-    }    
+    }
 }

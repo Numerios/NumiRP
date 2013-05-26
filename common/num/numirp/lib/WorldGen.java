@@ -1,7 +1,6 @@
 package num.numirp.lib;
 
-public class Values {
-    //TODO: Think of a better name for this class. This one sucks.
+public class WorldGen {
     public static boolean WORLDGEN_RUBY_DEFAULT = true;
     public static boolean WORLDGEN_GREENSAPPHIRE_DEFAULT = true;
     public static boolean WORLDGEN_SAPPHIRE_DEFAULT = true;
