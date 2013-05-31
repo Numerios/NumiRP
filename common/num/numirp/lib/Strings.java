@@ -20,4 +20,11 @@ public class Strings {
 
     public static final String[] SICKLES = { "Wooden", "Stone", "Iron", "Golden",
             "Diamond", "Ruby", "GreenSapphire", "Sapphire" };
+
+    public static final String[] COLORS = { "White", "Orange", "Magenta", "LBlue",
+        "Yellow", "Lime", "Pink", "Gray", "LGray", "Cyan", "Purple", "Blue",
+        "Brown", "Green", "Red", "Black" };
+    public static final String[] COLOR_NAMES = { "White", "Orange", "Magenta", "Light Blue",
+        "Yellow", "Lime", "Pink", "Gray", "Light Gray", "Cyan", "Purple", "Blue",
+        "Brown", "Green", "Red", "Black" };
 }
