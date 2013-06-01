@@ -23,8 +23,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockLamp extends Block {
     private final boolean inverted;
-    private boolean isPowered;
-
     public BlockLamp(int id, boolean inverted) {
         super(id, Material.redstoneLight);
         this.inverted = inverted;
@@ -46,52 +44,54 @@ public class BlockLamp extends Block {
     @Override
     public void onBlockAdded(World world, int x, int y, int z) {
         if (!world.isRemote) {
-            isPowered = world.isBlockIndirectlyGettingPowered(x, y, z);
+            int nowMetadata = world.getBlockMetadata(x, y, z);
+
+            if (world.isBlockIndirectlyGettingPowered(x, y, z) && nowMetadata < 16) {
+                if (world.getBlockId(x, y, z) == BlockIDs.LAMPS_ID) {
+                    world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, nowMetadata + 16, 3);
+                } else {
+                    world.setBlock(x, y, z, BlockIDs.LAMPS_ID, nowMetadata + 16, 3);
+                }
+            } else {
+                world.scheduleBlockUpdate(x, y, z, blockID, 4);
+            }
         }
     }
 
     @Override
     public void onNeighborBlockChange(World world, int x, int y, int z, int neighborBlockId) {
         if (!world.isRemote) {
-            updateBlock(world, x, y, z);
+            int nowMetadata = world.getBlockMetadata(x, y, z);
+
+            if (world.isBlockIndirectlyGettingPowered(x, y, z) && nowMetadata < 16) {
+                if (world.getBlockId(x, y, z) == BlockIDs.LAMPS_ID) {
+                    world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, nowMetadata + 16, 2);
+                } else {
+                    world.setBlock(x, y, z, BlockIDs.LAMPS_ID, nowMetadata + 16, 2);
+                }
+            } else if(!world.isBlockIndirectlyGettingPowered(x, y, z) && nowMetadata > 16) {
+                if (world.getBlockId(x, y, z) == BlockIDs.LAMPS_ID) {
+                    world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, nowMetadata - 16, 2);
+                } else {
+                    world.setBlock(x, y, z, BlockIDs.LAMPS_ID, nowMetadata - 16, 2);
+                }
+            } else {
+                world.scheduleBlockUpdate(x, y, z, blockID, 4);
+            }
         }
     }
 
     @Override
     public void updateTick(World world, int x, int y, int z, Random random) {
         if (!world.isRemote) {
-            updateBlock(world, x, y, z);
-        }
-    }
+            int nowMetadata = world.getBlockMetadata(x, y, z);
 
-    private void updateBlock(World world, int x, int y, int z) {
-        int nowBlockId = world.getBlockId(x, y, z);
-        int nowMetadata = world.getBlockMetadata(x, y, z);
-        isPowered = world.isBlockIndirectlyGettingPowered(x, y, z);
-
-        if (nowBlockId == BlockIDs.LAMPS_ID && nowMetadata < 16) {
-            if (isPowered) {
-                world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, nowMetadata + 16, 3);
-            } else {
-                world.scheduleBlockUpdate(x, y, z, nowBlockId, 4);
-            }
-        } else if (nowBlockId == BlockIDs.LAMPS_ID && nowMetadata > 15) {
-            if (!isPowered) {
-                world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, nowMetadata - 16, 3);
-            } else {
-                world.scheduleBlockUpdate(x, y, z, nowBlockId, 4);
-            }
-        } else if (nowBlockId == BlockIDs.LAMPS_INVERTED_ID && nowMetadata < 16) {
-            if (isPowered) {
-                world.setBlock(x, y, z, BlockIDs.LAMPS_ID, nowMetadata + 16, 3);
-            } else {
-                world.scheduleBlockUpdate(x, y, z, nowBlockId, 4);
-            }
-        } else if (nowBlockId == BlockIDs.LAMPS_INVERTED_ID && nowMetadata > 15) {
-            if (!isPowered) {
-                world.setBlock(x, y, z, BlockIDs.LAMPS_ID, nowMetadata - 16, 3);
-            } else {
-                world.scheduleBlockUpdate(x, y, z, nowBlockId, 4);
+            if(!world.isBlockIndirectlyGettingPowered(x, y, z) && nowMetadata > 16) {
+                if (world.getBlockId(x, y, z) == BlockIDs.LAMPS_ID) {
+                    world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, nowMetadata - 16, 2);
+                } else {
+                    world.setBlock(x, y, z, BlockIDs.LAMPS_ID, nowMetadata - 16, 2);
+                }
             }
         }
     }
