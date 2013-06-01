@@ -14,6 +14,7 @@ import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PostInit;
 import cpw.mods.fml.common.Mod.PreInit;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -26,7 +27,10 @@ public class NumiRP {
     public static NumiRP instance;
 
     public static CreativeTabs tabRP = new CreativeTabRP(CreativeTabs.getNextID(),
-            Reference.MOD_ID);
+            Reference.MOD_ID); 
+
+    @SidedProxy(clientSide="num.numirp.ClientProxy", serverSide="num.numirp.CommonProxy") 
+    public static CommonProxy proxy;
 
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
@@ -36,7 +40,8 @@ public class NumiRP {
         GameRegistry.registerWorldGenerator(WorldGenerator.instance);
         ModCrafting.init();
         ModSmelting.init();
-
+        
+        ClientProxy.setCustomRenderers(); 
     }
 
     @Init

@@ -96,6 +96,12 @@ public class ConfigHandler {
             BlockIDs.DECOR_ID = conf.getBlock("decorative blocks (marble, basalt, etc.)",
                     BlockIDs.DECOR_ID_DEFAULT).getInt(
                     BlockIDs.DECOR_ID_DEFAULT);
+            BlockIDs.LAMPS_ID = conf.getBlock("lamps",
+                    BlockIDs.LAMPS_ID_DEFAULT).getInt(
+                    BlockIDs.LAMPS_ID_DEFAULT);
+            BlockIDs.LAMPS_INVERTED_ID = conf.getBlock("lampsInverted",
+                    BlockIDs.LAMPS_INVERTED_ID_DEFAULT).getInt(
+                    BlockIDs.LAMPS_INVERTED_ID_DEFAULT);
 
         } catch (Exception e) {
             FMLLog.log(Level.SEVERE, e, "Mod called " + Reference.MOD_NAME
