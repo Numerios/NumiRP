@@ -3,6 +3,7 @@ package num.numirp;
 import net.minecraft.creativetab.CreativeTabs;
 import num.numirp.block.ModBlocks;
 import num.numirp.config.ConfigHandler;
+import num.numirp.core.proxy.CommonProxy;
 import num.numirp.creativetab.CreativeTabRP;
 import num.numirp.item.ModItems;
 import num.numirp.lib.Reference;
@@ -27,9 +28,10 @@ public class NumiRP {
     public static NumiRP instance;
 
     public static CreativeTabs tabRP = new CreativeTabRP(CreativeTabs.getNextID(),
-            Reference.MOD_ID); 
+            Reference.MOD_ID);
 
-    @SidedProxy(clientSide="num.numirp.ClientProxy", serverSide="num.numirp.CommonProxy") 
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS,
+            serverSide = Reference.COMMON_PROXY_CLASS)
     public static CommonProxy proxy;
 
     @PreInit
@@ -40,13 +42,12 @@ public class NumiRP {
         GameRegistry.registerWorldGenerator(WorldGenerator.instance);
         ModCrafting.init();
         ModSmelting.init();
-        
-        ClientProxy.setCustomRenderers(); 
+
     }
 
     @Init
     public void init(FMLInitializationEvent event) {
-      
+        proxy.initRendering();
     }
 
     @PostInit

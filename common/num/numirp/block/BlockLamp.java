@@ -13,8 +13,8 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
-import num.numirp.ClientProxy;
 import num.numirp.NumiRP;
+import num.numirp.core.proxy.ClientProxy;
 import num.numirp.lib.BlockIDs;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
@@ -46,7 +46,7 @@ public class BlockLamp extends Block {
     public void onBlockAdded(World world, int x, int y, int z) {
         if (!world.isRemote) {
             int nowMetadata = world.getBlockMetadata(x, y, z);
-            
+
             if (world.isBlockIndirectlyGettingPowered(x, y, z) && nowMetadata < 16) {
                 world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, nowMetadata, 3);
             } else if (!world.isBlockIndirectlyGettingPowered(x, y, z))
@@ -58,10 +58,11 @@ public class BlockLamp extends Block {
     }
 
     @Override
-    public void onNeighborBlockChange(World world, int x, int y, int z, int neighborBlockId) {
+    public void onNeighborBlockChange(World world, int x, int y, int z,
+            int neighborBlockId) {
         if (!world.isRemote) {
             int nowMetadata = world.getBlockMetadata(x, y, z);
-            
+
             if (world.isBlockIndirectlyGettingPowered(x, y, z) && nowMetadata < 16) {
                 world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, nowMetadata, 3);
             } else if (!world.isBlockIndirectlyGettingPowered(x, y, z))
@@ -76,10 +77,11 @@ public class BlockLamp extends Block {
     public void updateTick(World world, int x, int y, int z, Random random) {
         if (!world.isRemote) {
             int nowMetadata = world.getBlockMetadata(x, y, z);
-            
+
             if (!world.isBlockIndirectlyGettingPowered(x, y, z) && nowMetadata > 16) {
                 if (world.getBlockId(x, y, z) == BlockIDs.LAMPS_ID) {
-                    world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, nowMetadata - 16, 2);
+                    world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, nowMetadata - 16,
+                            2);
                 } else {
                     world.setBlock(x, y, z, BlockIDs.LAMPS_ID, nowMetadata - 16, 2);
                 }
@@ -103,7 +105,8 @@ public class BlockLamp extends Block {
     }
 
     @Override
-    public boolean shouldSideBeRendered(IBlockAccess blockAccess, int x, int y, int z, int side) {
+    public boolean shouldSideBeRendered(IBlockAccess blockAccess, int x, int y, int z,
+            int side) {
         return true;
     }
 
@@ -138,7 +141,8 @@ public class BlockLamp extends Block {
         icons = new Icon[Strings.COLORS.length];
 
         for (int i = 0; i < Strings.COLORS.length; i++) {
-            icons[i] = ir.registerIcon(Reference.TEXTURE_PATH + "lamp" + Strings.COLORS[i]);
+            icons[i] = ir.registerIcon(Reference.TEXTURE_PATH + "lamp"
+                    + Strings.COLORS[i]);
         }
 
         glowTexture = ir.registerIcon(Reference.TEXTURE_PATH + "lampGlow");
