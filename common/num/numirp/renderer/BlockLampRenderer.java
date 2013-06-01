@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.world.IBlockAccess;
 import num.numirp.ClientProxy;
 import num.numirp.block.BlockLamp;
+import num.numirp.lib.BlockIDs;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 
 public class BlockLampRenderer implements ISimpleBlockRenderingHandler {
@@ -55,15 +56,16 @@ public class BlockLampRenderer implements ISimpleBlockRenderingHandler {
     @Override
     public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId, RenderBlocks renderer) {
         if (ClientProxy.renderPass == 1) {
-            BlockLamp lamp = (BlockLamp) block;
-            int metadata = world.getBlockMetadata(x, y, z);
-            Color colors = lamp.getOverlayColor(metadata);
-            
-            renderer.overrideBlockBounds(-0.02D, -0.02D, -0.02D, 1.04D, 1.04D, 1.04D);
-            renderer.setOverrideBlockTexture(lamp.glowTexture);
-            renderer.renderStandardBlockWithColorMultiplier(Block.ice, x, y, z, (float)colors.getRed()/255, (float)colors.getGreen()/255, (float)colors.getBlue()/255);
-            renderer.clearOverrideBlockTexture();
-            renderer.unlockBlockBounds();
+            if(world.getBlockId(x, y, z) == BlockIDs.LAMPS_INVERTED_ID){
+                BlockLamp lamp = (BlockLamp) block;
+                int metadata = world.getBlockMetadata(x, y, z);
+                Color colors = lamp.getOverlayColor(metadata);
+                renderer.overrideBlockBounds(-0.02D, -0.02D, -0.02D, 1.04D, 1.04D, 1.04D);
+                renderer.setOverrideBlockTexture(lamp.glowTexture);
+                renderer.renderStandardBlockWithColorMultiplier(Block.ice, x, y, z, (float)colors.getRed()/255, (float)colors.getGreen()/255, (float)colors.getBlue()/255);
+                renderer.clearOverrideBlockTexture();
+                renderer.unlockBlockBounds();
+            }
             return true;
         } else {
             if(renderer.hasOverrideBlockTexture()){
