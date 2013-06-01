@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import num.numirp.ClientProxy;
@@ -45,31 +46,13 @@ public class BlockLamp extends Block {
     @Override
     public void onBlockAdded(World world, int x, int y, int z) {
         if (!world.isRemote) {
-            if (world.isBlockIndirectlyGettingPowered(x, y, z)) {
-                System.err.println("@" + x + ";" + y + ";" + z + " > onBlockAdded() > powered");
-                isPowered = true;
-            } else {
-                System.err.println("@" + x + ";" + y + ";" + z + " > onBlockAdded()");
-                isPowered = false;
-            }
-            world.scheduleBlockUpdate(x, y, z, blockID, 2);
+            isPowered = world.isBlockIndirectlyGettingPowered(x, y, z);
         }
     }
 
     @Override
     public void onNeighborBlockChange(World world, int x, int y, int z, int neighborBlockId) {
         if (!world.isRemote) {
-            if (world.isBlockIndirectlyGettingPowered(x, y, z)) {
-                if(isPowered != true){
-                    isPowered = true;
-                    System.err.println("@" + x + ";" + y + ";" + z + " > onNeighborBlockChange() > powered");
-                }
-            } else {
-                if(isPowered != false){
-                    isPowered = false;
-                    System.err.println("@" + x + ";" + y + ";" + z + " > onNeighborBlockChange()");
-                }
-            }
             updateBlock(world, x, y, z);
         }
     }
@@ -77,17 +60,6 @@ public class BlockLamp extends Block {
     @Override
     public void updateTick(World world, int x, int y, int z, Random random) {
         if (!world.isRemote) {
-            if (world.isBlockIndirectlyGettingPowered(x, y, z)) {
-                if(isPowered != true){
-                    isPowered = true;
-                    System.err.println("@" + x + ";" + y + ";" + z + " > updateTick() > powered");
-                }
-            } else {
-                if(isPowered != false){
-                    isPowered = false;
-                    System.err.println("@" + x + ";" + y + ";" + z + " > updateTick()");
-                }
-            }
             updateBlock(world, x, y, z);
         }
     }
@@ -95,22 +67,31 @@ public class BlockLamp extends Block {
     private void updateBlock(World world, int x, int y, int z) {
         int nowBlockId = world.getBlockId(x, y, z);
         int nowMetadata = world.getBlockMetadata(x, y, z);
+        isPowered = world.isBlockIndirectlyGettingPowered(x, y, z);
 
-        boolean isInverted = true;
-        if ((nowBlockId == BlockIDs.LAMPS_ID && nowMetadata <= 15) || (nowBlockId == BlockIDs.LAMPS_INVERTED_ID && nowMetadata > 15))
-            isInverted = false;
-
-        if (!isInverted) {
+        if (nowBlockId == BlockIDs.LAMPS_ID && nowMetadata < 16) {
             if (isPowered) {
                 world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, nowMetadata + 16, 3);
             } else {
-                world.setBlock(x, y, z, BlockIDs.LAMPS_ID, nowMetadata - 16, 3);
+                world.scheduleBlockUpdate(x, y, z, nowBlockId, 4);
             }
-        } else {
+        } else if (nowBlockId == BlockIDs.LAMPS_ID && nowMetadata > 15) {
+            if (!isPowered) {
+                world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, nowMetadata - 16, 3);
+            } else {
+                world.scheduleBlockUpdate(x, y, z, nowBlockId, 4);
+            }
+        } else if (nowBlockId == BlockIDs.LAMPS_INVERTED_ID && nowMetadata < 16) {
             if (isPowered) {
                 world.setBlock(x, y, z, BlockIDs.LAMPS_ID, nowMetadata + 16, 3);
             } else {
-                world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, nowMetadata - 16, 3);
+                world.scheduleBlockUpdate(x, y, z, nowBlockId, 4);
+            }
+        } else if (nowBlockId == BlockIDs.LAMPS_INVERTED_ID && nowMetadata > 15) {
+            if (!isPowered) {
+                world.setBlock(x, y, z, BlockIDs.LAMPS_ID, nowMetadata - 16, 3);
+            } else {
+                world.scheduleBlockUpdate(x, y, z, nowBlockId, 4);
             }
         }
     }
@@ -127,6 +108,11 @@ public class BlockLamp extends Block {
 
     @Override
     public boolean isOpaqueCube() {
+        return false;
+    }
+
+    @Override
+    public boolean shouldSideBeRendered(IBlockAccess blockAccess, int x, int y, int z, int side) {
         return true;
     }
 

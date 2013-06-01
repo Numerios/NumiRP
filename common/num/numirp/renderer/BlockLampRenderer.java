@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.world.IBlockAccess;
 import num.numirp.ClientProxy;
 import num.numirp.block.BlockLamp;
+import num.numirp.block.ModBlocks;
 import num.numirp.lib.BlockIDs;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 
@@ -60,9 +61,9 @@ public class BlockLampRenderer implements ISimpleBlockRenderingHandler {
                 BlockLamp lamp = (BlockLamp) block;
                 int metadata = world.getBlockMetadata(x, y, z);
                 Color colors = lamp.getOverlayColor(metadata);
-                renderer.overrideBlockBounds(-0.02D, -0.02D, -0.02D, 1.04D, 1.04D, 1.04D);
+                renderer.overrideBlockBounds(-0.03D, -0.03D, -0.03D, 1.03D, 1.03D, 1.03D);
                 renderer.setOverrideBlockTexture(lamp.glowTexture);
-                renderer.renderStandardBlockWithColorMultiplier(Block.ice, x, y, z, (float)colors.getRed()/255, (float)colors.getGreen()/255, (float)colors.getBlue()/255);
+                renderer.renderStandardBlockWithColorMultiplier(ModBlocks.blockLamp, x, y, z, (float)colors.getRed()/255, (float)colors.getGreen()/255, (float)colors.getBlue()/255);
                 renderer.clearOverrideBlockTexture();
                 renderer.unlockBlockBounds();
             }
