@@ -15,7 +15,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import num.numirp.NumiRP;
 import num.numirp.core.proxy.ClientProxy;
-import num.numirp.lib.BlockIDs;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
 import cpw.mods.fml.relauncher.Side;
@@ -28,7 +27,7 @@ public class BlockLamp extends Block {
     public BlockLamp(int id, boolean inverted) {
         super(id, Material.redstoneLight);
         this.inverted = inverted;
-        if (inverted) {
+        if (this.isShiny(inverted, powered)) {
             setLightValue(0.6F);
         } else {
             setLightValue(0F);
@@ -43,35 +42,34 @@ public class BlockLamp extends Block {
         MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 0);
     }
 
-   /*@Override
+    @Override
     public void onBlockAdded(World world, int x, int y, int z) {
-        debugFunction(world, x, y, z);
-    }*/
+        if (!world.isRemote) {
+            powered = world.isBlockIndirectlyGettingPowered(x, y, z);
+
+            world.markBlockForUpdate(x, y, z);
+            }
+    }
+    
+    @Override
+    public void updateTick(World world, int x, int y, int z, Random rand)
+    {
+        if (!world.isRemote) {
+            powered = world.isBlockIndirectlyGettingPowered(x, y, z);
+
+            world.markBlockForUpdate(x, y, z);
+            }   
+    }
 
     @Override
     public void onNeighborBlockChange(World world, int x, int y, int z,
             int neighborBlockId) {
-        System.out.println("NEIGHBOR");
-        debugFunction(world, x, y, z);       
-    }   
-    
-    private void debugFunction(World world, int x, int y, int z){
-        //TODO: Delete this || give it a better name
         if (!world.isRemote) {
-            int meta = world.getBlockMetadata(x, y, z);
             powered = world.isBlockIndirectlyGettingPowered(x, y, z);
-            boolean shiny = isShiny(inverted, powered);
 
-            if (shiny) {
-                world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, meta, 3);
-                world.markBlockForUpdate(x, y, z);
-            } else if (!shiny){ 
-                world.setBlock(x, y, z, BlockIDs.LAMPS_ID, meta, 3);
-                world.markBlockForUpdate(x, y, z);
-                
-        } }   
-    }
-    
+            world.markBlockForUpdate(x, y, z);
+            }       
+    }   
     
     public boolean isShiny(boolean inverted, boolean powered){
         if((!inverted && powered) || (inverted && !powered)) return true;
@@ -103,7 +101,7 @@ public class BlockLamp extends Block {
 
     @Override
     public int getRenderBlockPass() {
-        if (inverted) {
+        if (this.isShiny(inverted, powered)) {
             pass++;
             if (pass == 2)
                 pass = 0;

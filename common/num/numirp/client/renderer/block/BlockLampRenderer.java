@@ -59,7 +59,7 @@ public class BlockLampRenderer implements ISimpleBlockRenderingHandler {
     public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block,
             int modelId, RenderBlocks renderer) {
         if (ClientProxy.renderPass == 1) {
-            if (world.getBlockId(x, y, z) == BlockIDs.LAMPS_INVERTED_ID) {
+            //if (world.getBlockId(x, y, z) == BlockIDs.LAMPS_INVERTED_ID) {
                 BlockLamp lamp = (BlockLamp) block;
                 int metadata = world.getBlockMetadata(x, y, z);
                 Color colors = lamp.getOverlayColor(metadata);
@@ -70,7 +70,7 @@ public class BlockLampRenderer implements ISimpleBlockRenderingHandler {
                         (float) colors.getGreen() / 255, (float) colors.getBlue() / 255);
                 renderer.clearOverrideBlockTexture();
                 renderer.unlockBlockBounds();
-            }
+            //}
             return true;
         } else {
             if (renderer.hasOverrideBlockTexture()) {
