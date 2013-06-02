@@ -22,7 +22,8 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockLamp extends Block {
-    private final boolean inverted;
+    public final boolean inverted;
+    public static boolean powered;
 
     public BlockLamp(int id, boolean inverted) {
         super(id, Material.redstoneLight);
@@ -39,59 +40,47 @@ public class BlockLamp extends Block {
         setCreativeTab(NumiRP.tabRP);
         setUnlocalizedName("numirpworld.lamp");
 
-        MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 2);
+        MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 0);
     }
 
-    @Override
+   /*@Override
     public void onBlockAdded(World world, int x, int y, int z) {
-        if (!world.isRemote) {
-            int nowMetadata = world.getBlockMetadata(x, y, z);
-
-            if (world.isBlockIndirectlyGettingPowered(x, y, z) && nowMetadata < 16) {
-                world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, nowMetadata, 3);
-            } else if (!world.isBlockIndirectlyGettingPowered(x, y, z))
-                world.setBlock(x, y, z, BlockIDs.LAMPS_ID, nowMetadata, 3);
-            else {
-                world.scheduleBlockUpdate(x, y, z, blockID, 4);
-            }
-        }
-    }
+        debugFunction(world, x, y, z);
+    }*/
 
     @Override
     public void onNeighborBlockChange(World world, int x, int y, int z,
             int neighborBlockId) {
+        System.out.println("NEIGHBOR");
+        debugFunction(world, x, y, z);       
+    }   
+    
+    private void debugFunction(World world, int x, int y, int z){
+        //TODO: Delete this || give it a better name
         if (!world.isRemote) {
-            int nowMetadata = world.getBlockMetadata(x, y, z);
+            int meta = world.getBlockMetadata(x, y, z);
+            powered = world.isBlockIndirectlyGettingPowered(x, y, z);
+            boolean shiny = isShiny(inverted, powered);
 
-            if (world.isBlockIndirectlyGettingPowered(x, y, z) && nowMetadata < 16) {
-                world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, nowMetadata, 3);
-            } else if (!world.isBlockIndirectlyGettingPowered(x, y, z))
-                world.setBlock(x, y, z, BlockIDs.LAMPS_ID, nowMetadata, 3);
-            else {
-                world.scheduleBlockUpdate(x, y, z, blockID, 4);
-            }
-        }
+            if (shiny) {
+                world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, meta, 3);
+                world.markBlockForUpdate(x, y, z);
+            } else if (!shiny){ 
+                world.setBlock(x, y, z, BlockIDs.LAMPS_ID, meta, 3);
+                world.markBlockForUpdate(x, y, z);
+                
+        } }   
     }
-
-    @Override
-    public void updateTick(World world, int x, int y, int z, Random random) {
-        if (!world.isRemote) {
-            int nowMetadata = world.getBlockMetadata(x, y, z);
-
-            if (!world.isBlockIndirectlyGettingPowered(x, y, z) && nowMetadata > 16) {
-                if (world.getBlockId(x, y, z) == BlockIDs.LAMPS_ID) {
-                    world.setBlock(x, y, z, BlockIDs.LAMPS_INVERTED_ID, nowMetadata - 16,
-                            2);
-                } else {
-                    world.setBlock(x, y, z, BlockIDs.LAMPS_ID, nowMetadata - 16, 2);
-                }
-            }
-        }
+    
+    
+    public boolean isShiny(boolean inverted, boolean powered){
+        if((!inverted && powered) || (inverted && !powered)) return true;
+        else if((inverted && powered) || (!inverted && !powered)) return false;
+        else return false;
     }
-
     @Override
     public boolean renderAsNormalBlock() {
-        return false;
+        return true;
     }
 
     @Override
@@ -101,7 +90,7 @@ public class BlockLamp extends Block {
 
     @Override
     public boolean isOpaqueCube() {
-        return false;
+        return true;
     }
 
     @Override
