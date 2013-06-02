@@ -21,20 +21,26 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockLamp extends Block {
-    public final boolean inverted;
-    public static boolean powered;
+    public final int normalId;
+    public final int glowingId;
+    public final boolean powered;
+    public final boolean glow;
 
-    public BlockLamp(int id, boolean inverted) {
+    public BlockLamp(int id, boolean powered, boolean glow, int normalId, int glowingId) {
         super(id, Material.redstoneLight);
-        this.inverted = inverted;
-        if (this.isShiny(inverted, powered)) {
+        this.powered = powered;
+        this.glow = glow;
+        this.normalId = normalId;
+        this.glowingId = glowingId;
+        
+        if (glow) {
             setLightValue(0.6F);
         } else {
             setLightValue(0F);
         }
 
         setHardness(3.0F);
-        setResistance(3.0F);
+        setResistance(2.0F);
         setStepSound(soundGlassFootstep);
         setCreativeTab(NumiRP.tabRP);
         setUnlocalizedName("numirpworld.lamp");
@@ -45,37 +51,38 @@ public class BlockLamp extends Block {
     @Override
     public void onBlockAdded(World world, int x, int y, int z) {
         if (!world.isRemote) {
-            powered = world.isBlockIndirectlyGettingPowered(x, y, z);
+            int nowMetadata = world.getBlockMetadata(x, y, z);
 
-            world.markBlockForUpdate(x, y, z);
+            if (powered && !world.isBlockIndirectlyGettingPowered(x, y, z)) {
+                world.scheduleBlockUpdate(x, y, z, blockID, 4);
+            } else if (!powered && world.isBlockIndirectlyGettingPowered(x, y, z)) {
+                world.setBlock(x, y, z, glowingId, nowMetadata, 3);
             }
-    }
-    
-    @Override
-    public void updateTick(World world, int x, int y, int z, Random rand)
-    {
-        if (!world.isRemote) {
-            powered = world.isBlockIndirectlyGettingPowered(x, y, z);
-
-            world.markBlockForUpdate(x, y, z);
-            }   
+        }
     }
 
     @Override
-    public void onNeighborBlockChange(World world, int x, int y, int z,
-            int neighborBlockId) {
+    public void onNeighborBlockChange(World world, int x, int y, int z, int neighborBlockId) {
         if (!world.isRemote) {
-            powered = world.isBlockIndirectlyGettingPowered(x, y, z);
+            int nowMetadata = world.getBlockMetadata(x, y, z);
 
-            world.markBlockForUpdate(x, y, z);
-            }       
-    }   
-    
-    public boolean isShiny(boolean inverted, boolean powered){
-        if((!inverted && powered) || (inverted && !powered)) return true;
-        else if((inverted && powered) || (!inverted && !powered)) return false;
-        else return false;
+            if (powered && !world.isBlockIndirectlyGettingPowered(x, y, z)) {
+                world.scheduleBlockUpdate(x, y, z, blockID, 4);
+            } else if (!powered && world.isBlockIndirectlyGettingPowered(x, y, z)) {
+                world.setBlock(x, y, z, glowingId, nowMetadata, 3);
+            }
+        }
     }
+
+    @Override
+    public void updateTick(World world, int x, int y, int z, Random random) {
+        if (!world.isRemote && powered && !world.isBlockIndirectlyGettingPowered(x, y, z)) {
+            int nowMetadata = world.getBlockMetadata(x, y, z);
+            
+            world.setBlock(x, y, z, normalId, nowMetadata, 3);
+        }
+    }
+
     @Override
     public boolean renderAsNormalBlock() {
         return true;
@@ -92,8 +99,7 @@ public class BlockLamp extends Block {
     }
 
     @Override
-    public boolean shouldSideBeRendered(IBlockAccess blockAccess, int x, int y, int z,
-            int side) {
+    public boolean shouldSideBeRendered(IBlockAccess blockAccess, int x, int y, int z, int side) {
         return true;
     }
 
@@ -101,7 +107,7 @@ public class BlockLamp extends Block {
 
     @Override
     public int getRenderBlockPass() {
-        if (this.isShiny(inverted, powered)) {
+        if (glow) {
             pass++;
             if (pass == 2)
                 pass = 0;
@@ -128,8 +134,7 @@ public class BlockLamp extends Block {
         icons = new Icon[Strings.COLORS.length];
 
         for (int i = 0; i < Strings.COLORS.length; i++) {
-            icons[i] = ir.registerIcon(Reference.TEXTURE_PATH + "lamp"
-                    + Strings.COLORS[i]);
+            icons[i] = ir.registerIcon(Reference.TEXTURE_PATH + "lamp" + Strings.COLORS[i]);
         }
 
         glowTexture = ir.registerIcon(Reference.TEXTURE_PATH + "lampGlow");
@@ -151,9 +156,28 @@ public class BlockLamp extends Block {
     @SuppressWarnings({ "unchecked", "rawtypes" })
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(int par1, CreativeTabs creativetab, List list) {
-        for (int i = 0; i < Strings.COLORS.length; i++) {
-            list.add(new ItemStack(par1, 1, i));
+        if(!powered){
+            for (int i = 0; i < Strings.COLORS.length; i++) {
+                list.add(new ItemStack(par1, 1, i));
+            }
         }
+    }
+    /**
+     * Returns the ID of the items to drop on destruction.
+     */
+    public int idDropped(int par1, Random par2Random, int par3)
+    {
+        return normalId;
+    }
+
+    @SideOnly(Side.CLIENT)
+
+    /**
+     * only called by clickMiddleMouseButton , and passed to inventory.setCurrentItem (along with isCreative)
+     */
+    public int idPicked(World par1World, int par2, int par3, int par4)
+    {
+        return normalId;
     }
 
     @SideOnly(Side.CLIENT)
