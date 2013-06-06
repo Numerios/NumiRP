@@ -34,7 +34,7 @@ public class BlockLamp extends Block {
         this.glowingId = glowingId;
         
         if (glow) {
-            setLightValue(0.6F);
+            setLightValue(0.9F);
         } else {
             setLightValue(0F);
         }
