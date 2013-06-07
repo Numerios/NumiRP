@@ -17,16 +17,16 @@ public class ItemToolAxe extends ItemAxe {
         setCreativeTab(NumiRP.tabRP);
 
         if(material.name() == "RUBY") {
-            setUnlocalizedName("pickaxeRuby");
+            setUnlocalizedName("axeRuby");
             materialId = 0;
         } else if(material.name() == "GREENSAPPHIRE") {
-            setUnlocalizedName("pickaxeGreenSapphire");
+            setUnlocalizedName("axeGreenSapphire");
             materialId = 1;
         } else if(material.name() == "SAPPHIRE") {
-            setUnlocalizedName("pickaxeSapphire");
+            setUnlocalizedName("axeSapphire");
             materialId = 2;
         } else {
-            setUnlocalizedName("pickaxeUnknown");
+            setUnlocalizedName("axeUnknown");
             materialId = 3;
         }
     }
