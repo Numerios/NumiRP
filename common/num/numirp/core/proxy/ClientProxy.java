@@ -1,7 +1,7 @@
 package num.numirp.core.proxy;
 
-import num.numirp.client.TickHandler;
 import num.numirp.client.renderer.block.BlockLampRenderer;
+import num.numirp.core.handler.TickHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.registry.TickRegistry;
 import cpw.mods.fml.relauncher.Side;

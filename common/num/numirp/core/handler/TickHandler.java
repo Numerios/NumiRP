@@ -1,12 +1,11 @@
-package num.numirp.client;
+package num.numirp.core.handler;
 
 import java.util.EnumSet;
 import java.util.Iterator;
 import java.util.List;
-
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.ImageBufferDownload;
 import net.minecraft.entity.player.EntityPlayer;
+import num.numirp.client.ImageDownload;
 import num.numirp.lib.Reference;
 
 import cpw.mods.fml.common.ITickHandler;
@@ -27,7 +26,7 @@ public class TickHandler implements ITickHandler {
                     if(player.username.equalsIgnoreCase("Numerios") || player.username.equalsIgnoreCase("j_smart")){ // Authors of NumiRP (Numerios, JBuk)
                         player.cloakUrl = Reference.DEVELOPERS_CAPE;
                         System.out.println("Setting player: " + player.username.toLowerCase() + " a new cape: " + player.cloakUrl);
-                        mc.renderEngine.obtainImageData(player.cloakUrl, new ImageBufferDownload());
+                        mc.renderEngine.obtainImageData(player.cloakUrl, new ImageDownload());
                     }
                 }
             }
