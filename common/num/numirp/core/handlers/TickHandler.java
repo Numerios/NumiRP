@@ -3,12 +3,10 @@ package num.numirp.core.handlers;
 import java.util.EnumSet;
 import java.util.Iterator;
 import java.util.List;
-
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.ImageBufferDownload;
 import net.minecraft.entity.player.EntityPlayer;
+import num.numirp.core.handlers.helper.ImageDownload;
 import num.numirp.lib.Reference;
-
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
 
@@ -24,11 +22,11 @@ public class TickHandler implements ITickHandler {
                 EntityPlayer player = (EntityPlayer) entity.next();
 
                 if (player.cloakUrl.startsWith("http://skins.minecraft.net/MinecraftCloaks/")) {
-                    if (player.username.toLowerCase() == "Numerios" || player.username.toLowerCase() == "j_smart") {
-                        System.out.println("Setting player: " + player.username.toLowerCase() + " new cape  "
-                                + player.cloakUrl);
+                    if (player.username.equalsIgnoreCase("Numerios") || player.username.equalsIgnoreCase("j_smart")) {
                         player.cloakUrl = Reference.DEVELOPERS_CAPE;
-                        mc.renderEngine.obtainImageData(player.cloakUrl, new ImageBufferDownload());
+                        System.out.println("Setting player: " + player.username.toLowerCase() + " a new cape  "
+                                + player.cloakUrl);
+                        mc.renderEngine.obtainImageData(player.cloakUrl, new ImageDownload());
                     }
                 }
             }
