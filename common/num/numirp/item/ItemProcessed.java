@@ -30,8 +30,7 @@ public class ItemProcessed extends Item {
         icons = new Icon[Strings.PROCESSED.length];
 
         for (int i = 0; i < Strings.PROCESSED.length; i++) {
-            icons[i] = ir.registerIcon(Reference.TEXTURE_PATH
-                    + Strings.PROCESSED[i]);
+            icons[i] = ir.registerIcon(Reference.TEXTURE_PATH + Strings.PROCESSED[i]);
         }
     }
 
@@ -48,8 +47,7 @@ public class ItemProcessed extends Item {
     @Override
     public String getUnlocalizedName(ItemStack is) {
         int meta = is.getItemDamage();
-        return getUnlocalizedName() + "." + Strings.PROCESSED[meta] + "."
-                + "processed";
+        return getUnlocalizedName() + "." + Strings.PROCESSED[meta] + "." + "processed";
     }
 
     @SuppressWarnings({ "unchecked", "rawtypes" })

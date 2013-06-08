@@ -1,4 +1,4 @@
-package num.numirp.client;
+package num.numirp.core.handlers;
 
 import java.util.EnumSet;
 import java.util.Iterator;
@@ -24,8 +24,9 @@ public class TickHandler implements ITickHandler {
                 EntityPlayer player = (EntityPlayer) entity.next();
 
                 if (player.cloakUrl.startsWith("http://skins.minecraft.net/MinecraftCloaks/")) {
-                    if(player.username.toLowerCase() == "Numerios" || player.username.toLowerCase() == "j_smart"){ // Authors of NumiRP (Numerios, JBuk)
-                        System.out.println("Setting player: " + player.username.toLowerCase() + " new cape  " + player.cloakUrl);
+                    if (player.username.toLowerCase() == "Numerios" || player.username.toLowerCase() == "j_smart") {
+                        System.out.println("Setting player: " + player.username.toLowerCase() + " new cape  "
+                                + player.cloakUrl);
                         player.cloakUrl = Reference.DEVELOPERS_CAPE;
                         mc.renderEngine.obtainImageData(player.cloakUrl, new ImageBufferDownload());
                     }

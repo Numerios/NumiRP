@@ -9,20 +9,20 @@ import num.numirp.NumiRP;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
 
-public class ItemToolSword extends ItemSword{
+public class ItemToolSword extends ItemSword {
     private int materialId;
 
     public ItemToolSword(int itemId, EnumToolMaterial material) {
         super(itemId, material);
         setCreativeTab(NumiRP.tabRP);
 
-        if(material.name() == "RUBY") {
+        if (material.name() == "RUBY") {
             setUnlocalizedName("swordRuby");
             materialId = 0;
-        } else if(material.name() == "GREENSAPPHIRE") {
+        } else if (material.name() == "GREENSAPPHIRE") {
             setUnlocalizedName("swordGreenSapphire");
             materialId = 1;
-        } else if(material.name() == "SAPPHIRE") {
+        } else if (material.name() == "SAPPHIRE") {
             setUnlocalizedName("swordSapphire");
             materialId = 2;
         } else {

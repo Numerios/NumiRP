@@ -16,8 +16,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemToolSickle extends ItemTool {
-    private static Block[] blocksEffectiveAgainst = new Block[] { Block.leaves,
-            Block.grass, Block.vine };
+    private static Block[] blocksEffectiveAgainst = new Block[] { Block.leaves, Block.grass, Block.vine };
     private int materialId;
 
     public ItemToolSickle(int itemId, EnumToolMaterial material) {
@@ -55,7 +54,7 @@ public class ItemToolSickle extends ItemTool {
 
     @Override
     public float getStrVsBlock(ItemStack itemstack, Block block) {
-        if(block.blockMaterial == Material.leaves){
+        if (block.blockMaterial == Material.leaves) {
             return 1.5F;
         }
         return 0.5F;
@@ -66,37 +65,36 @@ public class ItemToolSickle extends ItemTool {
         World world = player.worldObj;
         Material material = world.getBlockMaterial(x, y, z);
         int damageItem = 0;
-        
+
         for (int i = x - 1; i <= x + 1; i++) {
             for (int j = y - 1; j <= y + 1; j++) {
                 for (int k = z - 1; k <= z + 1; k++) {
                     material = world.getBlockMaterial(i, j, k);
-                    if (material == Material.plants || material == Material.vine
-                            || material == Material.leaves) {
+                    if (material == Material.plants || material == Material.vine || material == Material.leaves) {
                         world.destroyBlock(i, j, k, true);
                         damageItem++;
                     }
                 }
             }
         }
-        if(itemstack.getItemDamage() <= damageItem){
+        if (itemstack.getItemDamage() <= damageItem) {
             player.destroyCurrentEquippedItem();
             return false;
         }
         itemstack.damageItem(damageItem, player);
-        
+
         return false;
     }
 
     @Override
-    public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLiving par7EntityLiving) {
+    public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6,
+            EntityLiving par7EntityLiving) {
         return true;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {
-        itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "sickle"
-                + Strings.SICKLES[materialId]);
+        itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "sickle" + Strings.SICKLES[materialId]);
     }
 }

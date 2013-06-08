@@ -16,13 +16,13 @@ public class ItemToolPickaxe extends ItemPickaxe {
         super(itemId, material);
         setCreativeTab(NumiRP.tabRP);
 
-        if(material.name() == "RUBY") {
+        if (material.name() == "RUBY") {
             setUnlocalizedName("pickaxeRuby");
             materialId = 0;
-        } else if(material.name() == "GREENSAPPHIRE") {
+        } else if (material.name() == "GREENSAPPHIRE") {
             setUnlocalizedName("pickaxeGreenSapphire");
             materialId = 1;
-        } else if(material.name() == "SAPPHIRE") {
+        } else if (material.name() == "SAPPHIRE") {
             setUnlocalizedName("pickaxeSapphire");
             materialId = 2;
         } else {

@@ -27,11 +27,9 @@ public class NumiRP {
     @Instance(Reference.MOD_ID)
     public static NumiRP instance;
 
-    public static CreativeTabs tabRP = new CreativeTabRP(CreativeTabs.getNextID(),
-            Reference.MOD_ID);
+    public static CreativeTabs tabRP = new CreativeTabRP(CreativeTabs.getNextID(), Reference.MOD_ID);
 
-    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS,
-            serverSide = Reference.COMMON_PROXY_CLASS)
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
     public static CommonProxy proxy;
 
     @PreInit

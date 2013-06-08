@@ -9,20 +9,20 @@ import num.numirp.NumiRP;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
 
-public class ItemToolHoe extends ItemHoe{
+public class ItemToolHoe extends ItemHoe {
     private int materialId;
 
     public ItemToolHoe(int itemId, EnumToolMaterial material) {
         super(itemId, material);
         setCreativeTab(NumiRP.tabRP);
 
-        if(material.name() == "RUBY") {
+        if (material.name() == "RUBY") {
             setUnlocalizedName("hoeRuby");
             materialId = 0;
-        } else if(material.name() == "GREENSAPPHIRE") {
+        } else if (material.name() == "GREENSAPPHIRE") {
             setUnlocalizedName("hoeGreenSapphire");
             materialId = 1;
-        } else if(material.name() == "SAPPHIRE") {
+        } else if (material.name() == "SAPPHIRE") {
             setUnlocalizedName("hoeSapphire");
             materialId = 2;
         } else {

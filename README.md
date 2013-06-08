@@ -21,6 +21,8 @@ If you find a bug and have a fix or want to implement a new feature:
 2. Click on the Pull Request at the top of your project page (next to "Watch").
 3. Enter necessary title with helpful description and send the Pull Request.
 
+P.S: I'd strongly advise to use my formatting setup located [HERE](https://dl.dropboxusercontent.com/u/3743471/Java/formatting.xml) for Eclipse so I don't have to format it myself.
+
 #### Issues
 If you find any issue or bug or just want to suggest something:
 

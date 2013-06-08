@@ -24,7 +24,7 @@ public class BlockStorage extends Block {
         setStepSound(soundStoneFootstep);
         setCreativeTab(NumiRP.tabRP);
         setUnlocalizedName("numirpworld.storage");
-        
+
         MinecraftForge.setBlockHarvestLevel(this, 0, "pickaxe", 2);
         MinecraftForge.setBlockHarvestLevel(this, 1, "pickaxe", 2);
         MinecraftForge.setBlockHarvestLevel(this, 2, "pickaxe", 2);
@@ -34,21 +34,20 @@ public class BlockStorage extends Block {
         MinecraftForge.setBlockHarvestLevel(this, 6, "pickaxe", 2);
         MinecraftForge.setBlockHarvestLevel(this, 7, "pickaxe", 2);
     }
-    
+
     @SideOnly(Side.CLIENT)
     private Icon[] icons;
-    
+
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister ir) {
         icons = new Icon[Strings.ORES.length];
 
         for (int i = 0; i < Strings.ORES.length; i++) {
-            icons[i] = ir.registerIcon(Reference.TEXTURE_PATH + "blockStorage"
-                    + Strings.ORES[i]);
+            icons[i] = ir.registerIcon(Reference.TEXTURE_PATH + "blockStorage" + Strings.ORES[i]);
         }
     }
-    
+
     @SideOnly(Side.CLIENT)
     public Icon getIcon(int side, int meta) {
         return icons[meta];

@@ -38,8 +38,7 @@ public class BlockDecor extends Block {
         icons = new Icon[Strings.DECOR.length];
 
         for (int i = 0; i < Strings.DECOR.length; i++) {
-            icons[i] = ir.registerIcon(Reference.TEXTURE_PATH + "block"
-                    + Strings.DECOR[i]);
+            icons[i] = ir.registerIcon(Reference.TEXTURE_PATH + "block" + Strings.DECOR[i]);
         }
     }
 

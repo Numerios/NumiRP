@@ -58,8 +58,8 @@ public class BlockOres extends Block {
 
     @Override
     public int idDropped(int id, Random rand, int meta) {
-        if ((id == Metadata.RUBY) || (id == Metadata.GREENSAPPHIRE)
-                || (id == Metadata.SAPPHIRE) || (id == Metadata.NIKOLITE))
+        if ((id == Metadata.RUBY) || (id == Metadata.GREENSAPPHIRE) || (id == Metadata.SAPPHIRE)
+                || (id == Metadata.NIKOLITE))
             return ModItems.itemProcessed.itemID;
         return this.blockID;
     }
@@ -74,8 +74,7 @@ public class BlockOres extends Block {
         if (meta == Metadata.NIKOLITE)
             return 4 + random.nextInt(2) + random.nextInt(fortune + 1); // same
                                                                         // as RS
-        if ((meta == Metadata.RUBY) || (meta == Metadata.GREENSAPPHIRE)
-                || (meta == Metadata.SAPPHIRE)) {
+        if ((meta == Metadata.RUBY) || (meta == Metadata.GREENSAPPHIRE) || (meta == Metadata.SAPPHIRE)) {
             return random.nextInt(fortune + 1) + 1;
         }
         return 1;

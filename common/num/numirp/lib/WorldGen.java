@@ -1,6 +1,7 @@
 package num.numirp.lib;
 
 public class WorldGen {
+    // WORLDGEN DEFAULT SETTINGS
     public static boolean WORLDGEN_RUBY_DEFAULT = true;
     public static boolean WORLDGEN_GREENSAPPHIRE_DEFAULT = true;
     public static boolean WORLDGEN_SAPPHIRE_DEFAULT = true;
@@ -11,7 +12,8 @@ public class WorldGen {
     public static boolean WORLDGEN_TUNGSTEN_DEFAULT = true;
     public static boolean WORLDGEN_MARBLE_DEFAULT = true;
     public static boolean WORLDGEN_BASALT_DEFAULT = true;
- 
+
+    // WORLDGEN USED SETTINGS
     public static boolean WORLDGEN_RUBY;
     public static boolean WORLDGEN_GREENSAPPHIRE;
     public static boolean WORLDGEN_SAPPHIRE;

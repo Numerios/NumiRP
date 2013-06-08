@@ -32,7 +32,7 @@ public class BlockLamp extends Block {
         this.glow = glow;
         this.normalId = normalId;
         this.glowingId = glowingId;
-        
+
         if (glow) {
             setLightValue(0.9F);
         } else {
@@ -78,7 +78,7 @@ public class BlockLamp extends Block {
     public void updateTick(World world, int x, int y, int z, Random random) {
         if (!world.isRemote && powered && !world.isBlockIndirectlyGettingPowered(x, y, z)) {
             int nowMetadata = world.getBlockMetadata(x, y, z);
-            
+
             world.setBlock(x, y, z, normalId, nowMetadata, 3);
         }
     }
@@ -90,7 +90,7 @@ public class BlockLamp extends Block {
 
     @Override
     public int getRenderType() {
-        if(glow){
+        if (glow) {
             return ClientProxy.blockLampRenderType;
         } else {
             return 0;
@@ -160,27 +160,25 @@ public class BlockLamp extends Block {
     @SuppressWarnings({ "unchecked", "rawtypes" })
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(int par1, CreativeTabs creativetab, List list) {
-        if(!powered){
+        if (!powered) {
             for (int i = 0; i < Strings.COLORS.length; i++) {
                 list.add(new ItemStack(par1, 1, i));
             }
         }
     }
+
     /**
      * Returns the ID of the items to drop on destruction.
      */
-    public int idDropped(int par1, Random par2Random, int par3)
-    {
+    public int idDropped(int par1, Random par2Random, int par3) {
         return normalId;
     }
 
     @SideOnly(Side.CLIENT)
-
     /**
      * only called by clickMiddleMouseButton , and passed to inventory.setCurrentItem (along with isCreative)
      */
-    public int idPicked(World par1World, int par2, int par3, int par4)
-    {
+    public int idPicked(World par1World, int par2, int par3, int par4) {
         return normalId;
     }
 

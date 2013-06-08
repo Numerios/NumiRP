@@ -11,27 +11,25 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ModBlocks {
-    public static Block blockOres, blockStorage, blockDecor, blockLampNormal,
-            blockLampNormalActive, blockLampInverted, blockLampInvertedActive;
-    public static ItemStack oreSapphire, oreGreenSapphire, oreRuby, oreCopper, oreTin, oreSilver,
-            oreNikolite, oreTungsten, blockStorageSapphire, blockStorageGreenSapphire,
-            blockStorageRuby, blockStorageCopper, blockStorageTin, blockStorageSilver,
-            blockStorageNikolite, blockStorageTungsten, blockMarble, blockBasalt, blockMarbleBrick,
-            blockBasaltCobble, blockBasaltBrick, blockBasaltChiseled, blockBasaltPaver,
-            blockLampWhite, blockLampOrange, blockLampMagenta, blockLampLBlue, blockLampYellow,
-            blockLampLime, blockLampPink, blockLampGray, blockLampLGray, blockLampCyan,
-            blockLampPurple, blockLampBlue, blockLampBrown, blockLampGreen, blockLampRed,
-            blockLampBlack, blockLampInvertedWhite, blockLampInvertedOrange,
-            blockLampInvertedMagenta, blockLampInvertedLBlue, blockLampInvertedYellow,
-            blockLampInvertedLime, blockLampInvertedPink, blockLampInvertedGray,
-            blockLampInvertedLGray, blockLampInvertedCyan, blockLampInvertedPurple,
-            blockLampInvertedBlue, blockLampInvertedBrown, blockLampInvertedGreen,
-            blockLampInvertedRed, blockLampInvertedBlack;
+    public static Block blockOres, blockStorage, blockDecor, blockLampNormal, blockLampNormalActive, blockLampInverted,
+            blockLampInvertedActive;
+    public static ItemStack oreSapphire, oreGreenSapphire, oreRuby, oreCopper, oreTin, oreSilver, oreNikolite,
+            oreTungsten, blockStorageSapphire, blockStorageGreenSapphire, blockStorageRuby, blockStorageCopper,
+            blockStorageTin, blockStorageSilver, blockStorageNikolite, blockStorageTungsten, blockMarble, blockBasalt,
+            blockMarbleBrick, blockBasaltCobble, blockBasaltBrick, blockBasaltChiseled, blockBasaltPaver,
+            blockLampWhite, blockLampOrange, blockLampMagenta, blockLampLBlue, blockLampYellow, blockLampLime,
+            blockLampPink, blockLampGray, blockLampLGray, blockLampCyan, blockLampPurple, blockLampBlue,
+            blockLampBrown, blockLampGreen, blockLampRed, blockLampBlack, blockLampInvertedWhite,
+            blockLampInvertedOrange, blockLampInvertedMagenta, blockLampInvertedLBlue, blockLampInvertedYellow,
+            blockLampInvertedLime, blockLampInvertedPink, blockLampInvertedGray, blockLampInvertedLGray,
+            blockLampInvertedCyan, blockLampInvertedPurple, blockLampInvertedBlue, blockLampInvertedBrown,
+            blockLampInvertedGreen, blockLampInvertedRed, blockLampInvertedBlack;
 
     public static void init() {
         blockOres = new BlockOres(BlockIDs.ORES_ID).setUnlocalizedName("blockOres");
 
-        GameRegistry.registerBlock(blockOres, ItemBlockOres.class, Reference.MOD_ID.toLowerCase() + (blockOres.getUnlocalizedName().substring(5)));
+        GameRegistry.registerBlock(blockOres, ItemBlockOres.class,
+                Reference.MOD_ID.toLowerCase() + (blockOres.getUnlocalizedName().substring(5)));
 
         for (int i = 0; i < Strings.ORES.length; i++) {
             LanguageRegistry.addName(new ItemStack(blockOres, 1, i), Strings.ORE_NAMES[i] + " Ore");
@@ -56,7 +54,8 @@ public class ModBlocks {
 
         blockStorage = new BlockStorage(BlockIDs.STORAGE_ID).setUnlocalizedName("blockStorage");
 
-        GameRegistry.registerBlock(blockStorage, ItemBlockStorage.class, Reference.MOD_ID.toLowerCase() + (blockStorage.getUnlocalizedName().substring(5)));
+        GameRegistry.registerBlock(blockStorage, ItemBlockStorage.class,
+                Reference.MOD_ID.toLowerCase() + (blockStorage.getUnlocalizedName().substring(5)));
 
         for (int i = 0; i < Strings.ORES.length; i++) {
             LanguageRegistry.addName(new ItemStack(blockStorage, 1, i), Strings.ORE_NAMES[i] + " Storage Block");
@@ -81,7 +80,8 @@ public class ModBlocks {
 
         blockDecor = new BlockDecor(BlockIDs.DECOR_ID).setUnlocalizedName("blockDecor");
 
-        GameRegistry.registerBlock(blockDecor, ItemBlockDecor.class, Reference.MOD_ID.toLowerCase() + (blockDecor.getUnlocalizedName().substring(5)));
+        GameRegistry.registerBlock(blockDecor, ItemBlockDecor.class,
+                Reference.MOD_ID.toLowerCase() + (blockDecor.getUnlocalizedName().substring(5)));
 
         for (int i = 0; i < Strings.DECOR.length; i++) {
             LanguageRegistry.addName(new ItemStack(blockDecor, 1, i), Strings.DECOR_NAMES[i]);
@@ -94,16 +94,23 @@ public class ModBlocks {
         blockBasaltChiseled = new ItemStack(blockDecor, 1, Metadata.BASALTCHISELED);
         blockBasaltPaver = new ItemStack(blockDecor, 1, Metadata.BASALTPAVER);
 
-        blockLampNormal = new BlockLamp(BlockIDs.LAMPS_NORMAL_ID, false, false, BlockIDs.LAMPS_NORMAL_ID, BlockIDs.LAMPS_NORMAL_ACTIVE_ID).setUnlocalizedName("lamp");
-        blockLampNormalActive = new BlockLamp(BlockIDs.LAMPS_NORMAL_ACTIVE_ID, true, true, BlockIDs.LAMPS_NORMAL_ID, BlockIDs.LAMPS_NORMAL_ACTIVE_ID).setUnlocalizedName("lampOn");
-        blockLampInverted = new BlockLamp(BlockIDs.LAMPS_INVERTED_ID, false, true, BlockIDs.LAMPS_INVERTED_ID, BlockIDs.LAMPS_INVERTED_ACTIVE_ID).setUnlocalizedName("lampInverted");
-        blockLampInvertedActive = new BlockLamp(BlockIDs.LAMPS_INVERTED_ACTIVE_ID, true, false, BlockIDs.LAMPS_INVERTED_ID, BlockIDs.LAMPS_INVERTED_ACTIVE_ID).setUnlocalizedName("lampInvertedOn");
+        blockLampNormal = new BlockLamp(BlockIDs.LAMPS_NORMAL_ID, false, false, BlockIDs.LAMPS_NORMAL_ID,
+                BlockIDs.LAMPS_NORMAL_ACTIVE_ID).setUnlocalizedName("lamp");
+        blockLampNormalActive = new BlockLamp(BlockIDs.LAMPS_NORMAL_ACTIVE_ID, true, true, BlockIDs.LAMPS_NORMAL_ID,
+                BlockIDs.LAMPS_NORMAL_ACTIVE_ID).setUnlocalizedName("lampOn");
+        blockLampInverted = new BlockLamp(BlockIDs.LAMPS_INVERTED_ID, false, true, BlockIDs.LAMPS_INVERTED_ID,
+                BlockIDs.LAMPS_INVERTED_ACTIVE_ID).setUnlocalizedName("lampInverted");
+        blockLampInvertedActive = new BlockLamp(BlockIDs.LAMPS_INVERTED_ACTIVE_ID, true, false,
+                BlockIDs.LAMPS_INVERTED_ID, BlockIDs.LAMPS_INVERTED_ACTIVE_ID).setUnlocalizedName("lampInvertedOn");
 
-        GameRegistry.registerBlock(blockLampNormal, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase() + (blockLampNormal.getUnlocalizedName().substring(5)));
-        GameRegistry.registerBlock(blockLampNormalActive, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase() + (blockLampNormalActive.getUnlocalizedName().substring(5)));
-        GameRegistry.registerBlock(blockLampInverted, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase() + (blockLampInverted.getUnlocalizedName().substring(5)));
-        GameRegistry.registerBlock(blockLampInvertedActive, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase() + (blockLampInvertedActive.getUnlocalizedName().substring(5)));
-
+        GameRegistry.registerBlock(blockLampNormal, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase()
+                + (blockLampNormal.getUnlocalizedName().substring(5)));
+        GameRegistry.registerBlock(blockLampNormalActive, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase()
+                + (blockLampNormalActive.getUnlocalizedName().substring(5)));
+        GameRegistry.registerBlock(blockLampInverted, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase()
+                + (blockLampInverted.getUnlocalizedName().substring(5)));
+        GameRegistry.registerBlock(blockLampInvertedActive, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase()
+                + (blockLampInvertedActive.getUnlocalizedName().substring(5)));
 
         for (int i = 0; i < Strings.COLORS.length; i++) {
             LanguageRegistry.addName(new ItemStack(blockLampNormal, 1, i), Strings.COLOR_NAMES[i] + " Lamp");
@@ -111,7 +118,7 @@ public class ModBlocks {
         for (int i = 0; i < Strings.COLORS.length; i++) {
             LanguageRegistry.addName(new ItemStack(blockLampInverted, 1, i), Strings.COLOR_NAMES[i] + " Inverted Lamp");
         }
-        
+
         blockLampWhite = new ItemStack(blockLampNormal, 1, Metadata.WHITE);
         blockLampOrange = new ItemStack(blockLampNormal, 1, Metadata.ORANGE);
         blockLampMagenta = new ItemStack(blockLampNormal, 1, Metadata.MAGENTA);

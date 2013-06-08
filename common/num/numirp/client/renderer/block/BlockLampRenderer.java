@@ -53,14 +53,16 @@ public class BlockLampRenderer implements ISimpleBlockRenderingHandler {
     }
 
     @Override
-    public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId, RenderBlocks renderer) {
+    public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId,
+            RenderBlocks renderer) {
         if (ClientProxy.renderPass == 1) {
             BlockLamp lamp = (BlockLamp) block;
             int metadata = world.getBlockMetadata(x, y, z);
             Color colors = lamp.getOverlayColor(metadata);
             renderer.overrideBlockBounds(-0.03D, -0.03D, -0.03D, 1.03D, 1.03D, 1.03D);
             renderer.setOverrideBlockTexture(lamp.glowTexture);
-            renderer.renderStandardBlockWithColorMultiplier(lamp, x, y, z, (float) colors.getRed() / 255, (float) colors.getGreen() / 255, (float) colors.getBlue() / 255);
+            renderer.renderStandardBlockWithColorMultiplier(lamp, x, y, z, (float) colors.getRed() / 255,
+                    (float) colors.getGreen() / 255, (float) colors.getBlue() / 255);
             renderer.clearOverrideBlockTexture();
             renderer.unlockBlockBounds();
             return true;

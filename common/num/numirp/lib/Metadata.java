@@ -1,6 +1,7 @@
 package num.numirp.lib;
 
 public class Metadata {
+    // ORES
     public static int RUBY = 0;
     public static int GREENSAPPHIRE = 1;
     public static int SAPPHIRE = 2;
@@ -10,6 +11,7 @@ public class Metadata {
     public static int NIKOLITE = 6;
     public static int TUNGSTEN = 7;
 
+    // DECORS
     public static int MARBLE = 0;
     public static int BASALT = 1;
     public static int MARBLEBRICK = 2;
@@ -18,6 +20,7 @@ public class Metadata {
     public static int BASALTCHISELED = 5;
     public static int BASALTPAVER = 6;
 
+    // COLORS
     public static int WHITE = 0;
     public static int ORANGE = 1;
     public static int MAGENTA = 2;
