@@ -24,9 +24,9 @@ public class TickHandler implements ITickHandler {
                 EntityPlayer player = (EntityPlayer) entity.next();
 
                 if (player.cloakUrl.startsWith("http://skins.minecraft.net/MinecraftCloaks/")) {
-                    if(player.username.toLowerCase() == "Numerios" || player.username.toLowerCase() == "j_smart"){ // Authors of NumiRP (Numerios, JBuk)
-                        System.out.println("Setting player: " + player.username.toLowerCase() + " new cape  " + player.cloakUrl);
+                    if(player.username.equalsIgnoreCase("Numerios") || player.username.equalsIgnoreCase("j_smart")){ // Authors of NumiRP (Numerios, JBuk)
                         player.cloakUrl = Reference.DEVELOPERS_CAPE;
+                        System.out.println("Setting player: " + player.username.toLowerCase() + " a new cape: " + player.cloakUrl);
                         mc.renderEngine.obtainImageData(player.cloakUrl, new ImageBufferDownload());
                     }
                 }
