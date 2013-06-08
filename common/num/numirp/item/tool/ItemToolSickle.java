@@ -65,6 +65,8 @@ public class ItemToolSickle extends ItemTool {
     public boolean onBlockStartBreak(ItemStack itemstack, int x, int y, int z, EntityPlayer player) {
         World world = player.worldObj;
         Material material = world.getBlockMaterial(x, y, z);
+        int damageItem = 0;
+        
         for (int i = x - 1; i <= x + 1; i++) {
             for (int j = y - 1; j <= y + 1; j++) {
                 for (int k = z - 1; k <= z + 1; k++) {
@@ -72,11 +74,17 @@ public class ItemToolSickle extends ItemTool {
                     if (material == Material.plants || material == Material.vine
                             || material == Material.leaves) {
                         world.destroyBlock(i, j, k, true);
-                        itemstack.damageItem(1, player);
+                        damageItem++;
                     }
                 }
             }
         }
+        if(itemstack.getItemDamage() <= damageItem){
+            player.destroyCurrentEquippedItem();
+            return false;
+        }
+        itemstack.damageItem(damageItem, player);
+        
         return false;
     }
 
