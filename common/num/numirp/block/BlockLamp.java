@@ -90,7 +90,11 @@ public class BlockLamp extends Block {
 
     @Override
     public int getRenderType() {
-        return ClientProxy.blockLampRenderType;
+        if(glow){
+            return ClientProxy.blockLampRenderType;
+        } else {
+            return 0;
+        }
     }
 
     @Override
