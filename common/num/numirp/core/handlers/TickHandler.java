@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
-import num.numirp.core.handlers.helper.ImageDownload;
+import num.numirp.core.util.ImageDownload;
 import num.numirp.lib.Reference;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;

@@ -1,4 +1,4 @@
-package num.numirp.core.handlers.helper;
+package num.numirp.core.util;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
