@@ -9,5 +9,5 @@ public class Reference {
     public static final String CLIENT_PROXY_CLASS = "num.numirp.core.proxy.ClientProxy";
     public static final String COMMON_PROXY_CLASS = "num.numirp.core.proxy.CommonProxy";
 
-    public static final String DEVELOPERS_CAPE = "http://test.frelania.eu/Template.png"; // Temporary URL
+    public static final String DEVELOPER_CAPE_PATH = "https://dl.dropboxusercontent.com/u/3743471/cape.png";
 }

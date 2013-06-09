@@ -23,9 +23,7 @@ public class TickHandler implements ITickHandler {
 
                 if (player.cloakUrl.startsWith("http://skins.minecraft.net/MinecraftCloaks/")) {
                     if (player.username.equalsIgnoreCase("Numerios") || player.username.equalsIgnoreCase("j_smart")) {
-                        player.cloakUrl = Reference.DEVELOPERS_CAPE;
-                        System.out.println("Setting player: " + player.username.toLowerCase() + " a new cape  "
-                                + player.cloakUrl);
+                        player.cloakUrl = Reference.DEVELOPER_CAPE_PATH;
                         mc.renderEngine.obtainImageData(player.cloakUrl, new ImageDownload());
                     }
                 }
