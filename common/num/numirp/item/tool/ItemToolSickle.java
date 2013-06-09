@@ -77,11 +77,11 @@ public class ItemToolSickle extends ItemTool {
                 }
             }
         }
-        if (itemstack.getItemDamage() <= damageItem) {
+        itemstack.damageItem(damageItem, player);
+        if (itemstack.getItemDamage() >= itemstack.getMaxDamage()) {
             player.destroyCurrentEquippedItem();
             return false;
         }
-        itemstack.damageItem(damageItem, player);
 
         return false;
     }
