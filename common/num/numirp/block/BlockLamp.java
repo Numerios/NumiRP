@@ -11,7 +11,6 @@ import net.minecraft.util.Icon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.common.MinecraftForge;
 import num.numirp.NumiRP;
 import num.numirp.core.proxy.ClientProxy;
 import num.numirp.lib.Reference;
@@ -41,13 +40,11 @@ public class BlockLamp extends Block {
             setLightValue(0F);
         }
 
-        setHardness(3.0F);
+        setHardness(0.2F);
         setResistance(2.0F);
         setStepSound(soundGlassFootstep);
         setCreativeTab(NumiRP.tabRP);
         setUnlocalizedName("numirpworld.lamp");
-
-        MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 0);
     }
 
     @Override
