@@ -94,7 +94,7 @@ public class BlockLampRenderer implements ISimpleBlockRenderingHandler {
             int metadata = world.getBlockMetadata(x, y, z);
             Color colors = lamp.getOverlayColor(metadata);
             renderer.overrideBlockBounds(west, down, north, east, up, south);
-            renderer.setOverrideBlockTexture(lamp.glowTexture);
+            renderer.setOverrideBlockTexture(lamp.overlayTexture);
             renderer.renderStandardBlockWithColorMultiplier(lamp, x, y, z, (float) colors.getRed() / 255,
                     (float) colors.getGreen() / 255, (float) colors.getBlue() / 255);
             renderer.clearOverrideBlockTexture();

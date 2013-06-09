@@ -132,23 +132,29 @@ public class BlockLamp extends Block {
     @SideOnly(Side.CLIENT)
     private Icon[] icons;
     @SideOnly(Side.CLIENT)
-    public Icon glowTexture;
+    public Icon overlayTexture;
 
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister ir) {
         icons = new Icon[Strings.COLORS.length];
 
-        for (int i = 0; i < Strings.COLORS.length; i++) {
-            icons[i] = ir.registerIcon(Reference.TEXTURE_PATH + "lamp" + Strings.COLORS[i]);
+        if (!glow) {
+            for (int i = 0; i < Strings.COLORS.length; i++) {
+                icons[i] = ir.registerIcon(Reference.TEXTURE_PATH + "lamp" + Strings.COLORS[i]);
+            }
+        } else {
+            for (int i = 0; i < Strings.COLORS.length; i++) {
+                icons[i] = ir.registerIcon(Reference.TEXTURE_PATH + "lampGlow" + Strings.COLORS[i]);
+            }
         }
 
-        glowTexture = ir.registerIcon(Reference.TEXTURE_PATH + "lampGlow");
+        overlayTexture = ir.registerIcon(Reference.TEXTURE_PATH + "lampOverlay");
     }
 
     @SideOnly(Side.CLIENT)
-    public Icon getGlowTexture() {
-        return glowTexture;
+    public Icon getTintTexture() {
+        return overlayTexture;
     }
 
     @SideOnly(Side.CLIENT)
@@ -176,44 +182,44 @@ public class BlockLamp extends Block {
 
     @Override
     public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z) {
-        return new ItemStack(normalId, 1, world.getBlockMetadata(x, y, z));
+    return new ItemStack(normalId, 1, world.getBlockMetadata(x, y, z));
     }
 
     @SideOnly(Side.CLIENT)
     public Color getOverlayColor(int metadata) {
         switch (metadata) {
-            case 0:
-                return new Color(221, 221, 221);
-            case 1:
-                return new Color(219, 125, 62);
-            case 2:
-                return new Color(179, 80, 188);
-            case 3:
-                return new Color(107, 138, 201);
-            case 4:
-                return new Color(177, 166, 39);
-            case 5:
-                return new Color(65, 174, 56);
-            case 6:
-                return new Color(208, 132, 153);
-            case 7:
-                return new Color(64, 64, 64);
-            case 8:
-                return new Color(154, 161, 161);
-            case 9:
-                return new Color(46, 110, 137);
-            case 10:
-                return new Color(126, 61, 181);
-            case 11:
-                return new Color(46, 56, 141);
-            case 12:
-                return new Color(79, 50, 31);
-            case 13:
-                return new Color(53, 70, 27);
-            case 14:
-                return new Color(150, 52, 48);
-            case 15:
-                return new Color(25, 25, 25);
+            case 0: // white
+                return new Color(255, 255, 255);
+            case 1: // orange
+                return new Color(219, 139, 42);
+            case 2: // magenta
+                return new Color(198, 91, 193);
+            case 3: // light blue
+                return new Color(99, 142, 203);
+            case 4: // yellow
+                return new Color(232, 199, 37);
+            case 5: // lime
+                return new Color(105, 178, 10);
+            case 6: // pink
+                return new Color(226, 113, 173);
+            case 7: // gray
+                return new Color(117, 117, 117);
+            case 8: // light gray
+                return new Color(211, 211, 211);
+            case 9: // cyan
+                return new Color(30, 118, 153);
+            case 10: // purple
+                return new Color(145, 54, 201);
+            case 11: // blue
+                return new Color(52, 94, 195);
+            case 12: // brown
+                return new Color(135, 81, 45);
+            case 13: // green
+                return new Color(83, 122, 20);
+            case 14: // red
+                return new Color(191, 40, 40);
+            case 15: // black
+                return new Color(61, 61, 61);
             default:
                 return new Color(0, 0, 0);
         }
