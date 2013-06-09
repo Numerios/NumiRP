@@ -94,6 +94,8 @@ public class ConfigHandler {
 
             ItemIDs.ATHAME_ID = conf.getItem("athame", ItemIDs.ATHAME_ID_DEFAULT).getInt(ItemIDs.ATHAME_ID_DEFAULT);
 
+            ItemIDs.WOOLCARD_ID = conf.getItem("woolcard", ItemIDs.WOOLCARD_ID_DEFAULT).getInt(ItemIDs.WOOLCARD_ID_DEFAULT);
+
             ItemIDs.PROCESSED_ID = conf.getItem("processed", ItemIDs.PROCESSED_ID_DEFAULT).getInt(
                     ItemIDs.PROCESSED_ID_DEFAULT);
             BlockIDs.ORES_ID = conf.getBlock("ores", BlockIDs.ORES_ID_DEFAULT).getInt(BlockIDs.ORES_ID_DEFAULT);

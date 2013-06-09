@@ -165,5 +165,13 @@ public class ModCrafting {
         // Athame
         GameRegistry.addRecipe(new ItemStack(ModItems.athame), new Object[] { "#", "I", Character.valueOf('#'),
                 ModItems.ingotSilver, Character.valueOf('I'), Item.stick });
+
+        // Wool Card
+        GameRegistry.addRecipe(new ItemStack(ModItems.woolcard), new Object[] { "#", "X", "I", Character.valueOf('#'),
+                Block.fenceIron, Character.valueOf('X'), Block.planks, Character.valueOf('I'), Item.stick });
+        for (int c = 0; c <= 15; c++) {
+            GameRegistry.addShapelessRecipe(new ItemStack(Item.silk, 4), new ItemStack(ModItems.woolcard, 1, 32767),
+                    new ItemStack(Block.cloth, 1, c));
+        }
     }
 }
