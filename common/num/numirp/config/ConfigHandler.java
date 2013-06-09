@@ -16,9 +16,14 @@ public class ConfigHandler {
 
     public static void init(File configFile) {
         Configuration conf = new Configuration(configFile);
+        
+        @SuppressWarnings("unused")
+        String usedVersion;
 
         try {
             conf.load();
+            usedVersion = conf.get("Version info", "VERSION INFO - Please do not change this", Reference.MOD_VERSION).getString();
+            
             WorldGen.WORLDGEN_RUBY = conf.get("World Generation", "Ruby Generation", WorldGen.WORLDGEN_RUBY_DEFAULT)
                     .getBoolean(WorldGen.WORLDGEN_RUBY_DEFAULT);
             WorldGen.WORLDGEN_GREENSAPPHIRE = conf.get("World Generation", "Green Sapphire Generation",
