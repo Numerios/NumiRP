@@ -1,12 +1,13 @@
 ##NumiRP
 
 ### Description
-NumiRP is a recreation of RP2 by Eloraam.
-The original RP2 is a very popular mod in the MC community but sadly Eloraam is not updating her mods that often.
-This mod will also try to improve on Eloraam's concepts and add some of our own.
+NumiRP is a temporary world gen replacement tool for RP2 by Eloraam.
+This mod was created as a public service to those that want to upgrade to 1.5.x without waiting.
+NumiRP was built from scratch - it does not use any of Eloraam's code or textures.
+All ideas and/or concepts are courtesy of Eloraam. 
 
 ### Download
-Newest: Version 0.1.0 - [_HERE_](https://dl.dropboxusercontent.com/u/3743471/mods/NumiRP-1.5.2-0.1.0.jar)
+Newest: Version 1.0.0 - [_HERE_](https://dl.dropboxusercontent.com/u/3743471/mods/NumiRP-1.5.2-1.0.0.jar)
 
 ### License
 This mod is licensed under the MMPL - Minecraft Mod Public License version 1.0.1

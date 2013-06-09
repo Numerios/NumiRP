@@ -2,8 +2,8 @@
 {
   "modid": "NumiRP",
   "name": "NumiRP",
-  "description": "NumiRP is a recreation of RP2 by Eloraam.",
-  "version": "0.2.0-alpha",
+  "description": "NumiRP is a temporary world gen replacement tool for RP2 by Eloraam",
+  "version": "1.0.0",
   "url": "www.github.com/numerios/NumiRP",
   "updateUrl": "",
   "authorList": [
