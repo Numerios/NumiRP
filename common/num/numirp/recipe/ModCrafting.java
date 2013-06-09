@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import num.numirp.block.ModBlocks;
 import num.numirp.item.ModItems;
 import num.numirp.lib.Metadata;
+import num.numirp.lib.Strings;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModCrafting {
@@ -169,9 +170,26 @@ public class ModCrafting {
         // Wool Card
         GameRegistry.addRecipe(new ItemStack(ModItems.woolcard), new Object[] { "#", "X", "I", Character.valueOf('#'),
                 Block.fenceIron, Character.valueOf('X'), Block.planks, Character.valueOf('I'), Item.stick });
-        for (int c = 0; c <= 15; c++) {
+        for (int c = 0; c < Strings.COLORS.length; c++) {
             GameRegistry.addShapelessRecipe(new ItemStack(Item.silk, 4), new ItemStack(ModItems.woolcard, 1, 32767),
                     new ItemStack(Block.cloth, 1, c));
+        }
+
+        // Lumars
+        for (int i = 0; i < Strings.COLORS.length; i++) {
+            GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemLumar, 4, i), new ItemStack(Item.redstone, 1),
+                    new ItemStack(Item.lightStoneDust, 1), new ItemStack(Item.dyePowder, 1, Strings.COLORS.length - i
+                            - 1), new ItemStack(Item.dyePowder, 1, Strings.COLORS.length - i - 1));
+        }
+        for (int i = 0; i < Strings.COLORS.length; i++) {
+            System.out.println("Adding Lamp recipe: " + i);
+            GameRegistry.addRecipe(new ItemStack(ModBlocks.blockLampNormal, 1, i), new Object[] { "GLG", "GLG", "GRG", Character.valueOf('G'),
+                Block.glass, Character.valueOf('L'), new ItemStack(ModItems.itemLumar, 1, i), Character.valueOf('R'), Item.redstone});
+        }
+        for (int i = 0; i < Strings.COLORS.length; i++) {
+            System.out.println("Adding Lamp recipe: " + i);
+            GameRegistry.addRecipe(new ItemStack(ModBlocks.blockLampInverted, 1, i), new Object[] { "GLG", "GLG", "GRG", Character.valueOf('G'),
+                Block.glass, Character.valueOf('L'), new ItemStack(ModItems.itemLumar, 1, i), Character.valueOf('R'), Block.torchRedstoneActive});
         }
     }
 }
