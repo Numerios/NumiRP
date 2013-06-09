@@ -179,7 +179,12 @@ public class BlockLamp extends Block {
 
     @Override
     public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z) {
-    return new ItemStack(normalId, 1, world.getBlockMetadata(x, y, z));
+        return new ItemStack(normalId, 1, world.getBlockMetadata(x, y, z));
+    }
+
+    @Override
+    public int damageDropped(int metadata) {
+        return metadata;
     }
 
     @SideOnly(Side.CLIENT)
