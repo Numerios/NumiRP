@@ -2,14 +2,13 @@ package num.numirp.block;
 
 import java.util.List;
 import java.util.Random;
-
-import org.lwjgl.util.Color;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
@@ -17,6 +16,9 @@ import num.numirp.NumiRP;
 import num.numirp.core.proxy.ClientProxy;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
+
+import org.lwjgl.util.Color;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -167,19 +169,14 @@ public class BlockLamp extends Block {
         }
     }
 
-    /**
-     * Returns the ID of the items to drop on destruction.
-     */
+    @Override
     public int idDropped(int par1, Random par2Random, int par3) {
         return normalId;
     }
 
-    @SideOnly(Side.CLIENT)
-    /**
-     * only called by clickMiddleMouseButton , and passed to inventory.setCurrentItem (along with isCreative)
-     */
-    public int idPicked(World par1World, int par2, int par3, int par4) {
-        return normalId;
+    @Override
+    public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z) {
+        return new ItemStack(normalId, 1, world.getBlockMetadata(x, y, z));
     }
 
     @SideOnly(Side.CLIENT)
