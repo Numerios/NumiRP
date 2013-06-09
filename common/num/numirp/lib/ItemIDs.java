@@ -35,6 +35,8 @@ public class ItemIDs {
 
     public static int ATHAME_ID_DEFAULT = 1329;
 
+    public static int WOOLCARD_ID_DEFAULT = 1330;
+
     // USED IDs
     public static int PROCESSED_ID;
 
@@ -68,5 +70,7 @@ public class ItemIDs {
     public static int SICKLE_SAPPHIRE_ID;
 
     public static int ATHAME_ID;
+
+    public static int WOOLCARD_ID;
 
 }

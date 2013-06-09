@@ -41,6 +41,7 @@ public class NumiRP {
         ModCrafting.init();
         ModSmelting.init();
 
+        proxy.initCrafting();
         proxy.initCapes();
     }
 
