@@ -19,10 +19,15 @@ import num.numirp.item.tool.ItemToolSickle;
 import num.numirp.item.tool.ItemToolSword;
 
 public class ModItems {
+    // Gems & Ingots
     public static Item itemProcessed;
     public static ItemStack gemSapphire, gemGreenSapphire, gemRuby, ingotCopper, ingotTin, ingotSilver, dustNikolite,
             ingotTungsten;
 
+    // Lumars
+    public static Item itemLumar;
+    public static ItemStack lumarWhite, lumarOrange, lumarMagenta, lumarLBlue, lumarYellow, lumarLime, lumarPink,
+            lumarGray, lumarLGray, lumarCyan, lumarPurple, lumarBlue, lumarBrown, lumarGreen, lumarRed, lumarBlack;
     // Tools
     public static Item pickaxeRuby, pickaxeGreenSapphire, pickaxeSapphire;
     public static Item shovelRuby, shovelGreenSapphire, shovelSapphire;
@@ -169,5 +174,44 @@ public class ModItems {
         GameRegistry.registerItem(woolcard, "woolcard");
         LanguageRegistry.addName(new ItemStack(woolcard, 1), "Wool Card");
 
+        // Lumars
+        itemLumar = new ItemLumar(ItemIDs.LUMAR_ID);
+        GameRegistry.registerItem(itemLumar, "itemLumar");
+        for (int i = 0; i < Strings.COLORS.length; i++) {
+            LanguageRegistry.addName(new ItemStack(itemLumar, 1, i), Strings.COLOR_NAMES[i] + " Lumar");
+        }
+
+        lumarWhite = new ItemStack(itemLumar, 1, Metadata.WHITE);
+        lumarOrange = new ItemStack(itemLumar, 1, Metadata.ORANGE);
+        lumarMagenta = new ItemStack(itemLumar, 1, Metadata.MAGENTA);
+        lumarLBlue = new ItemStack(itemLumar, 1, Metadata.LBLUE);
+        lumarYellow = new ItemStack(itemLumar, 1, Metadata.YELLOW);
+        lumarLime = new ItemStack(itemLumar, 1, Metadata.LIME);
+        lumarPink = new ItemStack(itemLumar, 1, Metadata.PINK);
+        lumarGray = new ItemStack(itemLumar, 1, Metadata.GRAY);
+        lumarLGray = new ItemStack(itemLumar, 1, Metadata.LGRAY);
+        lumarCyan = new ItemStack(itemLumar, 1, Metadata.CYAN);
+        lumarPurple = new ItemStack(itemLumar, 1, Metadata.PURPLE);
+        lumarBlue = new ItemStack(itemLumar, 1, Metadata.BLUE);
+        lumarBrown = new ItemStack(itemLumar, 1, Metadata.BROWN);
+        lumarGreen = new ItemStack(itemLumar, 1, Metadata.GREEN);
+        lumarRed = new ItemStack(itemLumar, 1, Metadata.RED);
+        lumarBlack = new ItemStack(itemLumar, 1, Metadata.BLACK);
+
+        OreDictionary.registerOre("lumarWhite", lumarWhite);
+        OreDictionary.registerOre("lumarOrange", lumarOrange);
+        OreDictionary.registerOre("lumarLBlue", lumarLBlue);
+        OreDictionary.registerOre("lumarYellow", lumarYellow);
+        OreDictionary.registerOre("lumarLime", lumarLime);
+        OreDictionary.registerOre("lumarPink", lumarPink);
+        OreDictionary.registerOre("lumarGray", lumarGray);
+        OreDictionary.registerOre("lumarLGray", lumarLGray);
+        OreDictionary.registerOre("lumarCyan", lumarCyan);
+        OreDictionary.registerOre("lumarPurple", lumarPurple);
+        OreDictionary.registerOre("lumarBlue", lumarBlue);
+        OreDictionary.registerOre("lumarBrown", lumarBrown);
+        OreDictionary.registerOre("lumarGreen", lumarGreen);
+        OreDictionary.registerOre("lumarRed", lumarRed);
+        OreDictionary.registerOre("lumarBlack", lumarBlack);
     }
 }
