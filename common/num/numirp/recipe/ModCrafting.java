@@ -169,7 +169,7 @@ public class ModCrafting {
 
         // Wool Card
         GameRegistry.addRecipe(new ItemStack(ModItems.woolcard), new Object[] { "#", "X", "I", Character.valueOf('#'),
-                Block.fenceIron, Character.valueOf('X'), Block.planks, Character.valueOf('I'), Item.stick });
+                Item.ingotIron, Character.valueOf('X'), Block.planks, Character.valueOf('I'), Item.stick });
         for (int c = 0; c < Strings.COLORS.length; c++) {
             GameRegistry.addShapelessRecipe(new ItemStack(Item.silk, 4), new ItemStack(ModItems.woolcard, 1, 32767),
                     new ItemStack(Block.cloth, 1, c));
@@ -181,15 +181,17 @@ public class ModCrafting {
                     new ItemStack(Item.lightStoneDust, 1), new ItemStack(Item.dyePowder, 1, Strings.COLORS.length - i
                             - 1), new ItemStack(Item.dyePowder, 1, Strings.COLORS.length - i - 1));
         }
+
+        // Lamps
         for (int i = 0; i < Strings.COLORS.length; i++) {
-            System.out.println("Adding Lamp recipe: " + i);
-            GameRegistry.addRecipe(new ItemStack(ModBlocks.blockLampNormal, 1, i), new Object[] { "GLG", "GLG", "GRG", Character.valueOf('G'),
-                Block.glass, Character.valueOf('L'), new ItemStack(ModItems.itemLumar, 1, i), Character.valueOf('R'), Item.redstone});
+            GameRegistry.addRecipe(new ItemStack(ModBlocks.blockLampNormal, 1, i), new Object[] { "GLG", "GLG", "GRG",
+                    Character.valueOf('G'), Block.glass, Character.valueOf('L'),
+                    new ItemStack(ModItems.itemLumar, 1, i), Character.valueOf('R'), Item.redstone });
         }
         for (int i = 0; i < Strings.COLORS.length; i++) {
-            System.out.println("Adding Lamp recipe: " + i);
-            GameRegistry.addRecipe(new ItemStack(ModBlocks.blockLampInverted, 1, i), new Object[] { "GLG", "GLG", "GRG", Character.valueOf('G'),
-                Block.glass, Character.valueOf('L'), new ItemStack(ModItems.itemLumar, 1, i), Character.valueOf('R'), Block.torchRedstoneActive});
+            GameRegistry.addRecipe(new ItemStack(ModBlocks.blockLampInverted, 1, i), new Object[] { "GLG", "GLG",
+                    "GRG", Character.valueOf('G'), Block.glass, Character.valueOf('L'),
+                    new ItemStack(ModItems.itemLumar, 1, i), Character.valueOf('R'), Block.torchRedstoneActive });
         }
     }
 }
