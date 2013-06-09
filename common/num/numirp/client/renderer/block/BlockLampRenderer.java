@@ -104,7 +104,7 @@ public class BlockLampRenderer implements ISimpleBlockRenderingHandler {
             if (renderer.hasOverrideBlockTexture()) {
                 renderer.clearOverrideBlockTexture();
             }
-            renderer.renderStandardBlock(block, x, y, z);
+            renderer.renderStandardBlockWithColorMultiplier(block, x, y, z, 1F, 1F, 1F);
             return true;
         }
     }
