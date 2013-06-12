@@ -3,7 +3,7 @@
    <property name="build.dir.dev" value="../../" />
    <property name="build.dir.release" value="Releases" />
    <property name="build.release.mcversion" value="1.5.2" />
-   <property name="build.release.mod.version" value="1.0.2" />   
+   <property name="build.release.mod.version" value="1.0.3" />   
 	
 	<target name="clean">
 		<delete file="${build.dir.dev}\mcp\src\minecraft\mcmod.info" />
@@ -45,7 +45,7 @@
 		
 		<!-- Build the jar -->
 		<mkdir dir="${build.dir.release}" />
-		<jar destfile="${build.dir.release}\NumiRPWorld-${build.release.mcversion}-${build.release.mod.version}.jar">
+		<jar destfile="${build.dir.release}\NumiRP-${build.release.mcversion}-${build.release.mod.version}.jar">
 			<fileset dir="${build.dir.dev}\mcp\src\minecraft\" includes="mcmod.info" />
 			<fileset dir="${build.dir.dev}\mcp\reobf\minecraft" />
 			<fileset dir="${build.dir.dev}\src\NumiRPWorld\resources" />
