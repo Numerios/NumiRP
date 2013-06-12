@@ -1,8 +1,6 @@
 package num.numirp.core.handlers;
 
 import java.util.EnumSet;
-import java.util.Iterator;
-import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import num.numirp.core.util.ImageDownload;
@@ -12,22 +10,33 @@ import cpw.mods.fml.common.TickType;
 
 public class TickHandler implements ITickHandler {
     private static final Minecraft mc = Minecraft.getMinecraft();
+    private int playerCounter;
 
     @Override
     public void tickStart(EnumSet<TickType> type, Object... tickData) {
         if ((mc.theWorld != null) && (mc.theWorld.playerEntities.size() > 0)) {
-            @SuppressWarnings("unchecked")
-            List<EntityPlayer> players = mc.theWorld.playerEntities;
-            for (Iterator<EntityPlayer> entity = players.iterator(); entity.hasNext();) {
-                EntityPlayer player = (EntityPlayer) entity.next();
+            playerCounter += 1;
+            if (playerCounter >= mc.theWorld.playerEntities.size())
+                playerCounter = 0;
 
-                if (player != null && player.cloakUrl != null && player.cloakUrl.startsWith("http://skins.minecraft.net/MinecraftCloaks/")) {
-                    if (player.username.equalsIgnoreCase("Numerios") || player.username.equalsIgnoreCase("j_smart")) {
-                        player.cloakUrl = Reference.DEVELOPER_CAPE_PATH;
-                        mc.renderEngine.obtainImageData(player.cloakUrl, new ImageDownload());
-                    }
-                }
+            EntityPlayer player = (EntityPlayer) mc.theWorld.playerEntities.get(playerCounter);
+            String cape = (String) getCape(player.username);
+            if (cape != null) {
+                String oldCape = player.cloakUrl;
+                player.cloakUrl = (player.cloakUrl = cape);
+
+                if (oldCape != cape)
+                    mc.renderEngine.obtainImageData(player.cloakUrl, new ImageDownload());
             }
+
+        }
+    }
+
+    private String getCape(String username) {
+        if (username.equalsIgnoreCase("Numerios") || username.equalsIgnoreCase("j_smart")) {
+            return Reference.DEVELOPER_CAPE_PATH;
+        } else {
+            return null;
         }
     }
 
