@@ -21,7 +21,7 @@ public class TickHandler implements ITickHandler {
             for (Iterator<EntityPlayer> entity = players.iterator(); entity.hasNext();) {
                 EntityPlayer player = (EntityPlayer) entity.next();
 
-                if (player.cloakUrl.startsWith("http://skins.minecraft.net/MinecraftCloaks/")) {
+                if (player != null && player.cloakUrl != null && player.cloakUrl.startsWith("http://skins.minecraft.net/MinecraftCloaks/")) {
                     if (player.username.equalsIgnoreCase("Numerios") || player.username.equalsIgnoreCase("j_smart")) {
                         player.cloakUrl = Reference.DEVELOPER_CAPE_PATH;
                         mc.renderEngine.obtainImageData(player.cloakUrl, new ImageDownload());
