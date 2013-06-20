@@ -93,6 +93,11 @@ public class ModBlocks {
         blockBasaltBrick = new ItemStack(blockDecor, 1, Metadata.BASALTBRICK);
         blockBasaltChiseled = new ItemStack(blockDecor, 1, Metadata.BASALTCHISELED);
         blockBasaltPaver = new ItemStack(blockDecor, 1, Metadata.BASALTPAVER);
+        
+        OreDictionary.registerOre("marble", blockMarble);
+        OreDictionary.registerOre("basalt", blockBasalt);
+        OreDictionary.registerOre("blockMarble", blockMarble);
+        OreDictionary.registerOre("blockBasalt", blockBasalt);
 
         blockLampNormal = new BlockLamp(BlockIDs.LAMPS_NORMAL_ID, false, false, BlockIDs.LAMPS_NORMAL_ID,
                 BlockIDs.LAMPS_NORMAL_ACTIVE_ID).setUnlocalizedName("lamp");
