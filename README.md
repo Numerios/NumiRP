@@ -7,7 +7,7 @@ NumiRP was built from scratch - it does not use any of Eloraam's code or texture
 All ideas and/or concepts are courtesy of Eloraam. 
 
 ### Download
-Newest: Version 1.0.4 - [_HERE_](https://dl.dropboxusercontent.com/u/3743471/mods/NumiRP-1.5.2-1.0.4.jar)
+Newest: Version 1.0.5 - [_HERE_](https://dl.dropboxusercontent.com/u/3743471/mods/NumiRP-1.5.2-1.0.5.jar)
 
 ### License
 This mod is licensed under the MMPL - Minecraft Mod Public License version 1.0.1
