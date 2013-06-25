@@ -3,7 +3,7 @@
    <property name="build.dir.dev" value="../../" />
    <property name="build.dir.release" value="Releases" />
    <property name="build.release.mcversion" value="1.5.2" />
-   <property name="build.release.mod.version" value="1.0.5" />   
+   <property name="build.release.mod.version" value="1.0.6" />   
 	
 	<target name="clean">
 		<delete file="${build.dir.dev}\mcp\src\minecraft\mcmod.info" />
