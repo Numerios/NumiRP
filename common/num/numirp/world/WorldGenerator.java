@@ -23,6 +23,8 @@ public class WorldGenerator implements IWorldGenerator {
                 generateSurface(world, random, chunkX * 16, chunkZ * 16);
             case 1:
                 generateEnd(world, random, chunkX * 16, chunkZ * 16);
+            default:
+                generateSurface(world, random, chunkX * 16, chunkZ * 16);
         }
     }
 
