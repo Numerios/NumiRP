@@ -45,6 +45,7 @@ public class ModItems {
         EnumToolMaterial ruby = EnumHelper.addToolMaterial("RUBY", 2, 500, 8.0F, 3, 12);
         EnumToolMaterial greenSapphire = EnumHelper.addToolMaterial("GREENSAPPHIRE", 2, 500, 8.0F, 3, 12);
         EnumToolMaterial sapphire = EnumHelper.addToolMaterial("SAPPHIRE", 2, 500, 8.0F, 3, 12);
+        EnumToolMaterial silver = EnumHelper.addToolMaterial("SILVER", 2, 100, 6.0F, 2, 0);
 
         // Processed items
         itemProcessed = new ItemProcessed(ItemIDs.PROCESSED_ID);
@@ -165,7 +166,7 @@ public class ModItems {
         LanguageRegistry.addName(new ItemStack(sickleSapphire, 1), Strings.SICKLES[7] + " Sickle");
 
         // Athame
-        athame = new ItemToolAthame(ItemIDs.ATHAME_ID, EnumToolMaterial.EMERALD);
+        athame = new ItemToolAthame(ItemIDs.ATHAME_ID, silver);
         GameRegistry.registerItem(athame, "athame");
         LanguageRegistry.addName(new ItemStack(athame, 1), "Athame");
 

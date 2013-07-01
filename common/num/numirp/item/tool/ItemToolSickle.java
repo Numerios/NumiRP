@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.world.World;
 import num.numirp.NumiRP;
+import num.numirp.core.util.MaterialHelper;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
 import cpw.mods.fml.relauncher.Side;
@@ -18,10 +19,13 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ItemToolSickle extends ItemTool {
     private static Block[] blocksEffectiveAgainst = new Block[] { Block.leaves, Block.grass, Block.vine };
     private int materialId;
+    private EnumToolMaterial material;
 
     public ItemToolSickle(int itemId, EnumToolMaterial material) {
         super(itemId, 1, material, blocksEffectiveAgainst);
         setCreativeTab(NumiRP.tabRP);
+        this.material = material;
+        
         if (material.name() == "WOOD") {
             setUnlocalizedName("sickleWooden");
             materialId = 0;
@@ -96,5 +100,10 @@ public class ItemToolSickle extends ItemTool {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {
         itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "sickle" + Strings.SICKLES[materialId]);
+    }
+    
+    @Override
+    public boolean getIsRepairable(ItemStack toolIS, ItemStack repairIS) {
+        return MaterialHelper.isRepairable(material, repairIS);
     }
 }

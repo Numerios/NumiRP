@@ -14,15 +14,18 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
 import num.numirp.NumiRP;
+import num.numirp.core.util.MaterialHelper;
 import num.numirp.lib.Reference;
 
 public class ItemToolAthame extends ItemSword {
     private int damage = 1;
+    private EnumToolMaterial material;
 
     public ItemToolAthame(int id, EnumToolMaterial material) {
         super(id, material);
         setUnlocalizedName("athame");
         setCreativeTab(NumiRP.tabRP);
+        this.material = material;
     }
 
     @Override
@@ -53,5 +56,10 @@ public class ItemToolAthame extends ItemSword {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {
         itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "athame");
+    }
+    
+    @Override
+    public boolean getIsRepairable(ItemStack toolIS, ItemStack repairIS) {
+        return MaterialHelper.isRepairable(material, repairIS);
     }
 }
