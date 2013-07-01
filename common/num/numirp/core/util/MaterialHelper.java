@@ -8,37 +8,29 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class MaterialHelper {
     public static boolean isRepairable(EnumToolMaterial material, ItemStack repairIS) {
-        System.err.println(material.name() + " | " + repairIS);
-        switch (material.name()) {
-            case "WOOD":
-                return (OreDictionary.getOreID("plankWood") == OreDictionary.getOreID(repairIS));
-
-            case "STONE":
-                return Block.cobblestone.blockID == repairIS.itemID;
-
-            case "GOLD":
-                return (OreDictionary.getOreID("ingotGold") == OreDictionary.getOreID(repairIS)) || (Item.ingotGold.itemID == repairIS.itemID);
-
-            case "IRON":
-                return (OreDictionary.getOreID("ingotIron") == OreDictionary.getOreID(repairIS)) || (Item.ingotIron.itemID == repairIS.itemID);
-
-            case "SILVER":
-                return (OreDictionary.getOreID("ingotSilver") == OreDictionary.getOreID(repairIS));
-
-            case "EMERALD":
-                return Item.diamond.itemID == repairIS.itemID;
-
-            case "RUBY":
-                return OreDictionary.getOreID("gemRuby") == OreDictionary.getOreID(repairIS);
-
-            case "GREENSAPPHIRE":
-                return OreDictionary.getOreID("gemGreenSapphire") == OreDictionary.getOreID(repairIS);
-
-            case "SAPPHIRE":
-                return OreDictionary.getOreID("gemSapphire") == OreDictionary.getOreID(repairIS);
-
-            default:
-                return false;
+        if (material.name() == "WOOD") {
+            return (OreDictionary.getOreID("plankWood") == OreDictionary.getOreID(repairIS));
+        } else if (material.name() == "STONE") {
+            return Block.cobblestone.blockID == repairIS.itemID;
+        } else if (material.name() == "GOLD") {
+            return (OreDictionary.getOreID("ingotGold") == OreDictionary.getOreID(repairIS))
+                    || (Item.ingotGold.itemID == repairIS.itemID);
+        } else if (material.name() == "IRON") {
+            return (OreDictionary.getOreID("ingotIron") == OreDictionary.getOreID(repairIS))
+                    || (Item.ingotIron.itemID == repairIS.itemID);
+        } else if (material.name() == "SILVER") {
+            return (OreDictionary.getOreID("ingotSilver") == OreDictionary.getOreID(repairIS));
+        } else if (material.name() == "EMERALD") {
+            return Item.diamond.itemID == repairIS.itemID;
+        } else if (material.name() == "RUBY") {
+            return OreDictionary.getOreID("gemRuby") == OreDictionary.getOreID(repairIS);
+        } else if (material.name() == "GREENSAPPHIRE") {
+            return OreDictionary.getOreID("gemGreenSapphire") == OreDictionary.getOreID(repairIS);
+        } else if (material.name() == "SAPPHIRE") {
+            return OreDictionary.getOreID("gemSapphire") == OreDictionary.getOreID(repairIS);
+        } else {
+            return false;
         }
+
     }
 }
