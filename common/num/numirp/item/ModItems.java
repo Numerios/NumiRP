@@ -37,7 +37,7 @@ public class ModItems {
     public static Item sickleWooden, sickleStone, sickleIron, sickleGolden, sickleDiamond, sickleRuby,
             sickleGreenSapphire, sickleSapphire;
     public static Item athame;
-    public static Item woolcard;
+    public static Item woolCard;
 
     public static void init() {
 
@@ -171,9 +171,9 @@ public class ModItems {
         LanguageRegistry.addName(new ItemStack(athame, 1), "Athame");
 
         // Wool Card
-        woolcard = new ItemWoolCard(ItemIDs.WOOLCARD_ID);
-        GameRegistry.registerItem(woolcard, "woolcard");
-        LanguageRegistry.addName(new ItemStack(woolcard, 1), "Wool Card");
+        woolCard = new ItemWoolCard(ItemIDs.WOOLCARD_ID);
+        GameRegistry.registerItem(woolCard, "woolCard");
+        LanguageRegistry.addName(new ItemStack(woolCard, 1), "Wool Card");
 
         // Lumars
         itemLumar = new ItemLumar(ItemIDs.LUMAR_ID);
