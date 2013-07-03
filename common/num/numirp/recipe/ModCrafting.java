@@ -145,10 +145,10 @@ public class ModCrafting {
                 Character.valueOf('#'), "ingotSilver", Character.valueOf('I'), Item.stick }));
 
         // Wool Card
-        GameRegistry.addRecipe(new ItemStack(ModItems.woolcard), new Object[] { "#", "X", "I", Character.valueOf('#'),
+        GameRegistry.addRecipe(new ItemStack(ModItems.woolCard), new Object[] { "#", "X", "I", Character.valueOf('#'),
                 Item.ingotIron, Character.valueOf('X'), Block.planks, Character.valueOf('I'), Item.stick });
         for (int c = 0; c < Strings.COLORS.length; c++) {
-            GameRegistry.addShapelessRecipe(new ItemStack(Item.silk, 4), new ItemStack(ModItems.woolcard, 1, 32767),
+            GameRegistry.addShapelessRecipe(new ItemStack(Item.silk, 4), new ItemStack(ModItems.woolCard, 1, 32767),
                     new ItemStack(Block.cloth, 1, c));
         }
 
