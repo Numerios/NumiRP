@@ -91,15 +91,17 @@ public class BlockOres extends Block {
 
     @Override
     public void dropBlockAsItemWithChance(World world, int x, int y, int z, int id, float f, int meta) {
+        super.dropBlockAsItemWithChance(world, x, y, z, id, f, meta);
+        
         int xpAmount = 0;
         if ((meta == Metadata.RUBY) || (meta == Metadata.GREENSAPPHIRE) || (meta == Metadata.SAPPHIRE)) {
-            xpAmount = MathHelper.getRandomIntegerInRange(world.rand, 2, 6);
+            xpAmount = MathHelper.getRandomIntegerInRange(world.rand, 2, 4);
         } else if (meta == Metadata.NIKOLITE) {
-            xpAmount = MathHelper.getRandomIntegerInRange(world.rand, 1, 3);
+            xpAmount = MathHelper.getRandomIntegerInRange(world.rand, 1, 2);
         } else if (meta == Metadata.TUNGSTEN) {
-            xpAmount = MathHelper.getRandomIntegerInRange(world.rand, 4, 8);
+            xpAmount = MathHelper.getRandomIntegerInRange(world.rand, 6, 8);
         } else {
-            xpAmount = MathHelper.getRandomIntegerInRange(world.rand, 0, 2);
+            xpAmount = MathHelper.getRandomIntegerInRange(world.rand, 0, 1);
         }
         this.dropXpOnBlockBreak(world, x, y, z, xpAmount);
 
