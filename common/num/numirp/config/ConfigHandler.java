@@ -9,6 +9,7 @@ import net.minecraftforge.common.Configuration;
 import num.numirp.lib.BlockIDs;
 import num.numirp.lib.ItemIDs;
 import num.numirp.lib.Reference;
+import num.numirp.lib.Tweaks;
 import num.numirp.lib.WorldGen;
 
 public class ConfigHandler {
@@ -16,14 +17,15 @@ public class ConfigHandler {
 
     public static void init(File configFile) {
         Configuration conf = new Configuration(configFile);
-        
+
         @SuppressWarnings("unused")
         String usedVersion;
 
         try {
             conf.load();
-            usedVersion = conf.get("Version info", "VERSION INFO - Please do not change this", Reference.MOD_VERSION).getString();
-            
+            usedVersion = conf.get("Version info", "VERSION INFO - Please do not change this", Reference.MOD_VERSION)
+                    .getString();
+
             WorldGen.WORLDGEN_RUBY = conf.get("World Generation", "Ruby Generation", WorldGen.WORLDGEN_RUBY_DEFAULT)
                     .getBoolean(WorldGen.WORLDGEN_RUBY_DEFAULT);
             WorldGen.WORLDGEN_GREENSAPPHIRE = conf.get("World Generation", "Green Sapphire Generation",
@@ -99,7 +101,8 @@ public class ConfigHandler {
 
             ItemIDs.ATHAME_ID = conf.getItem("athame", ItemIDs.ATHAME_ID_DEFAULT).getInt(ItemIDs.ATHAME_ID_DEFAULT);
 
-            ItemIDs.WOOLCARD_ID = conf.getItem("woolcard", ItemIDs.WOOLCARD_ID_DEFAULT).getInt(ItemIDs.WOOLCARD_ID_DEFAULT);
+            ItemIDs.WOOLCARD_ID = conf.getItem("woolcard", ItemIDs.WOOLCARD_ID_DEFAULT).getInt(
+                    ItemIDs.WOOLCARD_ID_DEFAULT);
 
             ItemIDs.LUMAR_ID = conf.getItem("lumar", ItemIDs.LUMAR_ID_DEFAULT).getInt(ItemIDs.LUMAR_ID_DEFAULT);
 
@@ -118,6 +121,9 @@ public class ConfigHandler {
                     BlockIDs.LAMPS_INVERTED_ID_DEFAULT);
             BlockIDs.LAMPS_INVERTED_ACTIVE_ID = conf.getBlock("lampsInvertedOn",
                     BlockIDs.LAMPS_INVERTED_ACTIVE_ID_DEFAULT).getInt(BlockIDs.LAMPS_INVERTED_ACTIVE_ID_DEFAULT);
+
+            Tweaks.SICKLE_RANGE = conf.get("Tweaks", "Sickle range - 3 by default", Tweaks.SICKLE_RANGE_DEFAULT)
+                    .getInt(Tweaks.SICKLE_RANGE_DEFAULT);
 
         } catch (Exception e) {
             FMLLog.log(Level.SEVERE, e, "Mod called " + Reference.MOD_NAME + " was unable to load its configs!");

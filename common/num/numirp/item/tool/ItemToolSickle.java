@@ -13,6 +13,7 @@ import num.numirp.NumiRP;
 import num.numirp.core.util.MaterialHelper;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
+import num.numirp.lib.Tweaks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -25,7 +26,7 @@ public class ItemToolSickle extends ItemTool {
         super(itemId, 1, material, blocksEffectiveAgainst);
         setCreativeTab(NumiRP.tabRP);
         this.material = material;
-        
+
         if (material.name() == "WOOD") {
             setUnlocalizedName("sickleWooden");
             materialId = 0;
@@ -59,7 +60,7 @@ public class ItemToolSickle extends ItemTool {
     @Override
     public float getStrVsBlock(ItemStack itemstack, Block block) {
         if (block.blockMaterial == Material.leaves) {
-            return 1.5F;
+            return 4F;
         }
         return 0.5F;
     }
@@ -69,10 +70,12 @@ public class ItemToolSickle extends ItemTool {
         World world = player.worldObj;
         Material material = world.getBlockMaterial(x, y, z);
         int damageItem = 0;
+        int configRange = Tweaks.SICKLE_RANGE;
+        int range = (int) Math.floor(configRange - (configRange + 1) / 2);
 
-        for (int i = x - 1; i <= x + 1; i++) {
-            for (int j = y - 1; j <= y + 1; j++) {
-                for (int k = z - 1; k <= z + 1; k++) {
+        for (int i = x - range; i <= x + range; i++) {
+            for (int j = y - range; j <= y + range; j++) {
+                for (int k = z - range; k <= z + range; k++) {
                     material = world.getBlockMaterial(i, j, k);
                     if (material == Material.plants || material == Material.vine || material == Material.leaves) {
                         world.destroyBlock(i, j, k, true);
@@ -101,7 +104,7 @@ public class ItemToolSickle extends ItemTool {
     public void registerIcons(IconRegister iconRegister) {
         itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "sickle" + Strings.SICKLES[materialId]);
     }
-    
+
     @Override
     public boolean getIsRepairable(ItemStack toolIS, ItemStack repairIS) {
         return MaterialHelper.isRepairable(material, repairIS);
