@@ -7,6 +7,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
@@ -18,7 +19,7 @@ import num.numirp.core.util.MaterialHelper;
 import num.numirp.lib.Reference;
 
 public class ItemToolAthame extends ItemSword {
-    private int damage = 1;
+    private int damage;
     private EnumToolMaterial material;
 
     public ItemToolAthame(int id, EnumToolMaterial material) {
@@ -26,6 +27,7 @@ public class ItemToolAthame extends ItemSword {
         setUnlocalizedName("athame");
         setCreativeTab(NumiRP.tabRP);
         this.material = material;
+        this.damage = 4 + material.getDamageVsEntity();
     }
 
     @Override
@@ -35,9 +37,9 @@ public class ItemToolAthame extends ItemSword {
 
     @Override
     public int getDamageVsEntity(Entity entity) {
-        if (entity instanceof EntityEnderman) {
+        if ((entity instanceof EntityEnderman) || (entity instanceof EntityDragon)) {
             Random random = new Random();
-            damage = random.nextInt(3) + 24;
+            damage = random.nextInt(damage + 2) + 24;
         }
         return damage;
     }

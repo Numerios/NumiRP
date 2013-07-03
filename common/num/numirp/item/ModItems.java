@@ -45,7 +45,7 @@ public class ModItems {
         EnumToolMaterial ruby = EnumHelper.addToolMaterial("RUBY", 2, 500, 8.0F, 3, 12);
         EnumToolMaterial greenSapphire = EnumHelper.addToolMaterial("GREENSAPPHIRE", 2, 500, 8.0F, 3, 12);
         EnumToolMaterial sapphire = EnumHelper.addToolMaterial("SAPPHIRE", 2, 500, 8.0F, 3, 12);
-        EnumToolMaterial silver = EnumHelper.addToolMaterial("SILVER", 2, 100, 6.0F, 2, 0);
+        EnumToolMaterial silver = EnumHelper.addToolMaterial("SILVER", 2, 120, 6.0F, 1, 14);
 
         // Processed items
         itemProcessed = new ItemProcessed(ItemIDs.PROCESSED_ID);
