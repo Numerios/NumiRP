@@ -9,6 +9,8 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.util.MathHelper;
+import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import num.numirp.NumiRP;
 import num.numirp.item.ModItems;
@@ -72,8 +74,7 @@ public class BlockOres extends Block {
     @Override
     public int quantityDropped(int meta, int fortune, Random random) {
         if (meta == Metadata.NIKOLITE)
-            return 4 + random.nextInt(2) + random.nextInt(fortune + 1); // same
-                                                                        // as RS
+            return 4 + random.nextInt(2) + random.nextInt(fortune + 1); // same as RS
         if ((meta == Metadata.RUBY) || (meta == Metadata.GREENSAPPHIRE) || (meta == Metadata.SAPPHIRE)) {
             return random.nextInt(fortune + 1) + 1;
         }
@@ -86,6 +87,22 @@ public class BlockOres extends Block {
         for (int i = 0; i < Strings.ORES.length; i++) {
             list.add(new ItemStack(par1, 1, i));
         }
+    }
+
+    @Override
+    public void dropBlockAsItemWithChance(World world, int x, int y, int z, int id, float f, int meta) {
+        int xpAmount = 0;
+        if ((meta == Metadata.RUBY) || (meta == Metadata.GREENSAPPHIRE) || (meta == Metadata.SAPPHIRE)) {
+            xpAmount = MathHelper.getRandomIntegerInRange(world.rand, 2, 6);
+        } else if (meta == Metadata.NIKOLITE) {
+            xpAmount = MathHelper.getRandomIntegerInRange(world.rand, 1, 3);
+        } else if (meta == Metadata.TUNGSTEN) {
+            xpAmount = MathHelper.getRandomIntegerInRange(world.rand, 4, 8);
+        } else {
+            xpAmount = MathHelper.getRandomIntegerInRange(world.rand, 0, 2);
+        }
+        this.dropXpOnBlockBreak(world, x, y, z, xpAmount);
+
     }
 
 }
