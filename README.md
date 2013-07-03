@@ -7,7 +7,7 @@ NumiRP was built from scratch - it does not use any of Eloraam's code or texture
 All ideas and/or concepts are courtesy of Eloraam. 
 
 ### Download
-Newest: Version 1.0.8 - [_HERE_](https://dl.dropboxusercontent.com/u/3743471/mods/NumiRP-1.5.2-1.0.8.jar)
+Newest: Version 1.0.9 - [_HERE_](https://dl.dropboxusercontent.com/u/3743471/mods/NumiRP-1.5.2-1.0.9.jar)
 If you want any changelogs, look into the version bump's commit description :)
 
 ### License
