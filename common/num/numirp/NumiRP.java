@@ -11,10 +11,8 @@ import num.numirp.recipe.ModCrafting;
 import num.numirp.recipe.ModSmelting;
 import num.numirp.world.WorldGenerator;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.Mod.PostInit;
-import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -32,7 +30,7 @@ public class NumiRP {
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
     public static CommonProxy proxy;
 
-    @PreInit
+    @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         ConfigHandler.init(event.getSuggestedConfigurationFile());
         ModBlocks.init();
@@ -40,16 +38,17 @@ public class NumiRP {
         GameRegistry.registerWorldGenerator(WorldGenerator.instance);
         ModCrafting.init();
         ModSmelting.init();
-
-        proxy.initCapes();
+        
+        //Disabled for the time being due to the removal of EntityPlayer.cloakUrl
+        //proxy.initCapes();
     }
 
-    @Init
+    @EventHandler
     public void init(FMLInitializationEvent event) {
         proxy.initRendering();
     }
 
-    @PostInit
+    @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
     }
 }
