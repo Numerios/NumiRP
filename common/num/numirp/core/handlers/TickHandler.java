@@ -14,6 +14,7 @@ public class TickHandler implements ITickHandler {
 
     @Override
     public void tickStart(EnumSet<TickType> type, Object... tickData) {
+        // This Needs Re-writing
         if ((mc.theWorld != null) && (mc.theWorld.playerEntities.size() > 0)) {
             playerCounter += 1;
             if (playerCounter >= mc.theWorld.playerEntities.size())

@@ -155,8 +155,8 @@ public class ModCrafting {
         // Lumars
         for (int i = 0; i < Strings.COLORS.length; i++) {
             GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemLumar, 4, i), new ItemStack(Item.redstone, 1),
-                    new ItemStack(Item.lightStoneDust, 1), new ItemStack(Item.dyePowder, 1, Strings.COLORS.length - i
-                            - 1), new ItemStack(Item.dyePowder, 1, Strings.COLORS.length - i - 1));
+                    new ItemStack(Item.glowstone, 1), new ItemStack(Item.dyePowder, 1, Strings.COLORS.length - i - 1),
+                    new ItemStack(Item.dyePowder, 1, Strings.COLORS.length - i - 1));
         }
 
         for (int i = 0; i < Strings.COLORS.length; i++) {
@@ -184,19 +184,21 @@ public class ModCrafting {
             for (int j = 0; j < Strings.COLORS.length; j++) {
                 if (i != j) {
                     GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.blockLampNormal, 1, i), new ItemStack(
-                            Item.dyePowder, 1, Strings.COLORS.length - i - 1), new ItemStack(ModBlocks.blockLampNormal, 1, j));
+                            Item.dyePowder, 1, Strings.COLORS.length - i - 1), new ItemStack(ModBlocks.blockLampNormal,
+                            1, j));
                     GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.blockLampInverted, 1, i), new ItemStack(
-                            Item.dyePowder, 1, Strings.COLORS.length - i - 1), new ItemStack(ModBlocks.blockLampInverted, j));
+                            Item.dyePowder, 1, Strings.COLORS.length - i - 1), new ItemStack(
+                            ModBlocks.blockLampInverted, j));
                 }
             }
         }
-        
-        for (int i = 0; i < Strings.COLORS.length; i++){
-            GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.blockLampNormal, 1, i), new ItemStack(
-                    Item.redstone), new ItemStack(ModBlocks.blockLampInverted, 1, i));
+
+        for (int i = 0; i < Strings.COLORS.length; i++) {
+            GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.blockLampNormal, 1, i),
+                    new ItemStack(Item.redstone), new ItemStack(ModBlocks.blockLampInverted, 1, i));
         }
-        
-        for (int i = 0; i < Strings.COLORS.length; i++){
+
+        for (int i = 0; i < Strings.COLORS.length; i++) {
             GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.blockLampInverted, 1, i), new ItemStack(
                     Block.torchRedstoneActive), new ItemStack(ModBlocks.blockLampNormal, 1, i));
         }

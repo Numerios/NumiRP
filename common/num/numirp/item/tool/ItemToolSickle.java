@@ -3,7 +3,7 @@ package num.numirp.item.tool;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
@@ -95,7 +95,7 @@ public class ItemToolSickle extends ItemTool {
 
     @Override
     public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6,
-            EntityLiving par7EntityLiving) {
+            EntityLivingBase par7EntityLiving) {
         return true;
     }
 

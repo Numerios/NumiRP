@@ -74,7 +74,8 @@ public class BlockOres extends Block {
     @Override
     public int quantityDropped(int meta, int fortune, Random random) {
         if (meta == Metadata.NIKOLITE)
-            return 4 + random.nextInt(2) + random.nextInt(fortune + 1); // same as RS
+            return 4 + random.nextInt(2) + random.nextInt(fortune + 1); // same
+                                                                        // as RS
         if ((meta == Metadata.RUBY) || (meta == Metadata.GREENSAPPHIRE) || (meta == Metadata.SAPPHIRE)) {
             return random.nextInt(fortune + 1) + 1;
         }
@@ -92,7 +93,7 @@ public class BlockOres extends Block {
     @Override
     public void dropBlockAsItemWithChance(World world, int x, int y, int z, int id, float f, int meta) {
         super.dropBlockAsItemWithChance(world, x, y, z, id, f, meta);
-        
+
         int xpAmount = 0;
         if ((meta == Metadata.RUBY) || (meta == Metadata.GREENSAPPHIRE) || (meta == Metadata.SAPPHIRE)) {
             xpAmount = MathHelper.getRandomIntegerInRange(world.rand, 2, 4);
