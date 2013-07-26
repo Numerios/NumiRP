@@ -7,6 +7,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
@@ -19,7 +20,7 @@ import num.numirp.core.util.MaterialHelper;
 import num.numirp.lib.Reference;
 
 public class ItemToolAthame extends ItemSword {
-    private int damage;
+    private float damage;
     private EnumToolMaterial material;
 
     public ItemToolAthame(int id, EnumToolMaterial material) {
@@ -36,13 +37,28 @@ public class ItemToolAthame extends ItemSword {
     }
 
     @Override
-    public int getDamageVsEntity(Entity entity) {
-        if ((entity instanceof EntityEnderman) || (entity instanceof EntityDragon)) {
+    public boolean hitEntity(ItemStack itemStack, EntityLivingBase entityHit, EntityLivingBase player) {
+        if ((entityHit instanceof EntityEnderman) || (entityHit instanceof EntityDragon)) {
             Random random = new Random();
-            damage = random.nextInt(damage + 2) + 24;
+            damage = random.nextInt((int) damage + 2) + 24;
         }
+        return super.hitEntity(itemStack, entityHit, player);
+    }
+
+    @Override
+    public float func_82803_g() {
         return damage;
     }
+
+    // @Override
+    // public int getDamageVsEntity(Entity entity) {
+    // if ((entity instanceof EntityEnderman) || (entity instanceof
+    // EntityDragon)) {
+    // Random random = new Random();
+    // damage = random.nextInt(damage + 2) + 24;
+    // }
+    // return damage;
+    // }
 
     @Override
     public boolean canHarvestBlock(Block block) {
@@ -59,7 +75,7 @@ public class ItemToolAthame extends ItemSword {
     public void registerIcons(IconRegister iconRegister) {
         itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "athame");
     }
-    
+
     @Override
     public boolean getIsRepairable(ItemStack toolIS, ItemStack repairIS) {
         return MaterialHelper.isRepairable(material, repairIS);

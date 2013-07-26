@@ -15,15 +15,14 @@ public class ImageDownload implements IImageBuffer {
     public BufferedImage parseUserSkin(BufferedImage bufferedImage) {
         if (bufferedImage == null) {
             return null;
-        }
-        else {
-            this.imgWidth = (bufferedImage.getWidth() <= 64) ? 64: (bufferedImage.getWidth());
-            this.imgHeight = (bufferedImage.getHeight() <= 32) ? 32: (bufferedImage.getHeight());
+        } else {
+            this.imgWidth = (bufferedImage.getWidth() <= 64) ? 64 : (bufferedImage.getWidth());
+            this.imgHeight = (bufferedImage.getHeight() <= 32) ? 32 : (bufferedImage.getHeight());
 
             BufferedImage capeImage = new BufferedImage(this.imgWidth, this.imgHeight, 2);
 
             Graphics graphics = capeImage.getGraphics();
-            graphics.drawImage(bufferedImage, 0, 0, (ImageObserver)null);
+            graphics.drawImage(bufferedImage, 0, 0, (ImageObserver) null);
             graphics.dispose();
 
             return capeImage;

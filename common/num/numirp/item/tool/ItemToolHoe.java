@@ -40,7 +40,7 @@ public class ItemToolHoe extends ItemHoe {
     public void registerIcons(IconRegister iconRegister) {
         itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "hoe" + Strings.ORES[materialId]);
     }
-    
+
     @Override
     public boolean getIsRepairable(ItemStack toolIS, ItemStack repairIS) {
         return MaterialHelper.isRepairable(material, repairIS);
