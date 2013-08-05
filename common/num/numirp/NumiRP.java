@@ -3,6 +3,7 @@ package num.numirp;
 import net.minecraft.creativetab.CreativeTabs;
 import num.numirp.block.ModBlocks;
 import num.numirp.config.ConfigHandler;
+import num.numirp.core.handlers.AddonHandler;
 import num.numirp.core.proxy.CommonProxy;
 import num.numirp.creativetab.CreativeTabRP;
 import num.numirp.item.ModItems;
@@ -51,5 +52,6 @@ public class NumiRP {
 
     @PostInit
     public void postInit(FMLPostInitializationEvent event) {
+        AddonHandler.init();
     }
 }
