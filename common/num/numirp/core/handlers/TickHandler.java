@@ -1,6 +1,8 @@
 package num.numirp.core.handlers;
 
 import java.util.EnumSet;
+import java.util.List;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import num.numirp.core.util.ImageDownload;
@@ -22,7 +24,7 @@ public class TickHandler implements ITickHandler {
             EntityPlayer player = (EntityPlayer) mc.theWorld.playerEntities.get(playerCounter);
             String cape = (String) getCape(player.username);
             if (cape != null) {
-                String oldCape = player.cloakUrl;
+                String oldCape = player.cloakUrl
                 player.cloakUrl = (player.cloakUrl = cape);
 
                 if (oldCape != cape)

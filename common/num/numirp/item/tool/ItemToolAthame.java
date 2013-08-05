@@ -27,7 +27,7 @@ public class ItemToolAthame extends ItemSword {
         setUnlocalizedName("athame");
         setCreativeTab(NumiRP.tabRP);
         this.material = material;
-        this.damage = 4 + material.getDamageVsEntity();
+        this.damage = (int)(4 + material.getDamageVsEntity());
     }
 
     @Override
@@ -35,8 +35,7 @@ public class ItemToolAthame extends ItemSword {
         return 0.8F;
     }
 
-    @Override
-    public int getDamageVsEntity(Entity entity) {
+    public float getDamageVsEntity(Entity entity) {
         if ((entity instanceof EntityEnderman) || (entity instanceof EntityDragon)) {
             Random random = new Random();
             damage = random.nextInt(damage + 2) + 24;
