@@ -20,61 +20,59 @@ import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
 
 public class BlockDecor extends Block {
-	public BlockDecor(int id) {
-		super(id, Material.rock);
-		setHardness(3.0F);
-		setResistance(5.0F);
-		setStepSound(soundStoneFootstep);
-		setCreativeTab(NumiRP.tabRP);
-		setUnlocalizedName("numirpworld.decor");
+    public BlockDecor(int id) {
+        super(id, Material.rock);
+        setHardness(3.0F);
+        setResistance(5.0F);
+        setStepSound(soundStoneFootstep);
+        setCreativeTab(NumiRP.tabRP);
+        setUnlocalizedName("numirpworld.decor");
 
-		MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 0);
-	}
+        MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 0);
+    }
 
-	@SideOnly(Side.CLIENT)
-	private Icon[] icons;
+    @SideOnly(Side.CLIENT)
+    private Icon[] icons;
 
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister ir) {
-		icons = new Icon[Strings.DECOR.length];
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IconRegister ir) {
+        icons = new Icon[Strings.DECOR.length];
 
-		for (int i = 0; i < Strings.DECOR.length; i++) {
-			icons[i] = ir.registerIcon(Reference.TEXTURE_PATH + "block"
-					+ Strings.DECOR[i]);
-		}
-	}
+        for (int i = 0; i < Strings.DECOR.length; i++) {
+            icons[i] = ir.registerIcon(Reference.TEXTURE_PATH + "block" + Strings.DECOR[i]);
+        }
+    }
 
-	@SideOnly(Side.CLIENT)
-	public Icon getIcon(int side, int meta) {
-		return icons[meta];
-	}
+    @SideOnly(Side.CLIENT)
+    public Icon getIcon(int side, int meta) {
+        return icons[meta];
+    }
 
-	@Override
-	public int damageDropped(int meta) {
-		if (meta == Metadata.BASALT) {
-			return Metadata.BASALTCOBBLE;
-		} else {
-			return meta;
-		}
-	}
+    @Override
+    public int damageDropped(int meta) {
+        if (meta == Metadata.BASALT) {
+            return Metadata.BASALTCOBBLE;
+        } else {
+            return meta;
+        }
+    }
 
-	@Override
-	public int quantityDropped(Random random) {
-		return 1;
-	}
+    @Override
+    public int quantityDropped(Random random) {
+        return 1;
+    }
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	@SideOnly(Side.CLIENT)
-	public void getSubBlocks(int par1, CreativeTabs creativetab, List list) {
-		for (int i = 0; i < Strings.DECOR.length; i++) {
-			list.add(new ItemStack(par1, 1, i));
-		}
-	}
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SideOnly(Side.CLIENT)
+    public void getSubBlocks(int par1, CreativeTabs creativetab, List list) {
+        for (int i = 0; i < Strings.DECOR.length; i++) {
+            list.add(new ItemStack(par1, 1, i));
+        }
+    }
 
-	@Override
-	public ItemStack getPickBlock(MovingObjectPosition target, World world,
-			int x, int y, int z) {
-		return new ItemStack(this.blockID, 1, world.getBlockMetadata(x, y, z));
-	}
+    @Override
+    public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z) {
+        return new ItemStack(this.blockID, 1, world.getBlockMetadata(x, y, z));
+    }
 }
