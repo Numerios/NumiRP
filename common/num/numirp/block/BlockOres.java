@@ -28,7 +28,7 @@ public class BlockOres extends Block {
         setResistance(5.0F);
         setStepSound(soundStoneFootstep);
         setCreativeTab(NumiRP.tabRP);
-        setUnlocalizedName("numirpworld.ore");
+        setUnlocalizedName("numirp.ore");
 
         MinecraftForge.setBlockHarvestLevel(this, 0, "pickaxe", 2);
         MinecraftForge.setBlockHarvestLevel(this, 1, "pickaxe", 2);

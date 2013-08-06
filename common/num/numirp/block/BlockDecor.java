@@ -26,7 +26,7 @@ public class BlockDecor extends Block {
         setResistance(5.0F);
         setStepSound(soundStoneFootstep);
         setCreativeTab(NumiRP.tabRP);
-        setUnlocalizedName("numirpworld.decor");
+        setUnlocalizedName("numirp.decor");
 
         MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 0);
     }
