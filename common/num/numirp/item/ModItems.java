@@ -6,6 +6,7 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.EnumHelper;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
 import num.numirp.lib.ItemIDs;
 import num.numirp.lib.Metadata;
@@ -85,6 +86,10 @@ public class ModItems {
         LanguageRegistry.addName(new ItemStack(pickaxeRuby, 1), Strings.ORE_NAMES[0] + " Pickaxe");
         LanguageRegistry.addName(new ItemStack(pickaxeGreenSapphire, 1), Strings.ORE_NAMES[1] + " Pickaxe");
         LanguageRegistry.addName(new ItemStack(pickaxeSapphire, 1), Strings.ORE_NAMES[2] + " Pickaxe");
+        
+        MinecraftForge.setToolClass(pickaxeRuby, "pickaxe", 2);
+        MinecraftForge.setToolClass(pickaxeGreenSapphire, "pickaxe", 2);
+        MinecraftForge.setToolClass(pickaxeSapphire, "pickaxe", 2);
 
         // Shovels
         shovelRuby = new ItemToolShovel(ItemIDs.SHOVEL_RUBY_ID, ruby);
@@ -98,6 +103,10 @@ public class ModItems {
         LanguageRegistry.addName(new ItemStack(shovelRuby, 1), Strings.ORE_NAMES[0] + " Shovel");
         LanguageRegistry.addName(new ItemStack(shovelGreenSapphire, 1), Strings.ORE_NAMES[1] + " Shovel");
         LanguageRegistry.addName(new ItemStack(shovelSapphire, 1), Strings.ORE_NAMES[2] + " Shovel");
+        
+        MinecraftForge.setToolClass(shovelRuby, "shovel", 2);
+        MinecraftForge.setToolClass(shovelGreenSapphire, "shovel", 2);
+        MinecraftForge.setToolClass(shovelSapphire, "shovel", 2);
 
         // Axes
         axeRuby = new ItemToolAxe(ItemIDs.AXE_RUBY_ID, ruby);
@@ -111,6 +120,10 @@ public class ModItems {
         LanguageRegistry.addName(new ItemStack(axeRuby, 1), Strings.ORE_NAMES[0] + " Axe");
         LanguageRegistry.addName(new ItemStack(axeGreenSapphire, 1), Strings.ORE_NAMES[1] + " Axe");
         LanguageRegistry.addName(new ItemStack(axeSapphire, 1), Strings.ORE_NAMES[2] + " Axe");
+        
+        MinecraftForge.setToolClass(axeRuby, "axe", 2);
+        MinecraftForge.setToolClass(axeGreenSapphire, "axe", 2);
+        MinecraftForge.setToolClass(axeSapphire, "axe", 2);
 
         // Swords
         swordRuby = new ItemToolSword(ItemIDs.SWORD_RUBY_ID, ruby);
@@ -124,6 +137,10 @@ public class ModItems {
         LanguageRegistry.addName(new ItemStack(swordRuby, 1), Strings.ORE_NAMES[0] + " Sword");
         LanguageRegistry.addName(new ItemStack(swordGreenSapphire, 1), Strings.ORE_NAMES[1] + " Sword");
         LanguageRegistry.addName(new ItemStack(swordSapphire, 1), Strings.ORE_NAMES[2] + " Sword");
+        
+        MinecraftForge.setToolClass(swordRuby, "sword", 2);
+        MinecraftForge.setToolClass(swordGreenSapphire, "sword", 2);
+        MinecraftForge.setToolClass(swordSapphire, "sword", 2);
 
         // Hoes
         hoeRuby = new ItemToolHoe(ItemIDs.HOE_RUBY_ID, ruby);
@@ -137,6 +154,10 @@ public class ModItems {
         LanguageRegistry.addName(new ItemStack(hoeRuby, 1), Strings.ORE_NAMES[0] + " Hoe");
         LanguageRegistry.addName(new ItemStack(hoeGreenSapphire, 1), Strings.ORE_NAMES[1] + " Hoe");
         LanguageRegistry.addName(new ItemStack(hoeSapphire, 1), Strings.ORE_NAMES[2] + " Hoe");
+        
+        MinecraftForge.setToolClass(hoeRuby, "hoe", 2);
+        MinecraftForge.setToolClass(hoeGreenSapphire, "hoe", 2);
+        MinecraftForge.setToolClass(hoeSapphire, "hoe", 2);
 
         // Sickles
         sickleWooden = new ItemToolSickle(ItemIDs.SICKLE_WOODEN_ID, EnumToolMaterial.WOOD);
