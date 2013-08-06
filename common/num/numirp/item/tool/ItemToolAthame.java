@@ -20,6 +20,7 @@ import num.numirp.lib.Reference;
 
 public class ItemToolAthame extends ItemSword {
     private int damage;
+    private int materialDamage;
     private EnumToolMaterial material;
 
     public ItemToolAthame(int id, EnumToolMaterial material) {
@@ -27,7 +28,7 @@ public class ItemToolAthame extends ItemSword {
         setUnlocalizedName("athame");
         setCreativeTab(NumiRP.tabRP);
         this.material = material;
-        this.damage = 4 + material.getDamageVsEntity();
+        this.materialDamage = material.getDamageVsEntity();
     }
 
     @Override
@@ -37,9 +38,10 @@ public class ItemToolAthame extends ItemSword {
 
     @Override
     public int getDamageVsEntity(Entity entity) {
+        damage = materialDamage;
         if ((entity instanceof EntityEnderman) || (entity instanceof EntityDragon)) {
             Random random = new Random();
-            damage = random.nextInt(damage + 2) + 24;
+            damage = random.nextInt(materialDamage + 2) + 20;
         }
         return damage;
     }
