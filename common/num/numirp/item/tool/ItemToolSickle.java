@@ -18,42 +18,43 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemToolSickle extends ItemTool {
-    private static Block[] blocksEffectiveAgainst = new Block[] { Block.leaves, Block.grass, Block.vine };
-    private int materialId;
-    private EnumToolMaterial material;
+    private static Block[] blocksEffectiveAgainst = new Block[] {Block.leaves, Block.grass, Block.vine};
+    
+    private int materialID;
+    private EnumToolMaterial toolMaterial;
 
-    public ItemToolSickle(int itemId, EnumToolMaterial material) {
-        super(itemId, 1, material, blocksEffectiveAgainst);
+    public ItemToolSickle(int itemId, EnumToolMaterial toolMaterial) {
+        super(itemId, 1, toolMaterial, blocksEffectiveAgainst);
         setCreativeTab(NumiRP.tabRP);
-        this.material = material;
+        this.toolMaterial = toolMaterial;
 
-        if (material.name() == "WOOD") {
+        if (toolMaterial.name() == "WOOD") {
             setUnlocalizedName("sickleWooden");
-            materialId = 0;
-        } else if (material.name() == "STONE") {
+            materialID = 0;
+        } else if (toolMaterial.name() == "STONE") {
             setUnlocalizedName("sickleStone");
-            materialId = 1;
-        } else if (material.name() == "IRON") {
+            materialID = 1;
+        } else if (toolMaterial.name() == "IRON") {
             setUnlocalizedName("sickleIron");
-            materialId = 2;
-        } else if (material.name() == "GOLD") {
+            materialID = 2;
+        } else if (toolMaterial.name() == "GOLD") {
             setUnlocalizedName("sickleGolden");
-            materialId = 3;
-        } else if (material.name() == "EMERALD") {
+            materialID = 3;
+        } else if (toolMaterial.name() == "EMERALD") {
             setUnlocalizedName("sickleDiamond");
-            materialId = 4;
-        } else if (material.name() == "RUBY") {
+            materialID = 4;
+        } else if (toolMaterial.name() == "RUBY") {
             setUnlocalizedName("sickleRuby");
-            materialId = 5;
-        } else if (material.name() == "GREENSAPPHIRE") {
+            materialID = 5;
+        } else if (toolMaterial.name() == "GREENSAPPHIRE") {
             setUnlocalizedName("sickleGreenSapphire");
-            materialId = 6;
-        } else if (material.name() == "SAPPHIRE") {
+            materialID = 6;
+        } else if (toolMaterial.name() == "SAPPHIRE") {
             setUnlocalizedName("sickleSapphire");
-            materialId = 7;
+            materialID = 7;
         } else {
             setUnlocalizedName("sickleUnknown");
-            materialId = 8;
+            materialID = 8;
         }
     }
 
@@ -102,11 +103,11 @@ public class ItemToolSickle extends ItemTool {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {
-        itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "sickle" + Strings.SICKLES[materialId]);
+        itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "sickle" + Strings.SICKLES[materialID]);
     }
 
     @Override
     public boolean getIsRepairable(ItemStack toolIS, ItemStack repairIS) {
-        return MaterialHelper.isRepairable(material, repairIS);
+        return MaterialHelper.isRepairable(toolMaterial, repairIS);
     }
 }

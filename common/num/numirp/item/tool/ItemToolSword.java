@@ -12,37 +12,37 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemToolSword extends ItemSword {
-    private int materialId;
-    private EnumToolMaterial material;
+    private int materialID;
+    private EnumToolMaterial toolMaterial;
 
-    public ItemToolSword(int itemId, EnumToolMaterial material) {
-        super(itemId, material);
-        this.material = material;
+    public ItemToolSword(int itemId, EnumToolMaterial toolMaterial) {
+        super(itemId, toolMaterial);
+        this.toolMaterial = toolMaterial;
         setCreativeTab(NumiRP.tabRP);
 
-        if (material.name() == "RUBY") {
+        if (toolMaterial.name() == "RUBY") {
             setUnlocalizedName("swordRuby");
-            materialId = 0;
-        } else if (material.name() == "GREENSAPPHIRE") {
+            materialID = 0;
+        } else if (toolMaterial.name() == "GREENSAPPHIRE") {
             setUnlocalizedName("swordGreenSapphire");
-            materialId = 1;
-        } else if (material.name() == "SAPPHIRE") {
+            materialID = 1;
+        } else if (toolMaterial.name() == "SAPPHIRE") {
             setUnlocalizedName("swordSapphire");
-            materialId = 2;
+            materialID = 2;
         } else {
             setUnlocalizedName("swordUnknown");
-            materialId = 3;
+            materialID = 3;
         }
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {
-        itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "sword" + Strings.ORES[materialId]);
+        itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "sword" + Strings.ORES[materialID]);
     }
 
     @Override
     public boolean getIsRepairable(ItemStack toolIS, ItemStack repairIS) {
-        return MaterialHelper.isRepairable(material, repairIS);
+        return MaterialHelper.isRepairable(toolMaterial, repairIS);
     }
 }

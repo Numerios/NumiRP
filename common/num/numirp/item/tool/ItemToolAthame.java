@@ -21,14 +21,14 @@ import num.numirp.lib.Reference;
 public class ItemToolAthame extends ItemSword {
     private int damage;
     private int materialDamage;
-    private EnumToolMaterial material;
+    private EnumToolMaterial toolMaterial;
 
-    public ItemToolAthame(int id, EnumToolMaterial material) {
-        super(id, material);
+    public ItemToolAthame(int id, EnumToolMaterial toolMaterial) {
+        super(id, toolMaterial);
         setUnlocalizedName("athame");
         setCreativeTab(NumiRP.tabRP);
-        this.material = material;
-        this.materialDamage = material.getDamageVsEntity();
+        this.toolMaterial = toolMaterial;
+        this.materialDamage = toolMaterial.getDamageVsEntity();
     }
 
     @Override
@@ -64,6 +64,6 @@ public class ItemToolAthame extends ItemSword {
     
     @Override
     public boolean getIsRepairable(ItemStack toolIS, ItemStack repairIS) {
-        return MaterialHelper.isRepairable(material, repairIS);
+        return MaterialHelper.isRepairable(toolMaterial, repairIS);
     }
 }

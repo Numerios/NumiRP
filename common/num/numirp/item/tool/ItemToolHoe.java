@@ -12,37 +12,37 @@ import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
 
 public class ItemToolHoe extends ItemHoe {
-    private int materialId;
-    private EnumToolMaterial material;
+    private int materialID;
+    private EnumToolMaterial toolMaterial;
 
-    public ItemToolHoe(int itemId, EnumToolMaterial material) {
-        super(itemId, material);
+    public ItemToolHoe(int itemId, EnumToolMaterial toolMaterial) {
+        super(itemId, toolMaterial);
         setCreativeTab(NumiRP.tabRP);
-        this.material = material;
+        this.toolMaterial = toolMaterial;
 
-        if (material.name() == "RUBY") {
+        if (toolMaterial.name() == "RUBY") {
             setUnlocalizedName("hoeRuby");
-            materialId = 0;
-        } else if (material.name() == "GREENSAPPHIRE") {
+            materialID = 0;
+        } else if (toolMaterial.name() == "GREENSAPPHIRE") {
             setUnlocalizedName("hoeGreenSapphire");
-            materialId = 1;
-        } else if (material.name() == "SAPPHIRE") {
+            materialID = 1;
+        } else if (toolMaterial.name() == "SAPPHIRE") {
             setUnlocalizedName("hoeSapphire");
-            materialId = 2;
+            materialID = 2;
         } else {
             setUnlocalizedName("hoeUnknown");
-            materialId = 3;
+            materialID = 3;
         }
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {
-        itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "hoe" + Strings.ORES[materialId]);
+        itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "hoe" + Strings.ORES[materialID]);
     }
     
     @Override
     public boolean getIsRepairable(ItemStack toolIS, ItemStack repairIS) {
-        return MaterialHelper.isRepairable(material, repairIS);
+        return MaterialHelper.isRepairable(toolMaterial, repairIS);
     }
 }
