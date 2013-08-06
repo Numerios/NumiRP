@@ -8,7 +8,11 @@ All ideas and/or concepts are courtesy of Eloraam.
 
 ### Download
 __Stable__: Version 1.0.9 - [_HERE_](https://dl.dropboxusercontent.com/u/3743471/mods/NumiRP-1.5.2-1.0.9.jar)
+
 Newest: Version 1.1.0-beta - [_HERE_](https://dl.dropboxusercontent.com/u/3743471/mods/NumiRP-1.5.2-1.1.0-beta.jar)
+
+_Please, don't use the beta in your stable worlds, it's for testing only!_
+
 If you want any changelogs, look into the version bump's commit description :)
 
 ### License
