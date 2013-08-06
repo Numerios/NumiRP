@@ -5,6 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import num.numirp.lib.BlockIDs;
 import num.numirp.lib.Metadata;
+import num.numirp.lib.Module;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -93,73 +94,76 @@ public class ModBlocks {
         blockBasaltBrick = new ItemStack(blockDecor, 1, Metadata.BASALTBRICK);
         blockBasaltChiseled = new ItemStack(blockDecor, 1, Metadata.BASALTCHISELED);
         blockBasaltPaver = new ItemStack(blockDecor, 1, Metadata.BASALTPAVER);
-        
+
         OreDictionary.registerOre("blockMarble", blockMarble);
         OreDictionary.registerOre("blockBasalt", blockBasalt);
         OreDictionary.registerOre("blockMarbleBrick", blockMarbleBrick);
         OreDictionary.registerOre("blockBasaltCobble", blockBasaltCobble);
         OreDictionary.registerOre("blockBasaltBrick", blockBasaltBrick);
         OreDictionary.registerOre("blockBasaltChiseled", blockBasaltChiseled);
-        OreDictionary.registerOre("blockBasaltPaver", blockBasaltPaver);        
+        OreDictionary.registerOre("blockBasaltPaver", blockBasaltPaver);
 
-        blockLampNormal = new BlockLamp(BlockIDs.LAMPS_NORMAL_ID, false, false, BlockIDs.LAMPS_NORMAL_ID,
-                BlockIDs.LAMPS_NORMAL_ACTIVE_ID).setUnlocalizedName("lamp");
-        blockLampNormalActive = new BlockLamp(BlockIDs.LAMPS_NORMAL_ACTIVE_ID, true, true, BlockIDs.LAMPS_NORMAL_ID,
-                BlockIDs.LAMPS_NORMAL_ACTIVE_ID).setUnlocalizedName("lampOn");
-        blockLampInverted = new BlockLamp(BlockIDs.LAMPS_INVERTED_ID, false, true, BlockIDs.LAMPS_INVERTED_ID,
-                BlockIDs.LAMPS_INVERTED_ACTIVE_ID).setUnlocalizedName("lampInverted");
-        blockLampInvertedActive = new BlockLamp(BlockIDs.LAMPS_INVERTED_ACTIVE_ID, true, false,
-                BlockIDs.LAMPS_INVERTED_ID, BlockIDs.LAMPS_INVERTED_ACTIVE_ID).setUnlocalizedName("lampInvertedOn");
+        if (Module.LAMPS) {
+            blockLampNormal = new BlockLamp(BlockIDs.LAMPS_NORMAL_ID, false, false, BlockIDs.LAMPS_NORMAL_ID,
+                    BlockIDs.LAMPS_NORMAL_ACTIVE_ID).setUnlocalizedName("lamp");
+            blockLampNormalActive = new BlockLamp(BlockIDs.LAMPS_NORMAL_ACTIVE_ID, true, true,
+                    BlockIDs.LAMPS_NORMAL_ID, BlockIDs.LAMPS_NORMAL_ACTIVE_ID).setUnlocalizedName("lampOn");
+            blockLampInverted = new BlockLamp(BlockIDs.LAMPS_INVERTED_ID, false, true, BlockIDs.LAMPS_INVERTED_ID,
+                    BlockIDs.LAMPS_INVERTED_ACTIVE_ID).setUnlocalizedName("lampInverted");
+            blockLampInvertedActive = new BlockLamp(BlockIDs.LAMPS_INVERTED_ACTIVE_ID, true, false,
+                    BlockIDs.LAMPS_INVERTED_ID, BlockIDs.LAMPS_INVERTED_ACTIVE_ID).setUnlocalizedName("lampInvertedOn");
 
-        GameRegistry.registerBlock(blockLampNormal, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase()
-                + (blockLampNormal.getUnlocalizedName().substring(5)));
-        GameRegistry.registerBlock(blockLampNormalActive, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase()
-                + (blockLampNormalActive.getUnlocalizedName().substring(5)));
-        GameRegistry.registerBlock(blockLampInverted, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase()
-                + (blockLampInverted.getUnlocalizedName().substring(5)));
-        GameRegistry.registerBlock(blockLampInvertedActive, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase()
-                + (blockLampInvertedActive.getUnlocalizedName().substring(5)));
+            GameRegistry.registerBlock(blockLampNormal, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase()
+                    + (blockLampNormal.getUnlocalizedName().substring(5)));
+            GameRegistry.registerBlock(blockLampNormalActive, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase()
+                    + (blockLampNormalActive.getUnlocalizedName().substring(5)));
+            GameRegistry.registerBlock(blockLampInverted, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase()
+                    + (blockLampInverted.getUnlocalizedName().substring(5)));
+            GameRegistry.registerBlock(blockLampInvertedActive, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase()
+                    + (blockLampInvertedActive.getUnlocalizedName().substring(5)));
 
-        for (int i = 0; i < Strings.COLORS.length; i++) {
-            LanguageRegistry.addName(new ItemStack(blockLampNormal, 1, i), Strings.COLOR_NAMES[i] + " Lamp");
+            for (int i = 0; i < Strings.COLORS.length; i++) {
+                LanguageRegistry.addName(new ItemStack(blockLampNormal, 1, i), Strings.COLOR_NAMES[i] + " Lamp");
+            }
+            for (int i = 0; i < Strings.COLORS.length; i++) {
+                LanguageRegistry.addName(new ItemStack(blockLampInverted, 1, i), Strings.COLOR_NAMES[i]
+                        + " Inverted Lamp");
+            }
+
+            blockLampWhite = new ItemStack(blockLampNormal, 1, Metadata.WHITE);
+            blockLampOrange = new ItemStack(blockLampNormal, 1, Metadata.ORANGE);
+            blockLampMagenta = new ItemStack(blockLampNormal, 1, Metadata.MAGENTA);
+            blockLampLBlue = new ItemStack(blockLampNormal, 1, Metadata.LBLUE);
+            blockLampYellow = new ItemStack(blockLampNormal, 1, Metadata.YELLOW);
+            blockLampLime = new ItemStack(blockLampNormal, 1, Metadata.LIME);
+            blockLampPink = new ItemStack(blockLampNormal, 1, Metadata.PINK);
+            blockLampGray = new ItemStack(blockLampNormal, 1, Metadata.GRAY);
+            blockLampLGray = new ItemStack(blockLampNormal, 1, Metadata.LGRAY);
+            blockLampCyan = new ItemStack(blockLampNormal, 1, Metadata.CYAN);
+            blockLampPurple = new ItemStack(blockLampNormal, 1, Metadata.PURPLE);
+            blockLampBlue = new ItemStack(blockLampNormal, 1, Metadata.BLUE);
+            blockLampBrown = new ItemStack(blockLampNormal, 1, Metadata.BROWN);
+            blockLampGreen = new ItemStack(blockLampNormal, 1, Metadata.GREEN);
+            blockLampRed = new ItemStack(blockLampNormal, 1, Metadata.RED);
+            blockLampBlack = new ItemStack(blockLampNormal, 1, Metadata.BLACK);
+
+            blockLampInvertedWhite = new ItemStack(blockLampInverted, 1, Metadata.WHITE);
+            blockLampInvertedOrange = new ItemStack(blockLampInverted, 1, Metadata.ORANGE);
+            blockLampInvertedMagenta = new ItemStack(blockLampInverted, 1, Metadata.MAGENTA);
+            blockLampInvertedLBlue = new ItemStack(blockLampInverted, 1, Metadata.LBLUE);
+            blockLampInvertedYellow = new ItemStack(blockLampInverted, 1, Metadata.YELLOW);
+            blockLampInvertedLime = new ItemStack(blockLampInverted, 1, Metadata.LIME);
+            blockLampInvertedPink = new ItemStack(blockLampInverted, 1, Metadata.PINK);
+            blockLampInvertedGray = new ItemStack(blockLampInverted, 1, Metadata.GRAY);
+            blockLampInvertedLGray = new ItemStack(blockLampInverted, 1, Metadata.LGRAY);
+            blockLampInvertedCyan = new ItemStack(blockLampInverted, 1, Metadata.CYAN);
+            blockLampInvertedPurple = new ItemStack(blockLampInverted, 1, Metadata.PURPLE);
+            blockLampInvertedBlue = new ItemStack(blockLampInverted, 1, Metadata.BLUE);
+            blockLampInvertedBrown = new ItemStack(blockLampInverted, 1, Metadata.BROWN);
+            blockLampInvertedGreen = new ItemStack(blockLampInverted, 1, Metadata.GREEN);
+            blockLampInvertedRed = new ItemStack(blockLampInverted, 1, Metadata.RED);
+            blockLampInvertedBlack = new ItemStack(blockLampInverted, 1, Metadata.BLACK);
         }
-        for (int i = 0; i < Strings.COLORS.length; i++) {
-            LanguageRegistry.addName(new ItemStack(blockLampInverted, 1, i), Strings.COLOR_NAMES[i] + " Inverted Lamp");
-        }
-
-        blockLampWhite = new ItemStack(blockLampNormal, 1, Metadata.WHITE);
-        blockLampOrange = new ItemStack(blockLampNormal, 1, Metadata.ORANGE);
-        blockLampMagenta = new ItemStack(blockLampNormal, 1, Metadata.MAGENTA);
-        blockLampLBlue = new ItemStack(blockLampNormal, 1, Metadata.LBLUE);
-        blockLampYellow = new ItemStack(blockLampNormal, 1, Metadata.YELLOW);
-        blockLampLime = new ItemStack(blockLampNormal, 1, Metadata.LIME);
-        blockLampPink = new ItemStack(blockLampNormal, 1, Metadata.PINK);
-        blockLampGray = new ItemStack(blockLampNormal, 1, Metadata.GRAY);
-        blockLampLGray = new ItemStack(blockLampNormal, 1, Metadata.LGRAY);
-        blockLampCyan = new ItemStack(blockLampNormal, 1, Metadata.CYAN);
-        blockLampPurple = new ItemStack(blockLampNormal, 1, Metadata.PURPLE);
-        blockLampBlue = new ItemStack(blockLampNormal, 1, Metadata.BLUE);
-        blockLampBrown = new ItemStack(blockLampNormal, 1, Metadata.BROWN);
-        blockLampGreen = new ItemStack(blockLampNormal, 1, Metadata.GREEN);
-        blockLampRed = new ItemStack(blockLampNormal, 1, Metadata.RED);
-        blockLampBlack = new ItemStack(blockLampNormal, 1, Metadata.BLACK);
-
-        blockLampInvertedWhite = new ItemStack(blockLampInverted, 1, Metadata.WHITE);
-        blockLampInvertedOrange = new ItemStack(blockLampInverted, 1, Metadata.ORANGE);
-        blockLampInvertedMagenta = new ItemStack(blockLampInverted, 1, Metadata.MAGENTA);
-        blockLampInvertedLBlue = new ItemStack(blockLampInverted, 1, Metadata.LBLUE);
-        blockLampInvertedYellow = new ItemStack(blockLampInverted, 1, Metadata.YELLOW);
-        blockLampInvertedLime = new ItemStack(blockLampInverted, 1, Metadata.LIME);
-        blockLampInvertedPink = new ItemStack(blockLampInverted, 1, Metadata.PINK);
-        blockLampInvertedGray = new ItemStack(blockLampInverted, 1, Metadata.GRAY);
-        blockLampInvertedLGray = new ItemStack(blockLampInverted, 1, Metadata.LGRAY);
-        blockLampInvertedCyan = new ItemStack(blockLampInverted, 1, Metadata.CYAN);
-        blockLampInvertedPurple = new ItemStack(blockLampInverted, 1, Metadata.PURPLE);
-        blockLampInvertedBlue = new ItemStack(blockLampInverted, 1, Metadata.BLUE);
-        blockLampInvertedBrown = new ItemStack(blockLampInverted, 1, Metadata.BROWN);
-        blockLampInvertedGreen = new ItemStack(blockLampInverted, 1, Metadata.GREEN);
-        blockLampInvertedRed = new ItemStack(blockLampInverted, 1, Metadata.RED);
-        blockLampInvertedBlack = new ItemStack(blockLampInverted, 1, Metadata.BLACK);
     }
 
 }

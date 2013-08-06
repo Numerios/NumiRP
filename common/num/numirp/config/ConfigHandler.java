@@ -8,6 +8,7 @@ import cpw.mods.fml.common.FMLLog;
 import net.minecraftforge.common.Configuration;
 import num.numirp.lib.BlockIDs;
 import num.numirp.lib.ItemIDs;
+import num.numirp.lib.Module;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Tweaks;
 import num.numirp.lib.WorldGen;
@@ -25,6 +26,11 @@ public class ConfigHandler {
             conf.load();
             usedVersion = conf.get("Version info", "VERSION INFO - Please do not change this", Reference.MOD_VERSION)
                     .getString();
+
+            Module.LAMPS = conf.get("General", "LAMP MODULE (adding lamps)", Module.LAMPS_DEFAULT).getBoolean(
+                    Module.LAMPS_DEFAULT);
+            Module.TURTLES = conf.get("General", "TURTLE MODULE (adding gem tools to turtles from computercraft)",
+                    Module.TURTLES_DEFAULT).getBoolean(Module.TURTLES_DEFAULT);
 
             WorldGen.WORLDGEN_RUBY = conf.get("World Generation", "Ruby Generation", WorldGen.WORLDGEN_RUBY_DEFAULT)
                     .getBoolean(WorldGen.WORLDGEN_RUBY_DEFAULT);
