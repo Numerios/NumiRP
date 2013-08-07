@@ -1,5 +1,10 @@
-/Releases/
-/bin/
+# To ignore release files #
+Releases/
+
+# To ignore Eclipse mess #
+bin/
 .classpath
 .project
-/common/dan200/
+
+# To ignore APIs #
+common/dan200/
