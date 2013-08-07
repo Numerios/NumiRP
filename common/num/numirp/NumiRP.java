@@ -1,10 +1,11 @@
 package num.numirp;
 
 import net.minecraft.creativetab.CreativeTabs;
+import num.numirp.addons.ModAddons;
 import num.numirp.block.ModBlocks;
 import num.numirp.config.ConfigHandler;
-import num.numirp.core.handlers.AddonHandler;
 import num.numirp.core.proxy.CommonProxy;
+import num.numirp.core.util.Logger;
 import num.numirp.creativetab.CreativeTabRP;
 import num.numirp.item.ModItems;
 import num.numirp.lib.Reference;
@@ -36,9 +37,13 @@ public class NumiRP {
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
         ConfigHandler.init(event.getSuggestedConfigurationFile());
+        Logger.init();
+        
         ModBlocks.init();
         ModItems.init();
+        
         GameRegistry.registerWorldGenerator(WorldGenerator.instance);
+        
         ModCrafting.init();
         ModSmelting.init();
 
@@ -52,6 +57,6 @@ public class NumiRP {
 
     @PostInit
     public void postInit(FMLPostInitializationEvent event) {
-        AddonHandler.init();
+        ModAddons.init();
     }
 }

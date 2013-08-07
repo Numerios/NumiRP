@@ -1,6 +1,7 @@
-package num.numirp.core.addons;
+package num.numirp.addons;
 
 import net.minecraft.item.Item;
+import num.numirp.core.util.Logger;
 import num.numirp.item.ModItems;
 import num.numirp.lib.Module;
 import cpw.mods.fml.common.Loader;
@@ -13,9 +14,9 @@ public class AddonCC {
 
     public static void init() {
         if (Loader.isModLoaded("CCTurtle")) {
-            System.out.println("[NumiRP] ComputerCraft found!");
+            Logger.info("ComputerCraft found!");
             if (Module.TURTLES) {
-                // TODO: Make them respect the harvest level!
+                Logger.info("Adding new turtle tools to ComputerCraft");
                 // Ruby turtles
                 TurtleAPI.registerUpgrade(getUpgrade(BASE_UPGRADE_ID, "Ruby", ModItems.swordRuby, "sword"));
                 TurtleAPI.registerUpgrade(getUpgrade(BASE_UPGRADE_ID + 1, "Ruby", ModItems.shovelRuby, "shovel"));
@@ -46,7 +47,7 @@ public class AddonCC {
                 TurtleAPI.registerUpgrade(getUpgrade(BASE_UPGRADE_ID + 14, "Sapphire", ModItems.hoeSapphire, "hoe"));
             }
         } else {
-            System.out.println("[NumiRP] ComputerCraft was not found!");
+            Logger.warn("ComputerCraft was not found!");
         }
     }
 
