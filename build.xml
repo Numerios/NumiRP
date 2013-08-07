@@ -7,7 +7,7 @@
    <property name="download.dir" value="TEMP" />   
 	
 	<target name="clean">
-		<echo message="Cleaning the mess after building... " />
+		<echo message="Cleaning the mess after/before building... " />
 		<delete file="${build.dir.dev}\mcp\src\minecraft\mcmod.info" />
 		<delete dir="${build.dir.dev}\mcp\src\minecraft\num" />
 		<delete dir="${build.dir.dev}\eclipse\Minecraft\bin\num" />
@@ -15,10 +15,10 @@
 	</target>
 
 	<target name="clean_APIs">
-		<echo message="Cleaning the mess after APIs... " />
+		<echo message="Cleaning the mess after/before APIs... " />
 		<delete dir="${build.dir.dev}\mcp\src\minecraft\dan200" />
 		<delete dir="${build.dir.dev}\eclipse\Minecraft\bin\dan200" />
-		
+		<delete dir="${build.dir.dev}\src\NumiRPWorld\common\dan200" />		
 		<delete dir="${download.dir}" />
 	</target>
 
@@ -71,8 +71,10 @@
 	</target>	
 	
 	<target name="build">
-		<!-- Prep for the build -->
 		<antcall target="clean" />
+		<antcall target="clean_APIs" />
+
+		<!-- Prep for the build -->
 		<antcall target="prep" />
 		<antcall target="download_APIs" />
 		<antcall target="extract_APIs" />
