@@ -4,13 +4,14 @@ import net.minecraft.item.Item;
 import num.numirp.core.util.Logger;
 import num.numirp.item.ModItems;
 import num.numirp.lib.Module;
+import num.numirp.lib.Tweaks;
 import cpw.mods.fml.common.Loader;
 import dan200.turtle.api.ITurtleUpgrade;
 import dan200.turtle.api.TurtleAPI;
 
 public class AddonCC {
-    // using 4900 - 4914
-    public static final int BASE_UPGRADE_ID = 4900;
+    // using 4900 - 4914 by default
+    public static final int BASE_UPGRADE_ID = Tweaks.TURTLE_UPGRADE_BASE;
 
     public static void init() {
         if (Loader.isModLoaded("CCTurtle")) {
@@ -88,6 +89,7 @@ public class AddonCC {
                     (materialName + " " + turtleName), item, false);
             return turtleUpgrade;
         } catch (Exception e) {
+            Logger.warn("Turtle was not found!");
             e.printStackTrace();
         }
         return null;

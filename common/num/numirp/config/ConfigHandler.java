@@ -128,8 +128,11 @@ public class ConfigHandler {
             BlockIDs.LAMPS_INVERTED_ACTIVE_ID = conf.getBlock("lampsInvertedOn",
                     BlockIDs.LAMPS_INVERTED_ACTIVE_ID_DEFAULT).getInt(BlockIDs.LAMPS_INVERTED_ACTIVE_ID_DEFAULT);
 
+            conf.addCustomCategoryComment("Tweaks", "Do not change these unless you know what you're doing!");
             Tweaks.SICKLE_RANGE = conf.get("Tweaks", "Sickle range - 3 by default", Tweaks.SICKLE_RANGE_DEFAULT)
                     .getInt(Tweaks.SICKLE_RANGE_DEFAULT);
+            Tweaks.TURTLE_UPGRADE_BASE = conf.get("Tweaks", "Turtle upgrade number (by default 4900)",
+                    Tweaks.TURTLE_UPGRADE_BASE_DEFAULT).getInt(Tweaks.TURTLE_UPGRADE_BASE_DEFAULT);
 
         } catch (Exception e) {
             FMLLog.log(Level.SEVERE, e, "Mod called " + Reference.MOD_NAME + " was unable to load its configs!");
