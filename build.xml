@@ -3,7 +3,7 @@
    <property name="build.dir.dev" value="../../" />
    <property name="build.dir.release" value="Releases" />
    <property name="build.release.mcversion" value="1.5.2" />
-   <property name="build.release.modversion" value="1.1.0-beta" />
+   <property name="build.release.modversion" value="1.1.0" />
    <property name="download.dir" value="TEMP" />   
 	
 	<target name="clean">
