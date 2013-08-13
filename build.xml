@@ -1,22 +1,22 @@
 <?xml version="1.0" ?> 
 <project name="NumiRP" default="build">
    <property name="build.dir.dev" value="../../" />
-   <property name="build.dir.release" value="Releases" />
-   <property name="build.release.mcversion" value="1.5.2" />
+   <property name="build.dir.release" value="releases" />
+   <property name="build.release.mcversion" value="1.6.2" />
    <property name="build.release.modversion" value="1.1.0" />
    <property name="download.dir" value="TEMP" />   
 	
 	<target name="clean">
 		<echo message="Cleaning the mess after/before building... " />
-		<delete file="${build.dir.dev}\mcp\src\minecraft\mcmod.info" />
-		<delete dir="${build.dir.dev}\mcp\src\minecraft\num" />
+		<delete file="${build.dir.dev}\forge\mcp\src\minecraft\mcmod.info" />
+		<delete dir="${build.dir.dev}\forge\mcp\src\minecraft\num" />
 		<delete dir="${build.dir.dev}\eclipse\Minecraft\bin\num" />
-		<delete dir="${build.dir.dev}\mcp\reobf\minecraft" />
+		<delete dir="${build.dir.dev}\forge\mcp\reobf\minecraft" />
 	</target>
 
 	<target name="clean_APIs">
 		<echo message="Cleaning the mess after/before APIs... " />
-		<delete dir="${build.dir.dev}\mcp\src\minecraft\dan200" />
+		<delete dir="${build.dir.dev}\forge\mcp\src\minecraft\dan200" />
 		<delete dir="${build.dir.dev}\eclipse\Minecraft\bin\dan200" />
 		<delete dir="${build.dir.dev}\src\NumiRPWorld\common\dan200" />		
 		<delete dir="${download.dir}" />
@@ -24,7 +24,7 @@
 
 	<target name="prep">
 		<echo message="Copying NumiRP source... " />
-		<copy todir="${build.dir.dev}\mcp\src\minecraft">
+		<copy todir="${build.dir.dev}\forge\mcp\src\minecraft">
 			<fileset dir="${build.dir.dev}\src\NumiRPWorld\common" />
 		</copy>
 	</target>
@@ -34,38 +34,38 @@
 		<mkdir dir="${download.dir}" />
 
 		<echo message="Downloading CC API... " />
-		<get src="https://dl.dropboxusercontent.com/u/3743471/mods/APIs/CC-api.zip" dest="${download.dir}/CC-api.zip" />
+		<get src="https://dl.dropboxusercontent.com/u/3743471/mods/APIs/CC-api-16.zip" dest="${download.dir}/CC-api-16.zip" />
 	</target>
 
 	<target name="extract_APIs">
 		<echo message="Extracting APIs..." />
 
 		<echo message="Extracting CC API... " />
-		<unzip src="${download.dir}/CC-api.zip" dest="${download.dir}" />
-		<move file="${download.dir}/dan200" todir="${build.dir.dev}\mcp\src\minecraft" />
+		<unzip src="${download.dir}/CC-api-16.zip" dest="${download.dir}" />
+		<move file="${download.dir}/dan200" todir="${build.dir.dev}\forge\mcp\src\minecraft" />
 	</target>
 
 	<target name="replace_version">
 		<echo message="Replacing @VERSION@ tokens... " />
-		<replace dir="${build.dir.dev}\mcp\src\minecraft" token="@VERSION@" value="${build.release.modversion}" />
+		<replace dir="${build.dir.dev}\forge\mcp\src\minecraft" token="@VERSION@" value="${build.release.modversion}" />
 	</target>
 
 	<target name="recompile">
 		<echo message="Recompiling... " />
-		<exec dir="${build.dir.dev}\mcp" executable="cmd" osfamily="windows">
+		<exec dir="${build.dir.dev}\forge\mcp" executable="cmd" osfamily="windows">
 			<arg line="/c recompile.bat" />
 		</exec>
-		<exec dir="${build.dir.dev}\mcp" executable="bash" osfamily="unix">
+		<exec dir="${build.dir.dev}\forge\mcp" executable="bash" osfamily="unix">
 			<arg line="recompile.sh" />
 		</exec>
 	</target>
 	
 	<target name="reobfuscate">
 		<echo message="Reobfuscating... " />
-		<exec dir="${build.dir.dev}\mcp" executable="cmd" osfamily="windows">
+		<exec dir="${build.dir.dev}\forge\mcp" executable="cmd" osfamily="windows">
 			<arg line="/c reobfuscate_srg.bat" />
 		</exec>
-		<exec dir="${build.dir.dev}\mcp" executable="bash" osfamily="unix">
+		<exec dir="${build.dir.dev}\forge\mcp" executable="bash" osfamily="unix">
 			<arg line="reobfuscate_srg.sh" />
 		</exec>
 	</target>	
@@ -83,14 +83,14 @@
 		<antcall target="reobfuscate" />
 		
 		<!-- Build the jar -->
-		<mkdir dir="${build.dir.release}" />
-		<jar destfile="${build.dir.release}\NumiRP-${build.release.mcversion}-${build.release.modversion}.jar">
-			<fileset dir="${build.dir.dev}\mcp\src\minecraft\" includes="mcmod.info" />
-			<fileset dir="${build.dir.dev}\mcp\reobf\minecraft" />
+		<mkdir dir="${build.dir.dev}\${build.dir.release}" />
+		<jar destfile="${build.dir.dev}\${build.dir.release}\NumiRP-${build.release.mcversion}-${build.release.modversion}.jar">
+			<fileset dir="${build.dir.dev}\forge\mcp\src\minecraft\" includes="mcmod.info" />
+			<fileset dir="${build.dir.dev}\forge\mcp\reobf\minecraft" />
 			<fileset dir="${build.dir.dev}\src\NumiRPWorld\resources" />
 		</jar>
 		
-		<!-- Clean up the MCP source now that we are done -->
+		<!-- Clean up now that we are done -->
 		<antcall target="clean" />
 		<antcall target="clean_APIs" />
 	</target>

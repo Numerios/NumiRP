@@ -2,11 +2,9 @@ package num.numirp.item.tool;
 
 import java.util.Random;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,10 +15,12 @@ import net.minecraft.world.World;
 import num.numirp.NumiRP;
 import num.numirp.core.util.MaterialHelper;
 import num.numirp.lib.Reference;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemToolAthame extends ItemSword {
-    private int damage;
-    private int materialDamage;
+    private float damage;
+    private float materialDamage;
     private EnumToolMaterial toolMaterial;
 
     public ItemToolAthame(int id, EnumToolMaterial toolMaterial) {
@@ -37,12 +37,18 @@ public class ItemToolAthame extends ItemSword {
     }
 
     @Override
-    public int getDamageVsEntity(Entity entity) {
+    public boolean hitEntity(ItemStack is, EntityLivingBase target, EntityLivingBase attacker) {
         damage = materialDamage;
-        if ((entity instanceof EntityEnderman) || (entity instanceof EntityDragon)) {
+        if ((target instanceof EntityEnderman) || (target instanceof EntityDragon)) {
             Random random = new Random();
-            damage = random.nextInt(materialDamage + 2) + 20;
+            damage = random.nextInt((int) (materialDamage + 2)) + 20;
         }
+        return super.hitEntity(is, target, attacker);
+    }
+
+    //TODO: FIX ATHAME DAMAGE!
+    @Override
+    public float func_82803_g() {
         return damage;
     }
 
@@ -61,7 +67,7 @@ public class ItemToolAthame extends ItemSword {
     public void registerIcons(IconRegister iconRegister) {
         itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "athame");
     }
-    
+
     @Override
     public boolean getIsRepairable(ItemStack toolIS, ItemStack repairIS) {
         return MaterialHelper.isRepairable(toolMaterial, repairIS);

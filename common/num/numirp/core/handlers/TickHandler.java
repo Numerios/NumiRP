@@ -21,13 +21,14 @@ public class TickHandler implements ITickHandler {
 
             EntityPlayer player = (EntityPlayer) mc.theWorld.playerEntities.get(playerCounter);
             String cape = (String) getCape(player.username);
-            if (cape != null) {
+           /* if (cape != null) {
                 String oldCape = player.cloakUrl;
                 player.cloakUrl = (player.cloakUrl = cape);
 
                 if (oldCape != cape)
                     mc.renderEngine.obtainImageData(player.cloakUrl, new ImageDownload());
-            }
+            }*/
+            //TODO: FIX CAPES!
 
         }
     }
