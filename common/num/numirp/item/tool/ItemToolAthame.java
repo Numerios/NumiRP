@@ -2,9 +2,13 @@ package num.numirp.item.tool;
 
 import java.util.Random;
 
+import com.google.common.collect.Multimap;
+
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
@@ -29,6 +33,7 @@ public class ItemToolAthame extends ItemSword {
         setCreativeTab(NumiRP.tabRP);
         this.toolMaterial = toolMaterial;
         this.materialDamage = toolMaterial.getDamageVsEntity();
+        damage = materialDamage;
     }
 
     @Override
@@ -38,7 +43,6 @@ public class ItemToolAthame extends ItemSword {
 
     @Override
     public boolean hitEntity(ItemStack is, EntityLivingBase target, EntityLivingBase attacker) {
-        damage = materialDamage;
         if ((target instanceof EntityEnderman) || (target instanceof EntityDragon)) {
             Random random = new Random();
             damage = random.nextInt((int) (materialDamage + 2)) + 20;
@@ -46,7 +50,8 @@ public class ItemToolAthame extends ItemSword {
         return super.hitEntity(is, target, attacker);
     }
 
-    //TODO: FIX ATHAME DAMAGE!
+    // TODO: FIX ATHAME DAMAGE!
+
     @Override
     public float func_82803_g() {
         return damage;
@@ -71,5 +76,14 @@ public class ItemToolAthame extends ItemSword {
     @Override
     public boolean getIsRepairable(ItemStack toolIS, ItemStack repairIS) {
         return MaterialHelper.isRepairable(toolMaterial, repairIS);
+    }
+
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @Override
+    public Multimap getItemAttributeModifiers() {
+        Multimap multimap = super.getItemAttributeModifiers();
+        multimap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(
+                field_111210_e, "Weapon modifier", (double) this.damage, 0));
+        return multimap;
     }
 }

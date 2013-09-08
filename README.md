@@ -9,6 +9,8 @@ All ideas and/or concepts are courtesy of Eloraam.
 ### Download
 __Stable__: Version 1.1.0 for MC1.5.x - [_HERE_](https://dl.dropboxusercontent.com/u/3743471/mods/NumiRP-1.5.2-1.1.0.jar)
 
+__Experimental__: Version 1.1.1-beta for MC1.5.x - [_HERE_](https://dl.dropboxusercontent.com/u/3743471/mods/NumiRP-1.5.2-1.1.1-beta.jar)
+
 If you want any changelogs, look into the version bump's commit description :)
 
 ### License

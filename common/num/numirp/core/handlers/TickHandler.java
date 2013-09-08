@@ -1,9 +1,12 @@
 package num.numirp.core.handlers;
 
 import java.util.EnumSet;
+
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ThreadDownloadImageData;
+import net.minecraft.client.renderer.texture.TextureObject;
 import net.minecraft.entity.player.EntityPlayer;
-import num.numirp.core.util.ImageDownload;
+import net.minecraft.util.ResourceLocation;
 import num.numirp.lib.Reference;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
@@ -14,23 +17,28 @@ public class TickHandler implements ITickHandler {
 
     @Override
     public void tickStart(EnumSet<TickType> type, Object... tickData) {
-        if ((mc.theWorld != null) && (mc.theWorld.playerEntities.size() > 0)) {
+      //TODO: FIX CAPES!
+       /* if ((mc.theWorld != null) && (mc.theWorld.playerEntities.size() > 0)) {
             playerCounter += 1;
             if (playerCounter >= mc.theWorld.playerEntities.size())
                 playerCounter = 0;
 
             EntityPlayer player = (EntityPlayer) mc.theWorld.playerEntities.get(playerCounter);
-            String cape = (String) getCape(player.username);
-           /* if (cape != null) {
+            String capeURL = (String) getCape(player.username);
+            if (capeURL != null){
+                ThreadDownloadImageData object = new ThreadDownloadImageData(capeURL, null, null);
+                mc.renderEngine.loadTexture(new ResourceLocation("cloaks/" + player.username), (TextureObject) object);
+            }
+            if (cape != null) {
                 String oldCape = player.cloakUrl;
                 player.cloakUrl = (player.cloakUrl = cape);
 
                 if (oldCape != cape)
                     mc.renderEngine.obtainImageData(player.cloakUrl, new ImageDownload());
-            }*/
-            //TODO: FIX CAPES!
+            }
+            
 
-        }
+        }*/
     }
 
     private String getCape(String username) {
