@@ -1,11 +1,8 @@
-# To ignore release files #
-Releases/
-
-# To ignore Eclipse mess #
+# To ignore Eclipse and/or IntelliJ mess #
 bin/
 .classpath
 .project
+.iml
 
 # To ignore APIs #
-common/dan200/
 lib/
