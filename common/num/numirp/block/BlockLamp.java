@@ -1,7 +1,7 @@
 package num.numirp.block;
 
-import java.util.List;
-import java.util.Random;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -15,11 +15,10 @@ import num.numirp.NumiRP;
 import num.numirp.core.proxy.ClientProxy;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
-
 import org.lwjgl.util.Color;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import java.util.List;
+import java.util.Random;
 
 public class BlockLamp extends Block {
     public final int normalId;
@@ -162,7 +161,7 @@ public class BlockLamp extends Block {
         return icons[meta];
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({"unchecked", "rawtypes"})
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(int par1, CreativeTabs creativetab, List list) {
         if (!powered) {

@@ -1,4 +1,4 @@
-package num.numirp.item;
+package num.numirp.tools;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -8,9 +8,9 @@ import net.minecraft.item.ItemStack;
 import num.numirp.NumiRP;
 import num.numirp.lib.Reference;
 
-public class ItemWoolCard extends Item {
+public class ItemToolWoolCard extends Item {
 
-    public ItemWoolCard(int par1) {
+    public ItemToolWoolCard(int par1) {
         super(par1);
         setMaxStackSize(1);
         setMaxDamage(128);

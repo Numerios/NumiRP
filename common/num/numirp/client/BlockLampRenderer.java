@@ -1,7 +1,6 @@
-package num.numirp.client.renderer.block;
+package num.numirp.client;
 
-import org.lwjgl.util.Color;
-import org.lwjgl.opengl.GL11;
+import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.Tessellator;
@@ -9,7 +8,8 @@ import net.minecraft.world.IBlockAccess;
 import num.numirp.block.BlockLamp;
 import num.numirp.core.proxy.ClientProxy;
 import num.numirp.lib.BlockIDs;
-import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.util.Color;
 
 public class BlockLampRenderer implements ISimpleBlockRenderingHandler {
 
@@ -55,7 +55,7 @@ public class BlockLampRenderer implements ISimpleBlockRenderingHandler {
 
     @Override
     public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId,
-            RenderBlocks renderer) {
+                                    RenderBlocks renderer) {
         if (ClientProxy.renderPass == 1) {
             double north = -0.03D;
             double south = 1.03D;

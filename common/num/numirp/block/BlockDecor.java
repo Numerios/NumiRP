@@ -1,8 +1,5 @@
 package num.numirp.block;
 
-import java.util.List;
-import java.util.Random;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -18,6 +15,9 @@ import num.numirp.NumiRP;
 import num.numirp.lib.Metadata;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
+
+import java.util.List;
+import java.util.Random;
 
 public class BlockDecor extends Block {
     public BlockDecor(int id) {
@@ -63,7 +63,7 @@ public class BlockDecor extends Block {
         return 1;
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({"unchecked", "rawtypes"})
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(int par1, CreativeTabs creativetab, List list) {
         for (int i = 0; i < Strings.DECOR.length; i++) {

@@ -1,15 +1,11 @@
 package num.numirp.core.handlers;
 
-import java.util.EnumSet;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.ThreadDownloadImageData;
-import net.minecraft.client.renderer.texture.TextureObject;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.ResourceLocation;
-import num.numirp.lib.Reference;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
+import net.minecraft.client.Minecraft;
+import num.numirp.lib.Reference;
+
+import java.util.EnumSet;
 
 public class TickHandler implements ITickHandler {
     private static final Minecraft mc = Minecraft.getMinecraft();
@@ -17,7 +13,7 @@ public class TickHandler implements ITickHandler {
 
     @Override
     public void tickStart(EnumSet<TickType> type, Object... tickData) {
-      //TODO: FIX CAPES!
+        //TODO: FIX CAPES!
        /* if ((mc.theWorld != null) && (mc.theWorld.playerEntities.size() > 0)) {
             playerCounter += 1;
             if (playerCounter >= mc.theWorld.playerEntities.size())

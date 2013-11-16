@@ -1,9 +1,8 @@
-package num.numirp.item.tool;
-
-import java.util.Random;
+package num.numirp.tools;
 
 import com.google.common.collect.Multimap;
-
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLivingBase;
@@ -19,8 +18,8 @@ import net.minecraft.world.World;
 import num.numirp.NumiRP;
 import num.numirp.core.util.MaterialHelper;
 import num.numirp.lib.Reference;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
+import java.util.Random;
 
 public class ItemToolAthame extends ItemSword {
     private float damage;
@@ -78,7 +77,7 @@ public class ItemToolAthame extends ItemSword {
         return MaterialHelper.isRepairable(toolMaterial, repairIS);
     }
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @SuppressWarnings({"rawtypes", "unchecked"})
     @Override
     public Multimap getItemAttributeModifiers() {
         Multimap multimap = super.getItemAttributeModifiers();

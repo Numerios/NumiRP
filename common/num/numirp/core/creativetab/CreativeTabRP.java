@@ -1,9 +1,9 @@
-package num.numirp.creativetab;
+package num.numirp.core.creativetab;
 
-import net.minecraft.creativetab.CreativeTabs;
-import num.numirp.block.ModBlocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.creativetab.CreativeTabs;
+import num.numirp.block.ModBlocks;
 
 public class CreativeTabRP extends CreativeTabs {
 

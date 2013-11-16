@@ -35,11 +35,11 @@ public class ItemIDs {
 
     public static int ATHAME_ID_DEFAULT = 1329;
 
-    public static int WOOLCARD_ID_DEFAULT = 31601; 
+    public static int WOOLCARD_ID_DEFAULT = 31601;
 
     public static int LUMAR_ID_DEFAULT = 31602;
     // IDs for Lumar and Wool Cards are derping out a bit (as well as all of these) - just set them properly in your configs
-    
+
     // USED IDs
     public static int PROCESSED_ID;
 
@@ -75,7 +75,7 @@ public class ItemIDs {
     public static int ATHAME_ID;
 
     public static int WOOLCARD_ID;
-    
+
     public static int LUMAR_ID;
 
 }

@@ -1,42 +1,42 @@
-package num.numirp.item.tool;
+package num.numirp.tools;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumToolMaterial;
-import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import num.numirp.NumiRP;
 import num.numirp.core.util.MaterialHelper;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemToolAxe extends ItemAxe {
+public class ItemToolShovel extends ItemSpade {
     private int materialID;
     private EnumToolMaterial toolMaterial;
 
-    private static Material[] materialsEffectiveAgainst = { Material.wood, Material.circuits, Material.cactus,
-            Material.vine, Material.pumpkin };
+    private static Material[] materialsEffectiveAgainst = {Material.ground, Material.grass, Material.sand,
+            Material.snow, Material.clay, Material.craftedSnow};
 
-    public ItemToolAxe(int itemId, EnumToolMaterial toolMaterial) {
+    public ItemToolShovel(int itemId, EnumToolMaterial toolMaterial) {
         super(itemId, toolMaterial);
         setCreativeTab(NumiRP.tabRP);
         this.toolMaterial = toolMaterial;
 
         if (toolMaterial.name() == "RUBY") {
-            setUnlocalizedName("axeRuby");
+            setUnlocalizedName("shovelRuby");
             materialID = 0;
         } else if (toolMaterial.name() == "GREENSAPPHIRE") {
-            setUnlocalizedName("axeGreenSapphire");
+            setUnlocalizedName("shovelGreenSapphire");
             materialID = 1;
         } else if (toolMaterial.name() == "SAPPHIRE") {
-            setUnlocalizedName("axeSapphire");
+            setUnlocalizedName("shovelSapphire");
             materialID = 2;
         } else {
-            setUnlocalizedName("axeUnknown");
+            setUnlocalizedName("shovelUnknown");
             materialID = 3;
         }
     }
@@ -44,7 +44,7 @@ public class ItemToolAxe extends ItemAxe {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {
-        itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "axe" + Strings.ORES[materialID]);
+        itemIcon = iconRegister.registerIcon(Reference.TEXTURE_PATH + "shovel" + Strings.ORES[materialID]);
     }
 
     @Override
@@ -57,8 +57,8 @@ public class ItemToolAxe extends ItemAxe {
         if (block.blockMaterial.isToolNotRequired()) {
             return true;
         }
-        for (Material mat : materialsEffectiveAgainst) {
-            if (mat == block.blockMaterial) {
+        for (Material material : materialsEffectiveAgainst) {
+            if (material == block.blockMaterial) {
                 return true;
             }
         }
@@ -69,7 +69,7 @@ public class ItemToolAxe extends ItemAxe {
     public float getStrVsBlock(ItemStack is, Block block, int meta) {
         for (Material mat : materialsEffectiveAgainst) {
             if (mat == block.blockMaterial) {
-                int harvestLevel = MinecraftForge.getBlockHarvestLevel(block, meta, "axe");
+                int harvestLevel = MinecraftForge.getBlockHarvestLevel(block, meta, "shovel");
                 if (harvestLevel <= toolMaterial.getHarvestLevel()) {
                     return toolMaterial.getEfficiencyOnProperMaterial();
                 }

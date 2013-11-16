@@ -1,7 +1,5 @@
 package num.numirp.item;
 
-import java.util.List;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -12,6 +10,8 @@ import net.minecraft.util.Icon;
 import num.numirp.NumiRP;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
+
+import java.util.List;
 
 public class ItemProcessed extends Item {
     public ItemProcessed(int id) {
@@ -50,7 +50,7 @@ public class ItemProcessed extends Item {
         return getUnlocalizedName() + "." + Strings.PROCESSED[meta] + "." + "processed";
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({"unchecked", "rawtypes"})
     @SideOnly(Side.CLIENT)
     public void getSubItems(int par1, CreativeTabs creativetab, List list) {
         for (int i = 0; i < Strings.PROCESSED.length; i++) {

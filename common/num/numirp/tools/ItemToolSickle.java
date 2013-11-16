@@ -1,5 +1,7 @@
-package num.numirp.item.tool;
+package num.numirp.tools;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -14,11 +16,9 @@ import num.numirp.core.util.MaterialHelper;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
 import num.numirp.lib.Tweaks;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemToolSickle extends ItemTool {
-    private static Block[] blocksEffectiveAgainst = new Block[] { Block.leaves, Block.grass, Block.vine };
+    private static Block[] blocksEffectiveAgainst = new Block[]{Block.leaves, Block.grass, Block.vine};
 
     private int materialID;
     private EnumToolMaterial toolMaterial;
@@ -96,7 +96,7 @@ public class ItemToolSickle extends ItemTool {
 
     @Override
     public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6,
-            EntityLivingBase par7EntityLivingBase) {
+                                    EntityLivingBase par7EntityLivingBase) {
         return true;
     }
 

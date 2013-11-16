@@ -1,17 +1,11 @@
 package num.numirp.config;
 
+import cpw.mods.fml.common.FMLLog;
+import net.minecraftforge.common.Configuration;
+import num.numirp.lib.*;
+
 import java.io.File;
 import java.util.logging.Level;
-
-import cpw.mods.fml.common.FMLLog;
-
-import net.minecraftforge.common.Configuration;
-import num.numirp.lib.BlockIDs;
-import num.numirp.lib.ItemIDs;
-import num.numirp.lib.Module;
-import num.numirp.lib.Reference;
-import num.numirp.lib.Tweaks;
-import num.numirp.lib.WorldGen;
 
 public class ConfigHandler {
     public static Configuration configuration;
@@ -27,9 +21,19 @@ public class ConfigHandler {
             usedVersion = conf.get("Version info", "VERSION INFO - Please do not change this", Reference.MOD_VERSION)
                     .getString();
 
-            Module.LAMPS = conf.get("General", "LAMP MODULE (adding lamps)", Module.LAMPS_DEFAULT).getBoolean(
+            Module.LAMPS = conf.get("General", "LAMP MODULE (adding lamps to the game)", Module.LAMPS_DEFAULT).getBoolean(
                     Module.LAMPS_DEFAULT);
-            Module.TURTLES = conf.get("General", "TURTLE MODULE (adding gem tools to turtles from computercraft)",
+            Module.TOOLS = conf.get("General", "TOOL MODULE (adding gem tools and wool card to the game)", Module.TOOLS_DEFAULT).getBoolean(
+                    Module.TOOLS_DEFAULT);
+            Module.STORAGE = conf.get("General", "STORAGE MODULE (adding the storage blocks to the game - Copper Storage Block, Silver Storage Block, etc.)",
+                    Module.STORAGE_DEFAULT).getBoolean(Module.STORAGE_DEFAULT);
+            Module.ORES = conf.get("General", "ORES MODULE (adding ores to the game)", Module.ORES_DEFAULT).getBoolean(
+                    Module.ORES_DEFAULT);
+            Module.DECOR = conf.get("General", "DECOR MODULE (adding decorative blocks to the game - basalt, marble and their variants)",
+                    Module.DECOR_DEFAULT).getBoolean(Module.DECOR_DEFAULT);
+            Module.PROCESSED = conf.get("General", "PROCESSED MODULE (adding processed things to the game - all gems, ingots and dusts)", Module.PROCESSED_DEFAULT).getBoolean(
+                    Module.PROCESSED_DEFAULT);
+            Module.TURTLES = conf.get("General", "TURTLE MODULE (adding gem tools to turtles from computercraft) [dependent on tools - if tools is off, this is too!]",
                     Module.TURTLES_DEFAULT).getBoolean(Module.TURTLES_DEFAULT);
 
             WorldGen.WORLDGEN_RUBY = conf.get("World Generation", "Ruby Generation", WorldGen.WORLDGEN_RUBY_DEFAULT)

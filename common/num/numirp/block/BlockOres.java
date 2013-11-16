@@ -1,8 +1,7 @@
 package num.numirp.block;
 
-import java.util.List;
-import java.util.Random;
-
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -17,8 +16,9 @@ import num.numirp.item.ModItems;
 import num.numirp.lib.Metadata;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
+import java.util.List;
+import java.util.Random;
 
 public class BlockOres extends Block {
 
@@ -81,7 +81,7 @@ public class BlockOres extends Block {
         return 1;
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({"unchecked", "rawtypes"})
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(int par1, CreativeTabs creativetab, List list) {
         for (int i = 0; i < Strings.ORES.length; i++) {
@@ -92,7 +92,7 @@ public class BlockOres extends Block {
     @Override
     public void dropBlockAsItemWithChance(World world, int x, int y, int z, int id, float f, int meta) {
         super.dropBlockAsItemWithChance(world, x, y, z, id, f, meta);
-        
+
         int xpAmount = 0;
         if ((meta == Metadata.RUBY) || (meta == Metadata.GREENSAPPHIRE) || (meta == Metadata.SAPPHIRE)) {
             xpAmount = MathHelper.getRandomIntegerInRange(world.rand, 2, 4);

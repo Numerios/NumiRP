@@ -1,13 +1,13 @@
 package num.numirp.addons;
 
+import cpw.mods.fml.common.Loader;
+import dan200.turtle.api.ITurtleUpgrade;
+import dan200.turtle.api.TurtleAPI;
 import net.minecraft.item.Item;
 import num.numirp.core.util.Logger;
 import num.numirp.item.ModItems;
 import num.numirp.lib.Module;
 import num.numirp.lib.Tweaks;
-import cpw.mods.fml.common.Loader;
-import dan200.turtle.api.ITurtleUpgrade;
-import dan200.turtle.api.TurtleAPI;
 
 public class AddonCC {
     // using 4900 - 4914 by default
@@ -54,11 +54,11 @@ public class AddonCC {
 
     /**
      * Gets a turtle upgrade
-     * 
-     * @param ID the turtle ID
+     *
+     * @param ID           the turtle ID
      * @param materialName the name of the material - later merged to (materialName + " " + tool + " Turtle")
-     * @param item the item used
-     * @param tool the basic Minecraft type tool used - pickaxe/axe/shovel/sword/hoe
+     * @param item         the item used
+     * @param tool         the basic Minecraft type tool used - pickaxe/axe/shovel/sword/hoe
      * @return desired turtle upgrade
      */
     private static ITurtleUpgrade getUpgrade(int ID, String materialName, Item item, String tool) {

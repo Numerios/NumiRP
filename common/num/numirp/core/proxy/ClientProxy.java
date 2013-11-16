@@ -1,10 +1,10 @@
 package num.numirp.core.proxy;
 
-import num.numirp.client.renderer.block.BlockLampRenderer;
-import num.numirp.core.handlers.TickHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.registry.TickRegistry;
 import cpw.mods.fml.relauncher.Side;
+import num.numirp.client.BlockLampRenderer;
+import num.numirp.core.handlers.TickHandler;
 
 public class ClientProxy extends CommonProxy {
     public static int blockLampRenderType;

@@ -1,10 +1,9 @@
 package num.numirp.core.util;
 
-import java.util.logging.Level;
-
 import cpw.mods.fml.common.FMLLog;
-
 import num.numirp.lib.Reference;
+
+import java.util.logging.Level;
 
 public class Logger {
     private static java.util.logging.Logger NRPLogger = java.util.logging.Logger.getLogger(Reference.MOD_ID);
@@ -30,6 +29,6 @@ public class Logger {
     }
 
     public static void debug(String message) {
-       log(Level.WARNING, "[DEBUG] " + message);
+        log(Level.WARNING, "[DEBUG] " + message);
     }
 }
