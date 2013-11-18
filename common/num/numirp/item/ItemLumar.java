@@ -18,7 +18,7 @@ public class ItemLumar extends Item {
         super(id);
         setHasSubtypes(true);
         setMaxDamage(0);
-        setCreativeTab(NumiRP.tabRP);
+        setCreativeTab(NumiRP.tabNRP);
     }
 
     @SideOnly(Side.CLIENT)

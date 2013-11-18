@@ -14,7 +14,7 @@ public class ItemToolWoolCard extends Item {
         super(par1);
         setMaxStackSize(1);
         setMaxDamage(128);
-        setCreativeTab(NumiRP.tabRP);
+        setCreativeTab(NumiRP.tabNRP);
         canRepair = false;
     }
 

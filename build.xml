@@ -4,7 +4,7 @@
     <property name="build.dir.dev" value="..\"/>
     <property name="build.dir.release" value="..\out"/>
     <property name="build.release.mcversion" value="1.6.4"/>
-    <property name="build.release.modversion" value="1.2.0-beta"/>
+    <property name="build.release.modversion" value="1.2.0-beta1"/>
     <property name="download.dir" value="..\temp"/>
 
     <target name="clean">

@@ -22,7 +22,7 @@ public class BlockStorage extends Block {
         setHardness(3.0F);
         setResistance(5.0F);
         setStepSound(soundStoneFootstep);
-        setCreativeTab(NumiRP.tabRP);
+        setCreativeTab(NumiRP.tabNRP);
         setUnlocalizedName("numirp.storage");
 
         MinecraftForge.setBlockHarvestLevel(this, 0, "pickaxe", 2);

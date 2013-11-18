@@ -12,9 +12,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import num.numirp.addons.ModAddons;
 import num.numirp.block.ModBlocks;
 import num.numirp.config.ConfigHandler;
+import num.numirp.core.creativetab.CreativeTabNRP;
 import num.numirp.core.proxy.CommonProxy;
 import num.numirp.core.util.Logger;
-import num.numirp.core.creativetab.CreativeTabRP;
 import num.numirp.item.ModItems;
 import num.numirp.lib.Reference;
 import num.numirp.recipe.ModCrafting;
@@ -27,7 +27,7 @@ public class NumiRP {
     @Instance(Reference.MOD_ID)
     public static NumiRP instance;
 
-    public static CreativeTabs tabRP = new CreativeTabRP(CreativeTabs.getNextID(), Reference.MOD_ID);
+    public static CreativeTabs tabNRP = new CreativeTabNRP(CreativeTabs.getNextID(), Reference.MOD_ID);
 
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
     public static CommonProxy proxy;

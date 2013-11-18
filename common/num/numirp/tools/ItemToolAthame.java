@@ -29,7 +29,7 @@ public class ItemToolAthame extends ItemSword {
     public ItemToolAthame(int id, EnumToolMaterial toolMaterial) {
         super(id, toolMaterial);
         setUnlocalizedName("athame");
-        setCreativeTab(NumiRP.tabRP);
+        setCreativeTab(NumiRP.tabNRP);
         this.toolMaterial = toolMaterial;
         this.materialDamage = toolMaterial.getDamageVsEntity();
         damage = materialDamage;

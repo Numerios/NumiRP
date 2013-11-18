@@ -23,7 +23,7 @@ public class ItemToolShovel extends ItemSpade {
 
     public ItemToolShovel(int itemId, EnumToolMaterial toolMaterial) {
         super(itemId, toolMaterial);
-        setCreativeTab(NumiRP.tabRP);
+        setCreativeTab(NumiRP.tabNRP);
         this.toolMaterial = toolMaterial;
 
         if (toolMaterial.name() == "RUBY") {

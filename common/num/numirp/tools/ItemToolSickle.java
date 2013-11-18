@@ -25,7 +25,7 @@ public class ItemToolSickle extends ItemTool {
 
     public ItemToolSickle(int itemId, EnumToolMaterial toolMaterial) {
         super(itemId, 1, toolMaterial, blocksEffectiveAgainst);
-        setCreativeTab(NumiRP.tabRP);
+        setCreativeTab(NumiRP.tabNRP);
         this.toolMaterial = toolMaterial;
 
         if (toolMaterial.name() == "WOOD") {

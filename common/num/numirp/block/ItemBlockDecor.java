@@ -10,7 +10,7 @@ public class ItemBlockDecor extends ItemBlock {
         super(par1);
         setHasSubtypes(true);
         setMaxDamage(0);
-        setCreativeTab(NumiRP.tabRP);
+        setCreativeTab(NumiRP.tabNRP);
     }
 
     @Override

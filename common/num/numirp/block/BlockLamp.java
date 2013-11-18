@@ -42,7 +42,7 @@ public class BlockLamp extends Block {
         setHardness(0.2F);
         setResistance(2.0F);
         setStepSound(soundGlassFootstep);
-        setCreativeTab(NumiRP.tabRP);
+        setCreativeTab(NumiRP.tabNRP);
         setUnlocalizedName("numirp.lamp");
     }
 

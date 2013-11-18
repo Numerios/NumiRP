@@ -18,7 +18,7 @@ public class ItemToolSword extends ItemSword {
     public ItemToolSword(int itemId, EnumToolMaterial toolMaterial) {
         super(itemId, toolMaterial);
         this.toolMaterial = toolMaterial;
-        setCreativeTab(NumiRP.tabRP);
+        setCreativeTab(NumiRP.tabNRP);
 
         if (toolMaterial.name() == "RUBY") {
             setUnlocalizedName("swordRuby");
