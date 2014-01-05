@@ -59,17 +59,16 @@ public class ItemToolSickle extends ItemTool {
     }
 
     @Override
-    public float getStrVsBlock(ItemStack itemstack, Block block) {
-        if (block.blockMaterial == Material.leaves) {
-            return 4F;
+    public float getStrVsBlock(ItemStack is, Block block) {
+        if (block.blockMaterial == Material.leaves || block.blockMaterial == Material.vine || block.blockMaterial == Material.leaves) {
+            return this.efficiencyOnProperMaterial;
         }
-        return 0.5F;
+        return super.getStrVsBlock(is, block);
     }
 
     @Override
     public boolean onBlockStartBreak(ItemStack itemstack, int x, int y, int z, EntityPlayer player) {
         World world = player.worldObj;
-        Material material = world.getBlockMaterial(x, y, z);
         int damageItem = 0;
         int configRange = Tweaks.SICKLE_RANGE;
         int range = (int) Math.floor(configRange - (configRange + 1) / 2);
@@ -77,7 +76,7 @@ public class ItemToolSickle extends ItemTool {
         for (int i = x - range; i <= x + range; i++) {
             for (int j = y - range; j <= y + range; j++) {
                 for (int k = z - range; k <= z + range; k++) {
-                    material = world.getBlockMaterial(i, j, k);
+                    Material material = world.getBlockMaterial(i, j, k);
                     if (material == Material.plants || material == Material.vine || material == Material.leaves) {
                         world.destroyBlock(i, j, k, true);
                         damageItem++;

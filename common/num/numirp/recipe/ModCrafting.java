@@ -4,6 +4,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import num.numirp.block.ModBlocks;
 import num.numirp.item.ModItems;
@@ -153,7 +154,7 @@ public class ModCrafting {
             GameRegistry.addRecipe(new ItemStack(ModItems.woolCard), new Object[]{"#", "X", "I", Character.valueOf('#'),
                     Item.ingotIron, Character.valueOf('X'), Block.planks, Character.valueOf('I'), Item.stick});
             for (int c = 0; c < Strings.COLORS.length; c++) {
-                GameRegistry.addShapelessRecipe(new ItemStack(Item.silk, 4), new ItemStack(ModItems.woolCard, 1, 32767),
+                GameRegistry.addShapelessRecipe(new ItemStack(Item.silk, 4), new ItemStack(ModItems.woolCard, 1, OreDictionary.WILDCARD_VALUE),
                         new ItemStack(Block.cloth, 1, c));
             }
         }

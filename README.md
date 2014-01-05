@@ -9,7 +9,7 @@ All ideas and/or concepts are courtesy of Eloraam.
 ### Download
 __Stable__: Version 1.1.0 for MC1.5.x - [_HERE_](https://dl.dropboxusercontent.com/u/3743471/mods/NumiRP-1.5.2-1.1.0.jar)
 
-__Experimental__: Version 1.2.0-beta1 for MC1.6.x - [_HERE_](https://dl.dropboxusercontent.com/u/3743471/mods/NumiRP-1.6.4-1.2.0-beta1.jar)
+__Experimental__: Version 1.2.1-beta for MC1.6.x - [_HERE_](https://dl.dropboxusercontent.com/u/3743471/mods/NumiRP-1.6.4-1.2.1-beta.jar)
 
 If you want any changelogs, look into the version bump's commit description :)
 
@@ -25,8 +25,6 @@ If you find a bug and have a fix or want to implement a new feature:
 1. Create a new fork of this project and implement the changes.
 2. Click on the Pull Request at the top of your project page (next to "Watch").
 3. Enter necessary title with helpful description and send the Pull Request.
-
-P.S: I'd strongly advise to use my formatting setup located [HERE](https://dl.dropboxusercontent.com/u/3743471/Java/formatting.xml) for Eclipse so I don't have to format it myself.
 
 #### Issues
 If you find any issue or bug or just want to suggest something:

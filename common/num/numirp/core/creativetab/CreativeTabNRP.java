@@ -12,10 +12,9 @@ public class CreativeTabNRP extends CreativeTabs {
         super(id, name);
     }
 
-
     @Override
-    public ItemStack getIconItemStack(){
-        if(Module.DECOR) {
+    public ItemStack getIconItemStack() {
+        if (Module.DECOR) {
             return ModBlocks.blockMarble.copy();
         } else if (Module.LAMPS) {
             return ModItems.lumarGray.copy();

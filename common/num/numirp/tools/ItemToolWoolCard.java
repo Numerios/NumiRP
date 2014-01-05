@@ -13,19 +13,15 @@ public class ItemToolWoolCard extends Item {
     public ItemToolWoolCard(int par1) {
         super(par1);
         setMaxStackSize(1);
+        setNoRepair();
         setMaxDamage(128);
         setCreativeTab(NumiRP.tabNRP);
-        canRepair = false;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister ir) {
         itemIcon = ir.registerIcon(Reference.TEXTURE_PATH + "woolCard");
-    }
-
-    public boolean doesContainerItemLeaveCraftingGrid() {
-        return false;
     }
 
     @Override
@@ -35,10 +31,19 @@ public class ItemToolWoolCard extends Item {
 
     @Override
     public ItemStack getContainerItemStack(ItemStack is) {
-        is.setItemDamage(is.getItemDamage() + 1);
-        if (is.getItemDamage() > getMaxDamage())
-            is.stackSize = 0;
-        return is;
+        if (is.itemID == this.itemID) {
+            is.setItemDamage(is.getItemDamage() + 1);
+            return is;
+        } else {
+            ItemStack returned = new ItemStack(this);
+            returned.setItemDamage(returned.getMaxDamage());
+            return returned;
+        }
+    }
+
+    @Override
+    public boolean doesContainerItemLeaveCraftingGrid(ItemStack is) {
+        return false;
     }
 
 }

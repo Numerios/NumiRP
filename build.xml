@@ -4,8 +4,8 @@
     <property name="build.dir.dev" value="..\"/>
     <property name="build.dir.release" value="..\out"/>
     <property name="build.release.mcversion" value="1.6.4"/>
-    <property name="build.release.modversion" value="1.2.0-beta1"/>
-    <property name="download.dir" value="..\temp"/>
+    <property name="build.release.modversion" value="1.2.1-beta"/>
+    <property name="download.dir" value="..\out\temp"/>
 
     <target name="clean">
         <echo message="Cleaning the mess after/before building... "/>
