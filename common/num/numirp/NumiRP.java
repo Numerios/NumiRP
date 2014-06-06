@@ -7,19 +7,14 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
-import num.numirp.addons.ModAddons;
-import num.numirp.block.ModBlocks;
-import num.numirp.config.ConfigHandler;
+import num.numirp.base.ModuleBase;
+import num.numirp.core.ModuleManager;
 import num.numirp.core.creativetab.CreativeTabNRP;
 import num.numirp.core.proxy.CommonProxy;
 import num.numirp.core.util.Logger;
-import num.numirp.item.ModItems;
 import num.numirp.lib.Reference;
-import num.numirp.recipe.ModCrafting;
-import num.numirp.recipe.ModSmelting;
-import num.numirp.world.WorldGenerator;
+import num.numirp.world.ModuleWorld;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION)
 public class NumiRP {
@@ -34,27 +29,42 @@ public class NumiRP {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        ConfigHandler.init(event.getSuggestedConfigurationFile());
+        //    ConfigHandler.init(event.getSuggestedConfigurationFile());
         Logger.init();
+        Logger.debug("PreInit started!");
 
-        ModBlocks.init();
-        ModItems.init();
+        ModuleManager.INSTANCE.register(new ModuleBase());
+        ModuleManager.INSTANCE.register(new ModuleWorld());
 
-        GameRegistry.registerWorldGenerator(WorldGenerator.instance, 0);
+        ModuleManager.INSTANCE.preInit();
+        Logger.debug("PreInit finished!");
 
-        ModCrafting.init();
-        ModSmelting.init();
+        //   ModBlocks.init();
+        //   ModItems.init();
 
-        proxy.initCapes();
+        //   GameRegistry.registerWorldGenerator(WorldGenerator.instance, 0);
+
+        //   ModCrafting.init();
+        //   ModSmelting.init();
+
+        //   proxy.initCapes();
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        proxy.initRendering();
+        Logger.debug("Init started!");
+
+        ModuleManager.INSTANCE.init();
+
+        //   proxy.initRendering();
+        Logger.debug("Init finished!");
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        ModAddons.init();
+        Logger.debug("PostInit started!");
+
+        ModuleManager.INSTANCE.postInit();
+        Logger.debug("PostInit finished!");
     }
 }

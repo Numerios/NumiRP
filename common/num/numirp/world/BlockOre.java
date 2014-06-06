@@ -64,7 +64,7 @@ public class BlockOre extends Block {
     @Override
     public Item getItemDropped(int id, Random rand, int meta) {
         if ((meta == EnumOre.RUBY.meta) || (meta == EnumOre.GREENSAPPHIRE.meta) || (meta == EnumOre.SAPPHIRE.meta) || (meta == EnumOre.NIKOLITE.meta)) {
-            return ModuleBase.processed;
+            //  return ModuleBase.processed;
         }
         return Item.getItemFromBlock(this);
     }

@@ -2,9 +2,9 @@ package num.numirp.world;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockOre;
+import num.numirp.core.Module;
 
-public class ModuleWorld {
+public class ModuleWorld extends Module {
     public static Block ore;
 
     public void preInit() {
