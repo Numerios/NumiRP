@@ -40,7 +40,7 @@ public class NumiRP {
         ModBlocks.init();
         ModItems.init();
 
-        GameRegistry.registerWorldGenerator(WorldGenerator.instance);
+        GameRegistry.registerWorldGenerator(WorldGenerator.instance, 0);
 
         ModCrafting.init();
         ModSmelting.init();

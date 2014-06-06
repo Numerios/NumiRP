@@ -14,6 +14,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+import net.minecraft.item.ItemTool;
 import net.minecraft.world.World;
 import num.numirp.NumiRP;
 import num.numirp.core.util.MaterialHelper;
@@ -24,10 +25,10 @@ import java.util.Random;
 public class ItemToolAthame extends ItemSword {
     private float damage;
     private float materialDamage;
-    private EnumToolMaterial toolMaterial;
+    private ToolMaterial toolMaterial;
 
-    public ItemToolAthame(int id, EnumToolMaterial toolMaterial) {
-        super(id, toolMaterial);
+    public ItemToolAthame(ToolMaterial toolMaterial) {
+        super(toolMaterial);
         setUnlocalizedName("athame");
         setCreativeTab(NumiRP.tabNRP);
         this.toolMaterial = toolMaterial;

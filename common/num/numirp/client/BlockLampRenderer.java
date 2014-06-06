@@ -110,7 +110,7 @@ public class BlockLampRenderer implements ISimpleBlockRenderingHandler {
     }
 
     @Override
-    public boolean shouldRender3DInInventory() {
+    public boolean shouldRender3DInInventory(int modelId) {
         return true;
     }
 

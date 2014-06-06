@@ -2,7 +2,15 @@
 bin/
 .classpath
 .project
-.iml
+/*.iml
+/*.ipr
+/*.iws
+.idea/
 
-# To ignore APIs #
-lib/
+# To ignore other potentially unwanted files #
+*.psd
+*.jar
+
+# To ignore Gradle's building stuff #
+.gradle/
+build/

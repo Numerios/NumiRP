@@ -2,6 +2,7 @@ package num.numirp.world;
 
 import cpw.mods.fml.common.IWorldGenerator;
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -70,7 +71,7 @@ public class WorldGenerator implements IWorldGenerator {
             int posX = blockXPos + random.nextInt(16);
             int posY = minY + random.nextInt(maxY - minY);
             int posZ = blockZPos + random.nextInt(16);
-            (new WorldGenMinable(block.blockID, meta, clusterSize, Block.stone.blockID)).generate(world, random, posX,
+            (new WorldGenMinable(block, meta, clusterSize, Blocks.stone)).generate(world, random, posX,
                     posY, posZ);
         }
     }
