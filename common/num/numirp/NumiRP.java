@@ -14,6 +14,7 @@ import num.numirp.core.creativetab.CreativeTabNRP;
 import num.numirp.core.proxy.CommonProxy;
 import num.numirp.core.util.Logger;
 import num.numirp.lib.Reference;
+import num.numirp.storage.ModuleStorage;
 import num.numirp.world.ModuleWorld;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION)
@@ -35,6 +36,7 @@ public class NumiRP {
 
         ModuleManager.INSTANCE.register(new ModuleBase());
         ModuleManager.INSTANCE.register(new ModuleWorld());
+        ModuleManager.INSTANCE.register(new ModuleStorage());
 
         ModuleManager.INSTANCE.preInit();
         Logger.debug("PreInit finished!");

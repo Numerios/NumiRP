@@ -15,44 +15,6 @@ import num.numirp.lib.Strings;
 public class ModCrafting {
 
     public static void init() {
-        if (Module.STORAGE) {
-            // Storage Blocks crafting
-            GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockStorageRuby, "###", "###", "###",
-                    '#', "gemRuby"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockStorageGreenSapphire, "###", "###",
-                    "###", '#', "gemGreenSapphire"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockStorageSapphire, "###", "###", "###",
-                    '#', "gemSapphire"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockStorageTin, "###", "###", "###",
-                    '#', "ingotTin"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockStorageCopper, "###", "###", "###",
-                    '#', "ingotCopper"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockStorageSilver, "###", "###", "###",
-                    '#', "ingotSilver"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockStorageNikolite, "###", "###", "###",
-                    '#', "dustNikolite"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockStorageTungsten, "###", "###", "###",
-                    '#', "ingotTungsten"));
-
-            // Storage Blocks uncrafting
-            GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.RUBY),
-                    "#", '#', ModBlocks.blockStorageRuby);
-            GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.GREENSAPPHIRE), "#",
-                    '#', ModBlocks.blockStorageGreenSapphire);
-            GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.SAPPHIRE), "#",
-                    '#', ModBlocks.blockStorageSapphire);
-            GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.TIN),
-                    "#", '#', ModBlocks.blockStorageTin);
-            GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.COPPER),
-                    "#", '#', ModBlocks.blockStorageCopper);
-            GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.SILVER),
-                    "#", '#', ModBlocks.blockStorageSilver);
-            GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.NIKOLITE), "#",
-                    '#', ModBlocks.blockStorageNikolite);
-            GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.TUNGSTEN), "#",
-                    '#', ModBlocks.blockStorageTungsten);
-        }
-
         if (Module.TOOLS) {
             // Pickaxes
             GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.pickaxeRuby), new Object[]{"###", " I ",
