@@ -1,4 +1,4 @@
-package num.numirp.world;
+package num.numirp.world.ore;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -7,6 +7,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
 import num.numirp.NumiRP;
+import num.numirp.base.ModuleBase;
 import num.numirp.lib.Reference;
 
 import java.util.List;
@@ -64,7 +65,7 @@ public class BlockOre extends Block {
     @Override
     public Item getItemDropped(int id, Random rand, int meta) {
         if ((meta == EnumOre.RUBY.meta) || (meta == EnumOre.GREENSAPPHIRE.meta) || (meta == EnumOre.SAPPHIRE.meta) || (meta == EnumOre.NIKOLITE.meta)) {
-            //  return ModuleBase.processed;
+            return ModuleBase.processed;
         }
         return Item.getItemFromBlock(this);
     }

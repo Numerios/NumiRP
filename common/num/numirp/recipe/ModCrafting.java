@@ -52,27 +52,6 @@ public class ModCrafting {
             GameRegistry.addRecipe(new ItemStack(ModItems.itemProcessed, 9, Metadata.TUNGSTEN), "#",
                     '#', ModBlocks.blockStorageTungsten);
         }
-        if (Module.DECOR) {
-            // Decor blocks crafting
-            GameRegistry.addRecipe(new ItemStack(ModBlocks.blockDecor, 4, Metadata.BASALTBRICK), "##", "##",
-                    '#', ModBlocks.blockBasalt);
-            GameRegistry.addRecipe(new ItemStack(ModBlocks.blockDecor, 4, Metadata.MARBLEBRICK), "##", "##",
-                    '#', ModBlocks.blockMarble);
-            GameRegistry.addRecipe(new ItemStack(ModBlocks.blockDecor, 4, Metadata.BASALTCHISELED), "##",
-                    "##", '#', ModBlocks.blockBasaltBrick);
-            GameRegistry.addRecipe(new ItemStack(ModBlocks.blockDecor, 1, Metadata.BASALTPAVER), "#",
-                    '#', ModBlocks.blockBasalt);
-
-            // Decor blocks uncrafting
-            GameRegistry.addRecipe(ModBlocks.blockBasalt, "#", '#',
-                    ModBlocks.blockBasaltBrick);
-            GameRegistry.addRecipe(ModBlocks.blockBasalt, "#", '#',
-                    ModBlocks.blockBasaltChiseled);
-            GameRegistry.addRecipe(ModBlocks.blockBasalt, "#", '#',
-                    ModBlocks.blockBasaltPaver);
-            GameRegistry.addRecipe(ModBlocks.blockMarble, "#", '#',
-                    ModBlocks.blockMarbleBrick);
-        }
 
         if (Module.TOOLS) {
             // Pickaxes
@@ -125,19 +104,24 @@ public class ModCrafting {
             // Sickle
             GameRegistry.addRecipe(new ItemStack(ModItems.sickleWooden),
                     new Object[]{" # ", "  #", "I# ", '#', Block.planks, 'I',
-                            Item.stick});
+                            Item.stick}
+            );
             GameRegistry.addRecipe(new ItemStack(ModItems.sickleStone),
                     new Object[]{" # ", "  #", "I# ", '#', Block.cobblestone, 'I',
-                            Item.stick});
+                            Item.stick}
+            );
             GameRegistry.addRecipe(new ItemStack(ModItems.sickleIron),
                     new Object[]{" # ", "  #", "I# ", '#', Item.ingotIron, 'I',
-                            Item.stick});
+                            Item.stick}
+            );
             GameRegistry.addRecipe(new ItemStack(ModItems.sickleGolden),
                     new Object[]{" # ", "  #", "I# ", '#', Item.ingotGold, 'I',
-                            Item.stick});
+                            Item.stick}
+            );
             GameRegistry.addRecipe(new ItemStack(ModItems.sickleDiamond),
                     new Object[]{" # ", "  #", "I# ", '#', Item.diamond, 'I',
-                            Item.stick});
+                            Item.stick}
+            );
 
             GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.sickleRuby), new Object[]{" # ", "  #",
                     "I# ", '#', "gemRuby", 'I', Item.stick}));
@@ -160,23 +144,6 @@ public class ModCrafting {
         }
 
         if (Module.LAMPS) {
-            // Lumars
-            for (int i = 0; i < Strings.COLORS.length; i++) {
-                GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemLumar, 4, i),
-                        new ItemStack(Item.redstone, 1), new ItemStack(Item.glowstone, 1), new ItemStack(
-                        Item.dyePowder, 1, Strings.COLORS.length - i - 1), new ItemStack(Item.dyePowder, 1,
-                        Strings.COLORS.length - i - 1));
-            }
-
-            for (int i = 0; i < Strings.COLORS.length; i++) {
-                for (int j = 0; j < Strings.COLORS.length; j++) {
-                    if (i != j)
-                        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemLumar, 1, i), new ItemStack(
-                                Item.dyePowder, 1, Strings.COLORS.length - i - 1), new ItemStack(ModItems.itemLumar, 1,
-                                j));
-                }
-            }
-
             // Lamps
             for (int i = 0; i < Strings.COLORS.length; i++) {
                 GameRegistry.addRecipe(new ItemStack(ModBlocks.blockLampNormal, 1, i), new Object[]{"GLG", "GLG",
@@ -198,7 +165,8 @@ public class ModCrafting {
                                 ModBlocks.blockLampNormal, 1, j));
                         GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.blockLampInverted, 1, i),
                                 new ItemStack(Item.dyePowder, 1, Strings.COLORS.length - i - 1), new ItemStack(
-                                ModBlocks.blockLampInverted, j));
+                                        ModBlocks.blockLampInverted, j)
+                        );
                     }
                 }
             }

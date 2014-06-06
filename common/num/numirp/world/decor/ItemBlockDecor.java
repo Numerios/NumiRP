@@ -1,11 +1,12 @@
-package num.numirp.world;
+package num.numirp.world.decor;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import num.numirp.world.ModuleWorld;
 
-public class ItemBlockOre extends ItemBlock {
-    public ItemBlockOre(Block block) {
+public class ItemBlockDecor extends ItemBlock {
+    public ItemBlockDecor(Block block) {
         super(block);
         setHasSubtypes(true);
         setMaxDamage(0);
@@ -18,6 +19,6 @@ public class ItemBlockOre extends ItemBlock {
 
     @Override
     public String getUnlocalizedName(ItemStack is) {
-        return ModuleWorld.ore.getUnlocalizedName() + "." + EnumOre.VALID[is.getItemDamage()].getUnlocalizedName();
+        return ModuleWorld.decor.getUnlocalizedName() + "." + EnumDecor.VALID[is.getItemDamage()].getUnlocalizedName();
     }
 }

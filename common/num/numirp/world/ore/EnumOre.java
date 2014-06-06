@@ -1,10 +1,11 @@
-package num.numirp.world;
+package num.numirp.world.ore;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraftforge.oredict.OreDictionary;
 import num.numirp.lib.Reference;
+import num.numirp.world.ModuleWorld;
 
 public enum EnumOre {
     RUBY("oreRuby", 2, 24, 48, 2, 6),
