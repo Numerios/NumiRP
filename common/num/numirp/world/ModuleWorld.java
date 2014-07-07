@@ -17,18 +17,22 @@ public class ModuleWorld extends Module {
     }
 
     public void init() {
+        registerOres();
         registerRecipes();
         new WorldGenerator();
     }
 
     private void registerBlocks() {
         ore = new BlockOre();
-        ((BlockOre) ore).registerOres();
         GameRegistry.registerBlock(ore, ItemBlockOre.class, ore.getUnlocalizedName());
 
         decor = new BlockDecor();
-        ((BlockDecor) decor).registerOres();
         GameRegistry.registerBlock(decor, ItemBlockDecor.class, decor.getUnlocalizedName());
+    }
+
+    private void registerOres() {
+        ((BlockOre) ore).registerOres();
+        ((BlockDecor) decor).registerOres();
     }
 
     private void registerRecipes() {

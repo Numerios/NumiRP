@@ -1,12 +1,6 @@
 package num.numirp.block;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
-import net.minecraft.block.Block;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
-import num.numirp.lib.*;
-
+/*
 public class ModBlocks {
     public static Block blockOres, blockStorage, blockDecor, blockLampNormal, blockLampNormalActive, blockLampInverted,
             blockLampInvertedActive;
@@ -103,23 +97,7 @@ public class ModBlocks {
             OreDictionary.registerOre("blockBasaltPaver", blockBasaltPaver);
         }
         if (Module.LAMPS) {
-            blockLampNormal = new BlockLamp(BlockIDs.LAMPS_NORMAL_ID, false, false, BlockIDs.LAMPS_NORMAL_ID,
-                    BlockIDs.LAMPS_NORMAL_ACTIVE_ID).setUnlocalizedName("lamp");
-            blockLampNormalActive = new BlockLamp(BlockIDs.LAMPS_NORMAL_ACTIVE_ID, true, true,
-                    BlockIDs.LAMPS_NORMAL_ID, BlockIDs.LAMPS_NORMAL_ACTIVE_ID).setUnlocalizedName("lampOn");
-            blockLampInverted = new BlockLamp(BlockIDs.LAMPS_INVERTED_ID, false, true, BlockIDs.LAMPS_INVERTED_ID,
-                    BlockIDs.LAMPS_INVERTED_ACTIVE_ID).setUnlocalizedName("lampInverted");
-            blockLampInvertedActive = new BlockLamp(BlockIDs.LAMPS_INVERTED_ACTIVE_ID, true, false,
-                    BlockIDs.LAMPS_INVERTED_ID, BlockIDs.LAMPS_INVERTED_ACTIVE_ID).setUnlocalizedName("lampInvertedOn");
 
-            GameRegistry.registerBlock(blockLampNormal, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase()
-                    + (blockLampNormal.getUnlocalizedName().substring(5)));
-            GameRegistry.registerBlock(blockLampNormalActive, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase()
-                    + (blockLampNormalActive.getUnlocalizedName().substring(5)));
-            GameRegistry.registerBlock(blockLampInverted, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase()
-                    + (blockLampInverted.getUnlocalizedName().substring(5)));
-            GameRegistry.registerBlock(blockLampInvertedActive, ItemBlockLamp.class, Reference.MOD_ID.toLowerCase()
-                    + (blockLampInvertedActive.getUnlocalizedName().substring(5)));
 
             for (int i = 0; i < Strings.COLORS.length; i++) {
                 LanguageRegistry.addName(new ItemStack(blockLampNormal, 1, i), Strings.COLOR_NAMES[i] + " Lamp");
@@ -165,4 +143,4 @@ public class ModBlocks {
         }
     }
 
-}
+}                         */

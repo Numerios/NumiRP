@@ -1,22 +1,6 @@
 package num.numirp.tools;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumToolMaterial;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTool;
-import net.minecraft.world.World;
-import num.numirp.NumiRP;
-import num.numirp.core.util.MaterialHelper;
-import num.numirp.lib.Reference;
-import num.numirp.lib.Strings;
-import num.numirp.lib.Tweaks;
-
+/*
 public class ItemToolSickle extends ItemTool {
     private static Block[] blocksEffectiveAgainst = new Block[]{Block.leaves, Block.grass, Block.vine};
 
@@ -109,4 +93,4 @@ public class ItemToolSickle extends ItemTool {
     public boolean getIsRepairable(ItemStack toolIS, ItemStack repairIS) {
         return MaterialHelper.isRepairable(toolMaterial, repairIS);
     }
-}
+}                     */

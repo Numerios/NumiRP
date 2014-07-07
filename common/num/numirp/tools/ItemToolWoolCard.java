@@ -1,13 +1,6 @@
 package num.numirp.tools;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import num.numirp.NumiRP;
-import num.numirp.lib.Reference;
-
+/*
 public class ItemToolWoolCard extends Item {
 
     public ItemToolWoolCard(int par1) {
@@ -46,4 +39,4 @@ public class ItemToolWoolCard extends Item {
         return false;
     }
 
-}
+}                                          */

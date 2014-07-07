@@ -1,19 +1,6 @@
 package num.numirp.tools;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.item.EnumToolMaterial;
-import net.minecraft.item.ItemSpade;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;
-import num.numirp.NumiRP;
-import num.numirp.core.util.MaterialHelper;
-import num.numirp.lib.Reference;
-import num.numirp.lib.Strings;
-
+/*
 public class ItemToolShovel extends ItemSpade {
     private int materialID;
     private EnumToolMaterial toolMaterial;
@@ -78,4 +65,4 @@ public class ItemToolShovel extends ItemSpade {
         }
         return super.getStrVsBlock(is, block, meta);
     }
-}
+}                       */

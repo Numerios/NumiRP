@@ -1,16 +1,6 @@
 package num.numirp.tools;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.item.EnumToolMaterial;
-import net.minecraft.item.ItemHoe;
-import net.minecraft.item.ItemStack;
-import num.numirp.NumiRP;
-import num.numirp.core.util.MaterialHelper;
-import num.numirp.lib.Reference;
-import num.numirp.lib.Strings;
-
+/*
 public class ItemToolHoe extends ItemHoe {
     private int materialID;
     private EnumToolMaterial toolMaterial;
@@ -45,4 +35,4 @@ public class ItemToolHoe extends ItemHoe {
     public boolean getIsRepairable(ItemStack toolIS, ItemStack repairIS) {
         return MaterialHelper.isRepairable(toolMaterial, repairIS);
     }
-}
+}      */

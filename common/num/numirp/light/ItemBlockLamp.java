@@ -1,12 +1,13 @@
-package num.numirp.block;
+package num.numirp.light;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import num.numirp.lib.Strings;
 
 public class ItemBlockLamp extends ItemBlock {
-    public ItemBlockLamp(int par1) {
-        super(par1);
+    public ItemBlockLamp(Block block) {
+        super(block);
         setHasSubtypes(true);
         setMaxDamage(0);
     }

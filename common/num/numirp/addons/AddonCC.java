@@ -1,14 +1,6 @@
 package num.numirp.addons;
 
-import cpw.mods.fml.common.Loader;
-import dan200.turtle.api.ITurtleUpgrade;
-import dan200.turtle.api.TurtleAPI;
-import net.minecraft.item.Item;
-import num.numirp.core.util.Logger;
-import num.numirp.item.ModItems;
-import num.numirp.lib.Module;
-import num.numirp.lib.Tweaks;
-
+/*
 public class AddonCC {
     // using 4900 - 4914 by default
     public static final int BASE_UPGRADE_ID = Tweaks.TURTLE_UPGRADE_BASE;
@@ -60,7 +52,7 @@ public class AddonCC {
      * @param item         the item used
      * @param tool         the basic Minecraft type tool used - pickaxe/axe/shovel/sword/hoe
      * @return desired turtle upgrade
-     */
+     */      /*
     private static ITurtleUpgrade getUpgrade(int ID, String materialName, Item item, String tool) {
         try {
             tool = tool.toLowerCase();
@@ -95,4 +87,4 @@ public class AddonCC {
         return null;
 
     }
-}
+}            */

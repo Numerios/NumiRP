@@ -5,11 +5,10 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.world.IBlockAccess;
-import num.numirp.block.BlockLamp;
 import num.numirp.core.proxy.ClientProxy;
-import num.numirp.lib.BlockIDs;
+import num.numirp.light.BlockLamp;
+import num.numirp.light.ModuleLight;
 import org.lwjgl.opengl.GL11;
-import org.lwjgl.util.Color;
 
 public class BlockLampRenderer implements ISimpleBlockRenderingHandler {
 
@@ -64,39 +63,40 @@ public class BlockLampRenderer implements ISimpleBlockRenderingHandler {
             double up = 1.03D;
             double down = -0.03D;
 
-            int tmpBlockId;
+            Block tmpBlock;
 
-            tmpBlockId = world.getBlockId(x, y, z - 1);
-            if (tmpBlockId == BlockIDs.LAMPS_NORMAL_ACTIVE_ID || tmpBlockId == BlockIDs.LAMPS_INVERTED_ID)
+            tmpBlock = world.getBlock(x, y, z - 1);
+            if (tmpBlock == ModuleLight.lampNormal || tmpBlock == ModuleLight.lampInverted)
                 north = 0D;
 
-            tmpBlockId = world.getBlockId(x, y, z + 1);
-            if (tmpBlockId == BlockIDs.LAMPS_NORMAL_ACTIVE_ID || tmpBlockId == BlockIDs.LAMPS_INVERTED_ID)
+            tmpBlock = world.getBlock(x, y, z + 1);
+            if (tmpBlock == ModuleLight.lampNormal || tmpBlock == ModuleLight.lampInverted)
                 south = 1D;
 
-            tmpBlockId = world.getBlockId(x + 1, y, z);
-            if (tmpBlockId == BlockIDs.LAMPS_NORMAL_ACTIVE_ID || tmpBlockId == BlockIDs.LAMPS_INVERTED_ID)
+            tmpBlock = world.getBlock(x + 1, y, z);
+            if (tmpBlock == ModuleLight.lampNormal || tmpBlock == ModuleLight.lampInverted)
                 east = 1D;
 
-            tmpBlockId = world.getBlockId(x - 1, y, z);
-            if (tmpBlockId == BlockIDs.LAMPS_NORMAL_ACTIVE_ID || tmpBlockId == BlockIDs.LAMPS_INVERTED_ID)
+            tmpBlock = world.getBlock(x - 1, y, z);
+            if (tmpBlock == ModuleLight.lampNormal || tmpBlock == ModuleLight.lampInverted)
                 west = 0D;
 
-            tmpBlockId = world.getBlockId(x, y + 1, z);
-            if (tmpBlockId == BlockIDs.LAMPS_NORMAL_ACTIVE_ID || tmpBlockId == BlockIDs.LAMPS_INVERTED_ID)
+            tmpBlock = world.getBlock(x, y + 1, z);
+            if (tmpBlock == ModuleLight.lampNormal || tmpBlock == ModuleLight.lampInverted)
                 up = 1D;
 
-            tmpBlockId = world.getBlockId(x, y - 1, z);
-            if (tmpBlockId == BlockIDs.LAMPS_NORMAL_ACTIVE_ID || tmpBlockId == BlockIDs.LAMPS_INVERTED_ID)
+            tmpBlock = world.getBlock(x, y - 1, z);
+            if (tmpBlock == ModuleLight.lampNormal || tmpBlock == ModuleLight.lampInverted)
                 down = 0D;
 
             BlockLamp lamp = (BlockLamp) block;
             int metadata = world.getBlockMetadata(x, y, z);
-            Color colors = lamp.getOverlayColor(metadata);
+            int renderColor = lamp.getRenderColor(metadata);
+            BlockLamp.LocalColour colour = new BlockLamp.LocalColour(renderColor);
             renderer.overrideBlockBounds(west, down, north, east, up, south);
             renderer.setOverrideBlockTexture(lamp.overlayTexture);
-            renderer.renderStandardBlockWithColorMultiplier(lamp, x, y, z, (float) colors.getRed() / 255,
-                    (float) colors.getGreen() / 255, (float) colors.getBlue() / 255);
+            renderer.renderStandardBlockWithColorMultiplier(lamp, x, y, z, (float) colour.r,
+                    (float) colour.g, (float) colour.b);
             renderer.clearOverrideBlockTexture();
             renderer.unlockBlockBounds();
             return true;

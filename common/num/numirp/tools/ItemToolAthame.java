@@ -1,27 +1,6 @@
 package num.numirp.tools;
 
-import com.google.common.collect.Multimap;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.block.Block;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
-import net.minecraft.entity.boss.EntityDragon;
-import net.minecraft.entity.monster.EntityEnderman;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumToolMaterial;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
-import net.minecraft.item.ItemTool;
-import net.minecraft.world.World;
-import num.numirp.NumiRP;
-import num.numirp.core.util.MaterialHelper;
-import num.numirp.lib.Reference;
-
-import java.util.Random;
-
+/*
 public class ItemToolAthame extends ItemSword {
     private float damage;
     private float materialDamage;
@@ -86,4 +65,4 @@ public class ItemToolAthame extends ItemSword {
                 field_111210_e, "Weapon modifier", (double) this.damage, 0));
         return multimap;
     }
-}
+}         */

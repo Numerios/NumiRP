@@ -1,13 +1,13 @@
-package num.numirp.block;
+package num.numirp.light;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -15,35 +15,32 @@ import num.numirp.NumiRP;
 import num.numirp.core.proxy.ClientProxy;
 import num.numirp.lib.Reference;
 import num.numirp.lib.Strings;
-import org.lwjgl.util.Color;
 
 import java.util.List;
 import java.util.Random;
 
 public class BlockLamp extends Block {
-    public final int normalId;
-    public final int glowingId;
     public final boolean powered;
     public final boolean glow;
+    public final Block normal, glowing;
 
-    public BlockLamp(int id, boolean powered, boolean glow, int normalId, int glowingId) {
-        super(id, Material.redstoneLight);
+    public BlockLamp(boolean powered, boolean glow, Block normal, Block glowing, String variant) {
+        super(Material.redstoneLight);
+        setBlockName(Reference.MOD_ID.toLowerCase() + ".light.lamp." + variant);
         this.powered = powered;
         this.glow = glow;
-        this.normalId = normalId;
-        this.glowingId = glowingId;
+        this.normal = normal;
+        this.glowing = glowing;
 
         if (glow) {
-            setLightValue(1.0F);
+            setLightLevel(1.0F);
         } else {
-            setLightValue(0F);
+            setLightLevel(0F);
         }
 
         setHardness(0.2F);
         setResistance(2.0F);
-        setStepSound(soundGlassFootstep);
         setCreativeTab(NumiRP.tabNRP);
-        setUnlocalizedName("numirp.lamp");
     }
 
     @Override
@@ -52,22 +49,21 @@ public class BlockLamp extends Block {
             int nowMetadata = world.getBlockMetadata(x, y, z);
 
             if (powered && !world.isBlockIndirectlyGettingPowered(x, y, z)) {
-                world.scheduleBlockUpdate(x, y, z, blockID, 4);
+                world.scheduleBlockUpdate(x, y, z, this, 4);
             } else if (!powered && world.isBlockIndirectlyGettingPowered(x, y, z)) {
-                world.setBlock(x, y, z, glowingId, nowMetadata, 3);
+                world.setBlock(x, y, z, glowing, nowMetadata, 3);
             }
         }
     }
 
     @Override
-    public void onNeighborBlockChange(World world, int x, int y, int z, int neighborBlockId) {
+    public void onNeighborBlockChange(World world, int x, int y, int z, Block block) {
         if (!world.isRemote) {
             int nowMetadata = world.getBlockMetadata(x, y, z);
-
             if (powered && !world.isBlockIndirectlyGettingPowered(x, y, z)) {
-                world.scheduleBlockUpdate(x, y, z, blockID, 4);
+                world.scheduleBlockUpdate(x, y, z, this, 4);
             } else if (!powered && world.isBlockIndirectlyGettingPowered(x, y, z)) {
-                world.setBlock(x, y, z, glowingId, nowMetadata, 3);
+                world.setBlock(x, y, z, glowing, nowMetadata, 3);
             }
         }
     }
@@ -77,7 +73,7 @@ public class BlockLamp extends Block {
         if (!world.isRemote && powered && !world.isBlockIndirectlyGettingPowered(x, y, z)) {
             int nowMetadata = world.getBlockMetadata(x, y, z);
 
-            world.setBlock(x, y, z, normalId, nowMetadata, 3);
+            world.setBlock(x, y, z, this, nowMetadata, 3);
         }
     }
 
@@ -126,14 +122,14 @@ public class BlockLamp extends Block {
     }
 
     @SideOnly(Side.CLIENT)
-    private Icon[] icons;
+    private IIcon[] icons;
     @SideOnly(Side.CLIENT)
-    public Icon overlayTexture;
+    public IIcon overlayTexture;
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister ir) {
-        icons = new Icon[Strings.COLORS.length];
+    public void registerBlockIcons(IIconRegister ir) {
+        icons = new IIcon[Strings.COLORS.length];
 
         if (!glow) {
             for (int i = 0; i < Strings.COLORS.length; i++) {
@@ -149,12 +145,12 @@ public class BlockLamp extends Block {
     }
 
     @SideOnly(Side.CLIENT)
-    public Icon getTintTexture() {
+    public IIcon getTintTexture() {
         return overlayTexture;
     }
 
     @SideOnly(Side.CLIENT)
-    public Icon getIcon(int side, int meta) {
+    public IIcon getIcon(int side, int meta) {
         if (meta > 15) {
             return icons[meta - 16];
         }
@@ -163,22 +159,22 @@ public class BlockLamp extends Block {
 
     @SuppressWarnings({"unchecked", "rawtypes"})
     @SideOnly(Side.CLIENT)
-    public void getSubBlocks(int par1, CreativeTabs creativetab, List list) {
+    public void getSubBlocks(Block block, CreativeTabs tab, List list) {
         if (!powered) {
             for (int i = 0; i < Strings.COLORS.length; i++) {
-                list.add(new ItemStack(par1, 1, i));
+                list.add(new ItemStack(this, 1, i));
             }
         }
     }
 
-    @Override
-    public int idDropped(int par1, Random par2Random, int par3) {
-        return normalId;
-    }
+   /* @Override
+    public int blockDropped(Block block, Random par2Random, int par3) {
+        return normal;
+    }                    */
 
     @Override
     public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z) {
-        return new ItemStack(normalId, 1, world.getBlockMetadata(x, y, z));
+        return new ItemStack(normal, 1, world.getBlockMetadata(x, y, z));
     }
 
     @Override
@@ -187,42 +183,65 @@ public class BlockLamp extends Block {
     }
 
     @SideOnly(Side.CLIENT)
-    public Color getOverlayColor(int metadata) {
+    public int getRenderColor(int metadata) {
         switch (metadata) {
             case 0: // white
-                return new Color(255, 255, 255);
+                return new LocalColour(255, 255, 255).getInt();
             case 1: // orange
-                return new Color(219, 139, 42);
+                return new LocalColour(219, 139, 42).getInt();
             case 2: // magenta
-                return new Color(198, 91, 193);
+                return new LocalColour(198, 91, 193).getInt();
             case 3: // light blue
-                return new Color(99, 142, 203);
+                return new LocalColour(99, 142, 203).getInt();
             case 4: // yellow
-                return new Color(232, 199, 37);
+                return new LocalColour(232, 199, 37).getInt();
             case 5: // lime
-                return new Color(105, 178, 10);
+                return new LocalColour(105, 178, 10).getInt();
             case 6: // pink
-                return new Color(226, 113, 173);
+                return new LocalColour(226, 113, 173).getInt();
             case 7: // gray
-                return new Color(117, 117, 117);
+                return new LocalColour(117, 117, 117).getInt();
             case 8: // light gray
-                return new Color(211, 211, 211);
+                return new LocalColour(211, 211, 211).getInt();
             case 9: // cyan
-                return new Color(30, 118, 153);
+                return new LocalColour(30, 118, 153).getInt();
             case 10: // purple
-                return new Color(145, 54, 201);
+                return new LocalColour(145, 54, 201).getInt();
             case 11: // blue
-                return new Color(52, 94, 195);
+                return new LocalColour(52, 94, 195).getInt();
             case 12: // brown
-                return new Color(135, 81, 45);
+                return new LocalColour(135, 81, 45).getInt();
             case 13: // green
-                return new Color(83, 122, 20);
+                return new LocalColour(83, 122, 20).getInt();
             case 14: // red
-                return new Color(191, 40, 40);
+                return new LocalColour(191, 40, 40).getInt();
             case 15: // black
-                return new Color(61, 61, 61);
+                return new LocalColour(61, 61, 61).getInt();
             default:
-                return new Color(0, 0, 0);
+                return new LocalColour(0, 0, 0).getInt();
+        }
+    }
+
+    /**
+     * Colour class, borrowed from ComplexWiring
+     */
+    public static class LocalColour {
+        public byte r, g, b;
+        public int colour;
+
+        public LocalColour(int r, int g, int b) {
+            this.r = (byte) r;
+            this.g = (byte) g;
+            this.b = (byte) b;
+            colour = this.getInt();
+        }
+
+        public LocalColour(int colour) {
+            this((colour >> 16) & 0xFF, (colour >> 8) & 0xFF, colour & 0xFF);
+        }
+
+        public int getInt() {
+            return (this.r & 0xFF) << 16 | (this.g & 0xFF) << 8 | (this.b & 0xFF);
         }
     }
 }

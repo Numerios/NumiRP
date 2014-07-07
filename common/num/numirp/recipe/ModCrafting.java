@@ -1,19 +1,8 @@
 package num.numirp.recipe;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-import num.numirp.block.ModBlocks;
-import num.numirp.item.ModItems;
-import num.numirp.lib.Metadata;
-import num.numirp.lib.Module;
-import num.numirp.lib.Strings;
-
 public class ModCrafting {
-
+}
+  /*
     public static void init() {
         if (Module.TOOLS) {
             // Pickaxes
@@ -106,42 +95,6 @@ public class ModCrafting {
         }
 
         if (Module.LAMPS) {
-            // Lamps
-            for (int i = 0; i < Strings.COLORS.length; i++) {
-                GameRegistry.addRecipe(new ItemStack(ModBlocks.blockLampNormal, 1, i), new Object[]{"GLG", "GLG",
-                        "GRG", 'G', Block.glass, 'L',
-                        new ItemStack(ModItems.itemLumar, 1, i), 'R', Item.redstone});
-            }
-
-            for (int i = 0; i < Strings.COLORS.length; i++) {
-                GameRegistry.addRecipe(new ItemStack(ModBlocks.blockLampInverted, 1, i), new Object[]{"GLG", "GLG",
-                        "GRG", 'G', Block.glass, 'L',
-                        new ItemStack(ModItems.itemLumar, 1, i), 'R', Block.torchRedstoneActive});
-            }
-
-            for (int i = 0; i < Strings.COLORS.length; i++) {
-                for (int j = 0; j < Strings.COLORS.length; j++) {
-                    if (i != j) {
-                        GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.blockLampNormal, 1, i), new ItemStack(
-                                Item.dyePowder, 1, Strings.COLORS.length - i - 1), new ItemStack(
-                                ModBlocks.blockLampNormal, 1, j));
-                        GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.blockLampInverted, 1, i),
-                                new ItemStack(Item.dyePowder, 1, Strings.COLORS.length - i - 1), new ItemStack(
-                                        ModBlocks.blockLampInverted, j)
-                        );
-                    }
-                }
-            }
-
-            for (int i = 0; i < Strings.COLORS.length; i++) {
-                GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.blockLampNormal, 1, i), new ItemStack(
-                        Item.redstone), new ItemStack(ModBlocks.blockLampInverted, 1, i));
-            }
-
-            for (int i = 0; i < Strings.COLORS.length; i++) {
-                GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.blockLampInverted, 1, i), new ItemStack(
-                        Block.torchRedstoneActive), new ItemStack(ModBlocks.blockLampNormal, 1, i));
-            }
         }
     }
-}
+}          */

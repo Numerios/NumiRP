@@ -1,19 +1,6 @@
 package num.numirp.item;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
-import net.minecraft.item.EnumToolMaterial;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.EnumHelper;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.oredict.OreDictionary;
-import num.numirp.lib.ItemIDs;
-import num.numirp.lib.Metadata;
-import num.numirp.lib.Module;
-import num.numirp.lib.Strings;
-import num.numirp.tools.*;
-
+/*
 public class ModItems {
     // Gems & Ingots
     public static Item itemProcessed;
@@ -233,4 +220,4 @@ public class ModItems {
             OreDictionary.registerOre("lumarBlack", lumarBlack);
         }
     }
-}
+}           */
